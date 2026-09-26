@@ -264,6 +264,18 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
 @media (max-width:520px){.fc7{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .brand{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand img{height:34px;width:auto;display:block;margin:8px}
+.picker{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.picker label{font-size:var(--t-label);color:var(--efin-grey)}
+.picker select{font:inherit;font-size:var(--t-body);padding:8px 10px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--white);color:var(--efin-grey-dark);min-width:0;flex:1 1 160px}
+.or{font-size:var(--t-label);color:var(--efin-grey-light)}
+.shel{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+.sh{border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;display:flex;flex-direction:column;gap:2px;font-size:var(--t-body)}
+.sh b{font-weight:600}
+.sh .ph{font-weight:500;font-variant-numeric:tabular-nums;color:var(--info)}
+.readme{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+.rd{border-left:3px solid var(--efin-grey-light);padding:4px 0 4px 10px;font-size:var(--t-body)}
+.rd b{display:block;font-weight:600}
+.lnk[hidden]{display:none!important}
 </style>
 
 <header class="hero">
@@ -295,13 +307,25 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
       <button class="hl" data-num="1197"><span class="n">1197</span><span class="d">สายด่วนจราจร สอบถามเส้นทาง 24 ชม.</span></button>
       <button class="hl" data-num="1586"><span class="n">1586</span><span class="d">กรมทางหลวง (ทางหลวงในปริมณฑล)</span></button>
       <button class="hl" data-num="1460"><span class="n">1460</span><span class="d">กรมชลประทาน</span></button>
+      <button class="hl" data-num="191"><span class="n">191</span><span class="d">เหตุด่วนเหตุร้าย ตำรวจ</span></button>
+      <button class="hl" data-num="1130"><span class="n">1130</span><span class="d">การไฟฟ้านครหลวง (MEA) กรุงเทพฯ นนทบุรี สมุทรปราการ<a class="cite" href="#s36">[36]</a></span></button>
+      <button class="hl" data-num="1129"><span class="n">1129</span><span class="d">การไฟฟ้าส่วนภูมิภาค (PEA) ปทุมธานี นครปฐม สมุทรสาคร<a class="cite" href="#s36">[36]</a></span></button>
     </div>
+    <p class="small muted"><b>เวลาโทรขอความช่วยเหลือ</b> บอกตำแหน่งและจุดสังเกต จำนวนคนที่ต้องช่วย มีผู้สูงอายุ เด็ก หรือผู้ป่วยหรือไม่ และเบอร์ติดต่อกลับ</p>
     <p class="small muted">แจ้งจุดน้ำท่วมหรือท่อตันผ่าน LINE <b>@traffyfondue</b> ระบบรับเรื่องของ กทม.<a class="cite" href="#s6">[6]</a> · ถ้ามีอันตรายต่อชีวิต โทร 1669 หรือ 191 ทันที</p>
     <p class="toast" id="hl-toast" aria-live="polite"></p>
   </section>
 
   <section class="section" id="locate" aria-labelledby="h-loc">
     <div class="sec-head"><h2 id="h-loc">เช็กน้ำท่วมตามตำแหน่ง</h2><span class="small muted">พิมพ์ชื่อเขต อำเภอ หรือถนน</span></div>
+    <div class="picker">
+      <label for="pick-prov">จังหวัด</label>
+      <select id="pick-prov"></select>
+      <label for="pick-area">เขต / อำเภอ</label>
+      <select id="pick-area"></select>
+      <button class="chip" type="button" id="share-area">คัดลอกลิงก์พื้นที่นี้</button>
+    </div>
+    <span class="or">หรือพิมพ์ค้นหา (รองรับชื่อถนนด้วย)</span>
     <form class="loc-form" id="loc-form" autocomplete="off">
       <input class="search" id="loc-q" type="search" list="loc-list" placeholder="เช่น จตุจักร, ลาดกระบัง, ปากเกร็ด, ถนนรามคำแหง" aria-label="พิมพ์ชื่อเขต อำเภอ หรือถนน">
       <datalist id="loc-list"></datalist>
@@ -314,6 +338,7 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
       <button class="chip" type="button" data-q="ปากเกร็ด">ปากเกร็ด</button>
       <button class="chip" type="button" data-q="บางนา">บางนา</button>
     </div>
+    <p class="toast" id="share-toast" aria-live="polite"></p>
     <div class="loc-res" id="loc-res" aria-live="polite"></div>
     <div class="howto">
       <div class="how"><h3>dds.bangkok.go.th</h3><span class="what">สำนักการระบายน้ำ กทม. · รายงานน้ำท่วมขัง ระดับน้ำคลอง ฝนรายสถานี เรดาร์</span>
@@ -326,6 +351,21 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
         <ol><li>เปิด <a href="https://www.thaiwater.net/" target="_blank" rel="noopener">thaiwater.net</a></li><li>เลือกหัวข้อระดับน้ำหรือฝน แล้วดูสถานีใกล้บ้าน</li><li>สีส้มหรือแดง = น้ำสูงใกล้ตลิ่ง</li></ol></div>
     </div>
     <p class="small muted">ผลในช่องนี้มาจากข้อมูลชุดเดียวกับหน้านี้ ถ้าไม่มีรายงานในเขตของคุณ ไม่ได้แปลว่าไม่ท่วม ให้เช็กแหล่งสดทุกครั้ง ปุ่ม Google Maps และ Waze จะส่งชื่อสถานที่ที่คุณพิมพ์ไปยังบริการนั้นเมื่อกดเท่านั้น</p>
+  </section>
+
+  <section class="section" id="shelter" aria-labelledby="h-shel">
+    <div class="sec-head"><h2 id="h-shel">ศูนย์พักพิงชั่วคราว</h2><span class="vtag v-news">ข่าว 26 ก.ย.<a class="cite" href="#s34">[34]</a><a class="cite" href="#s35">[35]</a></span></div>
+    <h3>กรุงเทพมหานคร เปิด 7 เขต</h3>
+    <div class="shel" id="shel-bkk"></div>
+    <h3>เทศบาลนครรังสิต ปทุมธานี 5 จุด รวมรองรับ 250 คน</h3>
+    <div class="shel">
+      <div class="sh"><b>โรงเรียนมัธยมนครรังสิต</b><span class="muted">รองรับ 50 คน</span></div>
+      <div class="sh"><b>โรงเรียนดวงกมล</b><span class="muted">รองรับ 50 คน</span></div>
+      <div class="sh"><b>โรงเรียนเพียรปัญญา</b><span class="muted">รองรับ 50 คน</span></div>
+      <div class="sh"><b>โรงเรียนประถมศึกษานครรังสิต</b><span class="muted">รองรับ 50 คน</span></div>
+      <div class="sh"><b>โรงเรียนนครรังสิต เปรมปรีดิ์</b><span class="muted">รองรับ 50 คน</span></div>
+    </div>
+    <p class="small muted">รายชื่อจากข่าวเช้า 26 ก.ย. อาจมีการเปิดเพิ่มหรือปิดแล้ว ก่อนเดินทางให้โทรยืนยันกับเบอร์ของศูนย์ ถ้าไม่มีศูนย์ในพื้นที่ของคุณ ติดต่อสำนักงานเขต 1555 (กทม.) หรือ 1784 (ปภ.)</p>
   </section>
 
   <section class="section" id="travel" aria-labelledby="h-trv">
@@ -354,6 +394,14 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
     </details>
     <p class="small muted">Google ไม่ได้บอกสาเหตุที่รถติด ผู้รวบรวมถือว่าสีส้มหรือแดงช่วงเช้ามืดมาจากน้ำท่วมขัง บางจุดอาจเกิดจากอุบัติเหตุ งานก่อสร้าง หรือปริมาณรถ ข้อมูลนี้ยังไม่ได้ตรวจสอบกับหน่วยงาน แต่ถนนส่วนใหญ่ตรงกับประกาศเลี่ยงเส้นทางของ กทม. ก่อนออกเดินทางให้เปิด Google Maps ดูสภาพล่าสุดอีกครั้ง</p>
 
+    <div class="sec-head"><h3>ก่อนตัดสินใจใช้เส้นทาง</h3></div>
+    <ul class="clean small">
+      <li><b>น้ำลดไม่ได้แปลว่าถนนเปิด</b> ดูประกาศของเจ้าหน้าที่ประกอบด้วย</li>
+      <li>เช็กฝนและน้ำท่วมทั้งต้นทางและปลายทาง ไม่ใช่เฉพาะจุดที่อยู่</li>
+      <li>ภาพกล้องจุดเดียวไม่ครอบคลุมทั้งเส้นทาง ดูเวลาของภาพก่อนใช้ตัดสินใจ</li>
+      <li>ถ้าข้อมูลไม่ชัดเจน โทรสอบถามเส้นทาง 1197</li>
+    </ul>
+
     <div class="sec-head"><h3>รถแบบไหนผ่านได้</h3><span class="vtag v-news">ข่าว<a class="cite" href="#s31">[31]</a></span></div>
     <div class="depthtbl">
       <div class="dp" style="border-color:var(--warning)"><div class="v">13–15 ซม.</div>ความสูงใต้ท้องรถเก๋งทั่วไป</div>
@@ -373,11 +421,12 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
 
     <div class="sec-head"><h3>ที่จอดรถหนีน้ำ (ฟรี)</h3><span class="vtag v-news">ข่าว 25 ก.ย. 20:15 น.<a class="cite" href="#s30">[30]</a></span></div>
     <div class="park">
+      <div class="pk"><b>รถไฟฟ้าสายสีชมพู สถานีมีนบุรี (PK30)</b><span>อาคารจอดแล้วจร · รถยนต์และจักรยานยนต์ ไม่มีค่าใช้จ่าย</span><span class="muted">เข้าจอดได้ตั้งแต่ 26 ก.ย. ต้องนำรถออกภายในจันทร์ 28 ก.ย. 12:00 น.<a class="cite" href="#s34">[34]</a></span></div>
       <div class="pk"><b>วัดพระธรรมกาย</b><span>อาคารจอดรถ 1 ราว 1,000 คัน · คลองหลวง ปทุมธานี</span><span class="muted">25–28 ก.ย. · รถต้องสตาร์ทได้ ห้ามค้างคืนในรถ ห้ามสูบบุหรี่และดื่มสุรา</span></div>
       <div class="pk"><b>เทศบาลนครรังสิต (5 จุด)</b><span>ฟิวเจอร์พาร์ค &amp; สเปลล์ ชั้น 1 (300 คัน) · โนโวเทล ฟิวเจอร์พาร์ค ชั้น 5–6 (200) · รังสิต เรสซิเดนซ์ (100) · โดมอเนกประสงค์ ซ.รังสิต-นครนายก 30 · หอประชุม 100 ปี ธัญบุรี</span><span class="muted">25–28 ก.ย. · โทร 0 2567 6000 ต่อ 602 หรือ 119 · 0 2567 3388 (24 ชม.)</span></div>
       <div class="pk"><b>เซ็นทรัล อยุธยา</b><span>อาคารจอดรถ ชั้น 1</span><span class="muted">25–27 ก.ย. · ใช้สำเนาบัตรประชาชนและสำเนาคู่มือรถ ห้างไม่รับผิดชอบความเสียหาย · 035 952 555</span></div>
     </div>
-    <p class="small muted">ตามข่าวไม่มีรายชื่อจุดจอดในเขตกรุงเทพฯ ติดต่อสำนักงานเขตหรือ 1555 เพื่อสอบถามจุดจอดรถของ กทม. ก่อนนำรถไปจอดให้โทรยืนยันว่ายังมีที่ว่าง</p>
+    <p class="small muted">จุดจอดของ กทม. และห้างอื่น ๆ ให้สอบถามสำนักงานเขตหรือ 1555 ก่อนนำรถไปจอดให้โทรยืนยันว่ายังมีที่ว่าง</p>
   </section>
 
   <section class="section" id="timeline" aria-labelledby="h-tl">
@@ -578,17 +627,44 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
 
   <section class="section" aria-labelledby="h-live">
     <div class="sec-head"><h2 id="h-live">ติดตามข้อมูลสดจากหน่วยงาน</h2><span class="small muted">ตรวจสอบว่าลิงก์ใช้งานได้ 26 ก.ย. 69</span></div>
-    <div class="links">
-      <a class="lnk" href="https://dds.bangkok.go.th/" target="_blank" rel="noopener"><b>สำนักการระบายน้ำ กทม.</b><span>รายงานน้ำท่วมขัง ระดับน้ำคลอง ฝนรายสถานี ภาพเรดาร์ กล้อง CCTV</span></a>
-      <a class="lnk" href="https://www.tmd.go.th/forecast/daily" target="_blank" rel="noopener"><b>กรมอุตุฯ พยากรณ์ประจำวัน</b><span>ออกวันละ 4 รอบ 05:00 11:00 17:00 23:00 น.</span></a>
-      <a class="lnk" href="https://www.tmd.go.th/warning-and-events/warning-storm" target="_blank" rel="noopener"><b>กรมอุตุฯ ประกาศเตือนภัย</b><span>ประกาศฉบับล่าสุดและฉบับก่อนหน้า</span></a>
-      <a class="lnk" href="https://www.tmd.go.th/forecast/heavyrainriskarea" target="_blank" rel="noopener"><b>พื้นที่เสี่ยงฝนตกหนัก</b><span>แผนที่ฝนหนักรายวันของกรมอุตุฯ</span></a>
-      <a class="lnk" href="https://www.thaiwater.net/" target="_blank" rel="noopener"><b>คลังข้อมูลน้ำแห่งชาติ</b><span>ระดับน้ำ ฝน เขื่อน ทั่วประเทศ (สสน.)</span></a>
-      <a class="lnk" href="https://water.rid.go.th/" target="_blank" rel="noopener"><b>กรมชลประทาน</b><span>สถานการณ์น้ำเจ้าพระยาและเขื่อน</span></a>
-      <a class="lnk" href="https://disaster.gistda.or.th/" target="_blank" rel="noopener"><b>GISTDA ภัยพิบัติ</b><span>พื้นที่น้ำท่วมจากภาพดาวเทียม</span></a>
-      <a class="lnk" href="https://www.onwr.go.th/" target="_blank" rel="noopener"><b>สทนช.</b><span>ประกาศเตือนพื้นที่เสี่ยงอุทกภัย</span></a>
-      <a class="lnk" href="https://www.disaster.go.th/" target="_blank" rel="noopener"><b>ปภ.</b><span>สถานการณ์สาธารณภัยและผู้ได้รับผลกระทบ</span></a>
-      <a class="lnk" href="https://hydro.navy.mi.th/waterlaveltable" target="_blank" rel="noopener"><b>กรมอุทกศาสตร์</b><span>ตารางน้ำขึ้นน้ำลงที่มีผลต่อการระบายน้ำ</span></a>
+    <div class="controls" role="group" aria-label="กรองประเภทแหล่งข้อมูล" id="lnk-filter">
+      <button class="chip" type="button" data-cat="all" aria-pressed="true">ทั้งหมด</button>
+      <button class="chip" type="button" data-cat="fc" aria-pressed="false">พยากรณ์</button>
+      <button class="chip" type="button" data-cat="rain" aria-pressed="false">ฝน / เรดาร์</button>
+      <button class="chip" type="button" data-cat="water" aria-pressed="false">ระดับน้ำ</button>
+      <button class="chip" type="button" data-cat="road" aria-pressed="false">ถนน</button>
+      <button class="chip" type="button" data-cat="svc" aria-pressed="false">ประกาศ / บริการ</button>
+    </div>
+    <div class="links" id="lnk-grid">
+      <a class="lnk" data-cat="fc" href="https://www.tmd.go.th/forecast/daily" target="_blank" rel="noopener"><b>กรมอุตุฯ พยากรณ์ประจำวัน</b><span>ออกวันละ 4 รอบ 05:00 11:00 17:00 23:00 น.</span></a>
+      <a class="lnk" data-cat="fc" href="https://www.tmd.go.th/forecast/sevenday" target="_blank" rel="noopener"><b>กรมอุตุฯ พยากรณ์ 7 วัน</b><span>ใช้วางแผนล่วงหน้า ไม่ใช่การยืนยันฝนรายเขต</span></a>
+      <a class="lnk" data-cat="fc" href="https://www.tmd.go.th/warning-and-events/warning-storm" target="_blank" rel="noopener"><b>กรมอุตุฯ ประกาศเตือนภัย</b><span>ประกาศฉบับล่าสุดและฉบับก่อนหน้า</span></a>
+      <a class="lnk" data-cat="rain" href="https://weather.tmd.go.th/" target="_blank" rel="noopener"><b>เรดาร์ตรวจอากาศ กรมอุตุฯ</b><span>ดูทิศทางกลุ่มฝน ตรวจเวลาที่ระบุบนภาพ</span></a>
+      <a class="lnk" data-cat="rain" href="https://www.tmd.go.th/forecast/heavyrainriskarea" target="_blank" rel="noopener"><b>พื้นที่เสี่ยงฝนตกหนัก</b><span>แผนที่ฝนหนักรายวันของกรมอุตุฯ</span></a>
+      <a class="lnk" data-cat="rain" href="https://dds.bangkok.go.th/weatherlink.php" target="_blank" rel="noopener"><b>ระบบโทรมาตร กทม.</b><span>ฝนรายสถานี ระดับน้ำในคลอง ของสำนักการระบายน้ำ</span></a>
+      <a class="lnk" data-cat="water" href="https://www.thaiwater.net/" target="_blank" rel="noopener"><b>คลังข้อมูลน้ำแห่งชาติ</b><span>ระดับน้ำ ฝน เขื่อน ทั่วประเทศ (สสน.)</span></a>
+      <a class="lnk" data-cat="water" href="https://water.rid.go.th/" target="_blank" rel="noopener"><b>กรมชลประทาน</b><span>สถานการณ์น้ำเจ้าพระยาและเขื่อน</span></a>
+      <a class="lnk" data-cat="water" href="https://hydro.navy.mi.th/waterlaveltable" target="_blank" rel="noopener"><b>กรมอุทกศาสตร์ ตารางน้ำขึ้นน้ำลง</b><span>เลือกสถานี เช่น ป้อมพระจุลจอมเกล้า ท่าเรือกรุงเทพ เป็นค่าทำนาย ไม่ใช่น้ำท่วมบนถนน</span></a>
+      <a class="lnk" data-cat="water" href="https://disaster.gistda.or.th/" target="_blank" rel="noopener"><b>GISTDA ภัยพิบัติ</b><span>พื้นที่น้ำท่วมจากภาพดาวเทียม</span></a>
+      <a class="lnk" data-cat="road" href="https://floodbangkok.bangkok.go.th/" target="_blank" rel="noopener"><b>ระบบตรวจวัดน้ำท่วมถนน กทม.</b><span>ค่าจากเซนเซอร์และกล้องตามจุด ไม่ใช่ประกาศเปิด–ปิดถนนทั้งสาย ช่วงนี้ระบบตอบช้า</span></a>
+      <a class="lnk" data-cat="road" href="https://dds.bangkok.go.th/flood_report.php" target="_blank" rel="noopener"><b>รายงานน้ำท่วมขัง สนน.</b><span>รายการน้ำท่วมขังถนนสายหลักรายวัน</span></a>
+      <a class="lnk" data-cat="road" href="https://www.google.com/maps/@13.78,100.58,12z/data=!5m1!1e1" target="_blank" rel="noopener"><b>Google Maps ชั้นการจราจร</b><span>สภาพจราจรปัจจุบัน ไม่บอกสาเหตุที่รถติด</span></a>
+      <a class="lnk" data-cat="svc" href="https://www.onwr.go.th/" target="_blank" rel="noopener"><b>สทนช.</b><span>ประกาศเตือนพื้นที่เสี่ยงอุทกภัย</span></a>
+      <a class="lnk" data-cat="svc" href="https://ndwc.disaster.go.th/ndwc" target="_blank" rel="noopener"><b>ศูนย์เตือนภัยพิบัติแห่งชาติ (ปภ.)</b><span>ประกาศเตือนภัยรายพื้นที่และช่องทางประสานงาน</span></a>
+      <a class="lnk" data-cat="svc" href="https://www.disaster.go.th/" target="_blank" rel="noopener"><b>ปภ.</b><span>สถานการณ์สาธารณภัยและผู้ได้รับผลกระทบ</span></a>
+      <a class="lnk" data-cat="svc" href="https://gov.bangkok.go.th/" target="_blank" rel="noopener"><b>บริการของ กทม.</b><span>ช่องทางบริการและแจ้งปัญหาเมือง</span></a>
+      <a class="lnk" data-cat="svc" href="https://myenergy.mea.or.th/" target="_blank" rel="noopener"><b>การไฟฟ้านครหลวง (MEA)</b><span>แจ้งไฟดับ ไฟฟ้าขัดข้อง โทร 1130</span></a>
+      <a class="lnk" data-cat="svc" href="https://www.pea.co.th/contact-us" target="_blank" rel="noopener"><b>การไฟฟ้าส่วนภูมิภาค (PEA)</b><span>แจ้งไฟดับในปทุมธานี นครปฐม สมุทรสาคร โทร 1129</span></a>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-rd">
+    <div class="sec-head"><h2 id="h-rd">อ่านข้อมูลอย่างไรให้ไม่คลาดเคลื่อน</h2></div>
+    <div class="readme">
+      <div class="rd"><b>ฝน ≠ ความลึกน้ำท่วม</b>มิลลิเมตรฝนคือปริมาณฝนสะสมในช่วงเวลาหนึ่ง แปลงเป็นระดับน้ำบนถนนตรง ๆ ไม่ได้</div>
+      <div class="rd"><b>พยากรณ์ ≠ ค่าตรวจวัด</b>พยากรณ์และเรดาร์ใช้ประเมินล่วงหน้า ค่าตรวจวัดบอกสภาพจริงเฉพาะสถานีและเวลาที่ระบุ</div>
+      <div class="rd"><b>เวลาเปิดหน้า ≠ เวลาข้อมูล</b>ดูเวลากำกับของแต่ละตัวเลข หน้านี้อัปเดตราวทุก 3 ชั่วโมง ไม่ใช่เรียลไทม์</div>
+      <div class="rd"><b>ไม่มีรายงาน ≠ ปลอดภัย</b>สถานีวัดและรายงานไม่ครอบคลุมทุกซอย ถ้าไม่แน่ใจให้เช็กแหล่งสดหรือโทรสอบถาม</div>
     </div>
   </section>
 
@@ -619,6 +695,7 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
         <li id="s27"><span class="num">[27]</span><span>คลังข้อมูลน้ำแห่งชาติ thaiwater.net (สสน.) — ระดับน้ำ ปริมาณน้ำไหลผ่าน และฝนรายสถานี จากสถานีของกรมชลประทาน สสน. และกรมอุตุฯ ดึงข้อมูลล่าสุด <span class="src-asof"></span> <a href="https://www.thaiwater.net/" target="_blank" rel="noopener">thaiwater.net</a></span></li>
         <li id="s28"><span class="num">[28]</span><span>สายด่วนตรวจสอบกับเว็บไซต์หน่วยงาน: <a href="https://www.disaster.go.th/" target="_blank" rel="noopener">ปภ. 1784</a> · <a href="https://www.niems.go.th/" target="_blank" rel="noopener">สพฉ. 1669</a> · <a href="https://www.doh.go.th/" target="_blank" rel="noopener">กรมทางหลวง 1586</a> · <a href="https://saranitet.police.go.th/uncategorized_25082024_832/" target="_blank" rel="noopener">สตช. 1197</a> · <a href="https://kmc.rid.go.th/kcsecretary/index.php/km-activities/%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%94%E0%B9%88%E0%B8%A7%E0%B8%99-1460" target="_blank" rel="noopener">กรมชลประทาน 1460</a> · กรมอุตุฯ 1182 ตามประกาศเตือนภัย</span></li>
         <li id="s33"><span class="num">[33]</span><span>เบอร์ผู้ให้บริการการเดินทางตรวจสอบกับเว็บไซต์: <a href="https://www.exat.co.th/" target="_blank" rel="noopener">กทพ. 1543</a> · <a href="https://www.bmta.co.th/" target="_blank" rel="noopener">ขสมก. 1348</a> · <a href="https://www.srtet.co.th/" target="_blank" rel="noopener">รถไฟฟ้าสายสีแดง 1690</a></span></li>
+        <li id="s36"><span class="num">[36]</span><span>เบอร์การไฟฟ้าตรวจสอบกับเว็บไซต์: <a href="https://myenergy.mea.or.th/" target="_blank" rel="noopener">MEA 1130</a> · <a href="https://www.pea.co.th/contact-us" target="_blank" rel="noopener">PEA 1129</a></span></li>
         <li id="s29"><span class="num">[29]</span><span>สำนักการระบายน้ำ กทม. — สรุปสภาพฝนหน้าเว็บไซต์ (ดึงอัตโนมัติ) <a href="https://dds.bangkok.go.th/index2.php" target="_blank" rel="noopener">dds.bangkok.go.th</a></span></li>
       </ul>
     </div>
@@ -642,6 +719,8 @@ footer{font-size:var(--t-body);color:var(--efin-grey-light);text-align:center;pa
         <li id="s30"><span class="num">[30]</span><span>ไทยรัฐ — จุดจอดรถฟรีช่วงน้ำท่วม (25 ก.ย. 69 20:15 น.) <a href="https://www.thairath.co.th/news/society/2962048" target="_blank" rel="noopener">thairath.co.th/news/society/2962048</a></span></li>
         <li id="s31"><span class="num">[31]</span><span>ไทยรัฐ — เส้นทางน้ำท่วมสูงรถเล็กควรหลีกเลี่ยง (26 ก.ย. 69) <a href="https://www.thairath.co.th/news/auto/news/2962084" target="_blank" rel="noopener">thairath.co.th/news/auto/news/2962084</a></span></li>
         <li id="s32"><span class="num">[32]</span><span>หน้าเว็บ “เลี่ยงถนนน้ำท่วม กทม.” รวบรวมจากชั้นข้อมูลการจราจรแบบเรียลไทม์ของ Google Maps 26 ก.ย. 69 08:43–08:50 น. (ผู้รวบรวมภายนอก ยังไม่ได้ตรวจสอบกับหน่วยงาน) <a href="https://claude.ai/artifact/N6umcENfSgoY6GMkhVKwZs" target="_blank" rel="noopener">claude.ai/artifact/N6umcENfSgoY6GMkhVKwZs</a></span></li>
+        <li id="s34"><span class="num">[34]</span><span>ไทยโพสต์ — กทม.เปิดศูนย์พักพิง 7 เขต สายสีชมพูเปิดที่จอดรถฟรี (26 ก.ย. 69 09:08 น.) <a href="https://www.thaipost.net/x-cite-news/1076601/" target="_blank" rel="noopener">thaipost.net/x-cite-news/1076601</a></span></li>
+        <li id="s35"><span class="num">[35]</span><span>ฐานเศรษฐกิจ — เทศบาลนครรังสิตเปิด 5 ศูนย์พักพิงชั่วคราว รองรับ 250 คน (26 ก.ย. 69) <a href="https://www.thansettakij.com/general-news/669866" target="_blank" rel="noopener">thansettakij.com/general-news/669866</a></span></li>
         <li id="s20"><span class="num">[20]</span><span>ไทยโพสต์ — ดร.เสรี เตือนฝนหนักต่อเนื่อง กทม.-8 จังหวัด <a href="https://www.thaipost.net/general-news/1076398/" target="_blank" rel="noopener">thaipost.net/general-news/1076398</a></span></li>
       </ul>
     </div>
@@ -676,6 +755,7 @@ var DATA={"river":{"C.2":{"name":"C.2 นครสวรรค์","bank":25.7,"
     {w:"25→26 ก.ย.",c:"past",t:"ฝนสะสม 24 ชม. พื้นที่ส่วนใหญ่ของ กทม. 120–180 มม. สูงสุด 236.2 มม. ที่บางเขน สนน. บันทึกน้ำท่วมขังถนนสายหลัก 66 จุด 22 เขต",s:[25,27,24]},
     {w:"26 ก.ย. 05:00",c:"past",t:"กรมอุตุฯ พยากรณ์ กทม. มีฝนฟ้าคะนองเกือบทั่วไป ฝนตกหนักถึงหนักมากหลายพื้นที่ และออกประกาศเตือนฉบับที่ 10",s:[21,23]},
     {w:"26 ก.ย. 07:00",c:"past",t:"กทม. แนะนำเลี่ยง 18 เส้นทาง วิภาวดีฯ ขาเข้าน้ำสูงกว่า 1 ม. รถเล็กผ่านไม่ได้",s:[1,3],n:1},
+    {w:"26 ก.ย. 09:08",c:"past",t:"กทม. เปิดศูนย์พักพิงชั่วคราว 7 เขต และรถไฟฟ้าสายสีชมพูเปิดที่จอดรถฟรีที่สถานีมีนบุรี",s:[34],n:1},
     {w:"26 ก.ย. 08:45",c:"past",t:"Google Maps: ถนน 27 สายเป็นสีแดง/ส้ม หนักสุด สุวินทวงศ์ ช้ากว่าปกติ 57 นาที",s:[32],n:1},
     {w:"27–28 ก.ย.",c:"future",t:"คาดการณ์: ฝนฟ้าคะนอง 60–80% ของพื้นที่ ฝนตกหนักบางแห่ง ประกาศเตือนมีผลถึง 27 ก.ย.",s:[22,23]},
     {w:"29 ก.ย.–1 ต.ค.",c:"future",t:"คาดการณ์: ฝนลดลงเหลือ 30–40% ของพื้นที่",s:[22]},
@@ -820,9 +900,6 @@ var DATA={"river":{"C.2":{"name":"C.2 นครสวรรค์","bank":25.7,"
     [0,20,40,60].forEach(function(v){el('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),'class':'gl'},svg);var tx=el('text',{x:m.l-8,y:Y(v)+4,'text-anchor':'end','class':'ax'},svg);tx.textContent=v;});
     [0,100,200,300].forEach(function(v){var tx=el('text',{x:W-m.r+8,y:YC(v)+4,'text-anchor':'start','class':'ax',fill:'var(--warning)'},svg);tx.textContent=v;});
     var bw=(W-m.l-m.r)/n*0.72;
-    el('line',{x1:m.l,x2:W-m.r,y1:Y(35.1),y2:Y(35.1),'class':'zero'},svg);
-    var rl=el('text',{x:m.l+4,y:Y(35.1)-6,'class':'reflbl'},svg); rl.textContent='35 มม./ชม. ขึ้นไป = ฝนหนักมากในชั่วโมงเดียว (ระบาย กทม. รับได้ราว 60 มม./ชม. ในพื้นที่หลัก)';
-    rl.textContent='35 มม./ชม.';
     ts.forEach(function(t,i){var v=s.v[i]||0; el('rect',{x:X(t)-bw/2,y:Y(v),width:bw,height:Math.max(0,Y(0)-Y(v)),fill:'var(--info)'},svg);});
     var d=''; ts.forEach(function(t,i){d+=(i?'L':'M')+X(t).toFixed(1)+','+YC(cum[i]).toFixed(1);});
     el('path',{d:d,fill:'none',stroke:'var(--warning)','stroke-width':2.2},svg);
@@ -971,7 +1048,7 @@ var DATA={"river":{"C.2":{"name":"C.2 นครสวรรค์","bank":25.7,"
 
   // ---------- locate ----------
   var ZNAME={north:"กทม. โซนเหนือ",east:"กทม. โซนตะวันออก",central:"กทม. ชั้นใน",thon:"กทม. ฝั่งธนบุรี"};
-  var VIC={"นนทบุรี":["เมืองนนทบุรี","บางกรวย","ปากเกร็ด","บางบัวทอง","บางใหญ่","ไทรน้อย"],"ปทุมธานี":["เมืองปทุมธานี","ลาดหลุมแก้ว","คลองหลวง","ธัญบุรี","ลำลูกกา","สามโคก","หนองเสือ"],"สมุทรปราการ":["เมืองสมุทรปราการ","บางบ่อ","บางเสาธง","บางพลี","พระประแดง","พระสมุทรเจดีย์"],"สมุทรสาคร":["เมืองสมุทรสาคร","กระทุ่มแบน","บ้านแพ้ว"],"นครปฐม":["เมืองนครปฐม","นครชัยศรี","พุทธมณฑล","สามพราน","กำแพงแสน","บางเลน"]};
+  var VIC={"นนทบุรี":["เมืองนนทบุรี","บางกรวย","ปากเกร็ด","บางบัวทอง","บางใหญ่","ไทรน้อย"],"ปทุมธานี":["เมืองปทุมธานี","ลาดหลุมแก้ว","คลองหลวง","ธัญบุรี","ลำลูกกา","สามโคก","หนองเสือ"],"สมุทรปราการ":["เมืองสมุทรปราการ","บางบ่อ","บางเสาธง","บางพลี","พระประแดง","พระสมุทรเจดีย์"],"สมุทรสาคร":["เมืองสมุทรสาคร","กระทุ่มแบน","บ้านแพ้ว"],"นครปฐม":["เมืองนครปฐม","นครชัยศรี","พุทธมณฑล","สามพราน","กำแพงแสน","บางเลน","ดอนตูม"]};
   var ONWR_RISK=["เมืองนนทบุรี","บางกรวย","ปากเกร็ด","เมืองปทุมธานี","ลาดหลุมแก้ว","บางบ่อ","บางเสาธง","บางพลี"];
   var DECLARED={"หนองจอก":8,"สวนหลวง":3,"คันนายาว":2};
   var PLACES=[];
@@ -997,6 +1074,8 @@ var DATA={"river":{"C.2":{"name":"C.2 นครสวรรค์","bank":25.7,"
     if(hb.length){var wet=hb.filter(function(r){return !r.dry;}).length;pills.push('<span class="pill p-warn">สนน. รายงานน้ำท่วมขัง '+hb.length+' จุด</span>');notes.push('สำนักการระบายน้ำ กทม. รายงานน้ำท่วมขังถนนสายหลักที่ตรงกับคำค้นนี้ '+hb.length+' จุด ('+(hb.length-wet)+' จุดแห้งแล้ว ณ เวลารายงาน) ลึกสุด '+Math.max.apply(null,hb.map(function(r){return r.cm;}))+' ซม.'+cite(24));}
     if(ha.length){var worst=Math.min.apply(null,ha.map(function(r){return r.rank;}));pills.push('<span class="pill '+(worst===0?'p-crit':'p-warn')+'">ประกาศเลี่ยง/ข่าว '+ha.length+' รายการ</span>');}
     if(hg.length){pills.push('<span class="pill p-crit">Google Maps สีแดง/ส้ม '+hg.length+' สาย</span>');notes.push('สภาพจราจร Google Maps 08:43–08:50 น.: '+hg.map(function(r){return esc(r.r)+(r.dep?' ('+r.dep+')':'');}).join(' · ')+cite(32));}
+    var shHere=place?SHEL.filter(function(x){return x.d===place.name;}):[];
+    if(shHere.length){pills.push('<span class="pill p-ok">มีศูนย์พักพิง</span>');notes.push('ศูนย์พักพิงชั่วคราว: '+shHere.map(function(x){return esc(x.p)+' โทร '+x.t;}).join(' · ')+cite(34));}
     if(rainHere.length){notes.push('ฝน 24 ชม. ถึงเช้า 26 ก.ย.: '+rainHere.map(function(r){return esc(r.s)+' '+nf(r.v,1)+' มม.';}).join(' · ')+cite(27));}
     if(place){
       if(DECLARED[place.name]){pills.push('<span class="pill p-crit">มีรายงานประกาศพื้นที่ประสบภัย</span>');notes.push('มีรายงานข่าวว่า กทม. ประกาศเป็นพื้นที่ประสบสาธารณภัย 25 ก.ย. ('+DECLARED[place.name]+' แขวง) ยังไม่พบประกาศต้นฉบับ'+cite(7));}
@@ -1023,7 +1102,41 @@ var DATA={"river":{"C.2":{"name":"C.2 นครสวรรค์","bank":25.7,"
   }
   document.getElementById('loc-form').addEventListener('submit',function(e){e.preventDefault();locate(locQ.value);});
   document.querySelectorAll('.loc-quick .chip').forEach(function(c){c.addEventListener('click',function(){locQ.value=c.dataset.q;locate(c.dataset.q);});});
-  locQ.value='ลาดพร้าว'; locate('ลาดพร้าว');
+
+
+  // ---------- shelters ----------
+  var SHEL=[{d:"หลักสี่",p:"วัดหลักสี่",t:"096-999-4829"},{d:"ลาดพร้าว",p:"วัดลาดปลาเค้า",t:"089-815-6188"},{d:"จตุจักร",p:"วัดเทวสุนทรฯ",t:"096-883-7585"},{d:"บางเขน",p:"โรงเรียนประชาภิบาล",t:"089-783-3595"},{d:"ดอนเมือง",p:"โรงเรียนวัดดอนเมือง",t:"092-396-3773"},{d:"บางซื่อ",p:"ศูนย์พัฒนาเด็กเล็กชุมชนหัวจักรรถไฟตึกแดง และศูนย์พัฒนาเด็กเล็กชุมชนบ้านพักรถไฟก่อสร้าง",t:"081-268-1104"},{d:"สายไหม",p:"โรงเรียนประชานุกูล (กรุงเทพมหานคร) ซอยสายไหม 6",t:"086-937-9294"}];
+  document.getElementById('shel-bkk').innerHTML=SHEL.map(function(x){return '<div class="sh"><span class="muted">เขต'+esc(x.d)+'</span><b>'+esc(x.p)+'</b><span class="ph">โทร '+x.t+'</span></div>';}).join('');
+
+  // ---------- area picker + share ----------
+  var provSel=document.getElementById('pick-prov'), areaSel=document.getElementById('pick-area');
+  var PROVS=["กรุงเทพมหานคร","นนทบุรี","ปทุมธานี","สมุทรปราการ","นครปฐม","สมุทรสาคร"];
+  provSel.innerHTML=PROVS.map(function(p){return '<option>'+p+'</option>';}).join('');
+  function fillAreas(prov,sel){
+    var list=PLACES.map(function(p,i){return {p:p,i:i};}).filter(function(x){return x.p.prov===prov;});
+    list.sort(function(a,b){return a.p.name.localeCompare(b.p.name,'th');});
+    areaSel.innerHTML='<option value="">เลือก'+(prov==='กรุงเทพมหานคร'?'เขต':'อำเภอ')+'</option>'+list.map(function(x){return '<option value="'+x.i+'"'+(x.i===sel?' selected':'')+'>'+esc(x.p.name)+'</option>';}).join('');
+  }
+  var curArea=-1;
+  function pickArea(i){ curArea=i; var p=PLACES[i]; locQ.value=p.name; locate(p.name); }
+  provSel.addEventListener('change',function(){fillAreas(provSel.value,-1);});
+  areaSel.addEventListener('change',function(){ if(areaSel.value!=='') pickArea(+areaSel.value); });
+  document.getElementById('share-area').addEventListener('click',function(){
+    var t=document.getElementById('share-toast');
+    if(curArea<0){t.textContent='เลือกเขตหรืออำเภอก่อน แล้วค่อยคัดลอกลิงก์';return;}
+    var base=location.href.split('#')[0], url=base+'#a'+curArea;
+    try{navigator.clipboard.writeText(url).then(function(){t.textContent='คัดลอกลิงก์ของ'+PLACES[curArea].kind+PLACES[curArea].name+'แล้ว';},function(){t.textContent='ลิงก์: '+url;});}catch(e){t.textContent='ลิงก์: '+url;}
+  });
+  var hm=(location.hash||'').match(/^#a(\d+)$/);
+  if(hm&&PLACES[+hm[1]]){var hp=PLACES[+hm[1]];provSel.value=hp.prov;fillAreas(hp.prov,+hm[1]);pickArea(+hm[1]);setTimeout(function(){document.getElementById('locate').scrollIntoView();},50);}
+  else {fillAreas('กรุงเทพมหานคร',-1); locQ.value='ลาดพร้าว'; locate('ลาดพร้าว');}
+
+  // ---------- link category filter ----------
+  document.querySelectorAll('#lnk-filter .chip').forEach(function(c){c.addEventListener('click',function(){
+    var cat=c.dataset.cat;
+    document.querySelectorAll('#lnk-filter .chip').forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false');});
+    document.querySelectorAll('#lnk-grid .lnk').forEach(function(a){a.hidden=!(cat==='all'||a.dataset.cat===cat);});
+  });});
 
   // ---------- copy hotline ----------
   var hlToast=document.getElementById('hl-toast');
