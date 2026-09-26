@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>น้ำท่วมกรุงเทพ ก.ย. 69</title>
+<style>html{color-scheme:light}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#EEF3F4; --surface:#FFFFFF; --surface-2:#F6F9FA; --ink:#0F2229; --muted:#4E626A; --faint:#7D9098;
+  --line:#D3DFE2; --grid:#E3EBED; --accent:#0A6F82; --accent-soft:#DCEEF1;
+  --hero:#0E2A33; --hero-ink:#EAF4F6; --hero-muted:#A9C3CA;
+  --crit:#B8322A; --crit-soft:#FBE7E5; --warn:#C56A12; --warn-soft:#FCEEDD; --caution:#8F7410; --caution-soft:#F7F0D2; --ok:#2B7A4B; --ok-soft:#E1F2E7;
+  --bar:#0A6F82; --bar-2:#8FB9C3;
+  --s1:#0A6F82; --s2:#C56A12; --s3:#6B4FA0; --s4:#1F8A5B; --s5:#A8327A;
+  --f-display:"Anuphan","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0A1519; --surface:#11222A; --surface-2:#0E1C22; --ink:#E4EEF0; --muted:#A2B5BC; --faint:#72878F;
+    --line:#22363E; --grid:#1A2C33; --accent:#4FC0D3; --accent-soft:#12343D;
+    --hero:#0F2F39; --hero-ink:#EAF4F6; --hero-muted:#9FBBC3;
+    --crit:#F07A70; --crit-soft:#3A1A18; --warn:#F0A55A; --warn-soft:#3A2712; --caution:#E0C45A; --caution-soft:#332C10; --ok:#6FCB93; --ok-soft:#14301F;
+    --bar:#4FC0D3; --bar-2:#2F6A77;
+    --s1:#4FC0D3; --s2:#F0A55A; --s3:#B39AE6; --s4:#6FCB93; --s5:#F08AC4;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0A1519; --surface:#11222A; --surface-2:#0E1C22; --ink:#E4EEF0; --muted:#A2B5BC; --faint:#72878F;
+  --line:#22363E; --grid:#1A2C33; --accent:#4FC0D3; --accent-soft:#12343D;
+  --hero:#0F2F39; --hero-ink:#EAF4F6; --hero-muted:#9FBBC3;
+  --crit:#F07A70; --crit-soft:#3A1A18; --warn:#F0A55A; --warn-soft:#3A2712; --caution:#E0C45A; --caution-soft:#332C10; --ok:#6FCB93; --ok-soft:#14301F;
+  --bar:#4FC0D3; --bar-2:#2F6A77;
+  --s1:#4FC0D3; --s2:#F0A55A; --s3:#B39AE6; --s4:#6FCB93; --s5:#F08AC4;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.25}
+h2{font-size:1.3rem;font-weight:700}
+h3{font-size:1.02rem;font-weight:600}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.cite{font-size:.72rem;vertical-align:super;text-decoration:none;font-family:var(--f-mono);padding-left:1px}
+.muted{color:var(--muted)}
+.small{font-size:.84rem}
+.vtag{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.v-src{background:var(--ok-soft);color:var(--ok)}
+.v-news{background:var(--caution-soft);color:var(--caution)}
+.v-gen{background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+
+/* hero */
+.hero{background:var(--hero);color:var(--hero-ink);margin-inline:-16px;padding:22px 16px 26px}
+.hero-in{max-width:1180px;margin:0 auto;display:grid;gap:18px}
+.stamp{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:.85rem;color:var(--hero-muted)}
+.level{display:inline-flex;align-items:center;gap:8px;background:#B8322A;color:#fff;font-weight:600;padding:4px 12px;border-radius:999px;font-size:.84rem}
+.level::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.level::before{animation:none}}
+.hero h1{font-size:clamp(1.6rem,4.2vw,2.5rem);font-weight:700;max-width:24ch}
+.hero .lede{color:var(--hero-muted);max-width:70ch;font-size:1rem}
+.hero a{color:#8FDCEA}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:10px;overflow:hidden}
+.kpi{background:var(--hero);padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.kpi .v{font-family:var(--f-mono);font-size:1.75rem;font-weight:600;color:#fff;line-height:1.1}
+.kpi .v small{font-size:.8rem;color:var(--hero-muted);font-weight:500;margin-left:4px}
+.kpi .l{font-size:.86rem;color:var(--hero-ink)}
+.kpi .t{font-size:.74rem;color:var(--hero-muted)}
+.hero-note{font-size:.82rem;color:var(--hero-muted);border-top:1px solid rgba(255,255,255,.14);padding-top:10px}
+
+/* hotline */
+.hotline{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hl{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.hl:hover{border-color:var(--accent)}
+.hl .n{font-family:var(--f-mono);font-size:1.3rem;font-weight:600;color:var(--accent)}
+.hl .d{font-size:.82rem;color:var(--muted);line-height:1.35}
+.hl.primary{border-color:var(--crit);background:var(--crit-soft)}
+.hl.primary .n{color:var(--crit)}
+
+.section{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+
+/* forecast */
+.fc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px}
+.day{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;background:var(--surface-2)}
+.day .date{font-family:var(--f-display);font-weight:600}
+.meter{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.meter span{display:block;height:100%;background:var(--bar)}
+.pct{font-family:var(--f-mono);font-size:1.2rem;font-weight:600;line-height:1.3}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap;width:fit-content}
+.p-crit{background:var(--crit-soft);color:var(--crit)}
+.p-warn{background:var(--warn-soft);color:var(--warn)}
+.p-caution{background:var(--caution-soft);color:var(--caution)}
+.p-ok{background:var(--ok-soft);color:var(--ok)}
+.p-info{background:var(--accent-soft);color:var(--accent)}
+
+/* rain bars */
+.bars{display:flex;flex-direction:column;gap:8px}
+.brow{display:grid;grid-template-columns:minmax(120px,170px) 1fr 52px;gap:10px;align-items:center}
+.brow .name{font-size:.85rem;line-height:1.3}
+.brow .name small{display:block;color:var(--faint);font-size:.72rem}
+.track{height:16px;background:var(--surface-2);border-radius:3px;position:relative;border:1px solid var(--line)}
+.track span{position:absolute;left:0;top:0;bottom:0;background:var(--bar);border-radius:2px}
+.track span.alt{background:var(--bar-2)}
+.track .ref{position:absolute;top:-4px;bottom:-4px;border-left:1.5px dashed var(--crit)}
+.brow .val{font-family:var(--f-mono);font-weight:600;text-align:right;font-size:.92rem}
+.axis{display:grid;grid-template-columns:minmax(120px,170px) 1fr 52px;gap:10px;font-size:.72rem;color:var(--faint)}
+.axis .ticks{display:flex;justify-content:space-between;font-family:var(--f-mono)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px}
+
+/* charts */
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .gl{stroke:var(--grid);stroke-width:1}
+.chart .ax{fill:var(--faint);font-family:var(--f-mono);font-size:11px}
+.chart .axl{fill:var(--muted);font-family:var(--f-body);font-size:11px}
+.chart .zero{stroke:var(--crit);stroke-width:1.5;stroke-dasharray:5 4}
+.chart .reflbl{fill:var(--crit);font-family:var(--f-body);font-size:11px;font-weight:600}
+.chart .cursor{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 3}
+.tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:.8rem;box-shadow:0 4px 14px rgba(0,0,0,.12);min-width:170px;z-index:2}
+.tip b{font-family:var(--f-mono)}
+.tip .row{display:flex;justify-content:space-between;gap:12px}
+.chart-foot{font-size:.8rem;color:var(--muted)}
+.series-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem}
+.series-legend span{display:inline-flex;align-items:center;gap:6px}
+.series-legend i{display:inline-block;width:14px;height:3px;border-radius:2px}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:118px 18px 1fr;gap:0 10px;align-items:start}
+.tl .when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);text-align:right;padding-top:2px;line-height:1.35}
+.tl .rail{position:relative;align-self:stretch;display:flex;justify-content:center}
+.tl .rail::before{content:"";position:absolute;top:0;bottom:0;width:2px;background:var(--line)}
+.tl li:first-child .rail::before{top:9px}
+.tl li:last-child .rail::before{bottom:calc(100% - 9px)}
+.tl .dot{position:relative;margin-top:5px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl li.past .dot{background:var(--accent)}
+.tl li.now .dot{background:var(--crit);border-color:var(--crit);box-shadow:0 0 0 4px var(--crit-soft)}
+.tl li.future .dot{border-style:dashed;border-color:var(--faint)}
+.tl .what{padding-bottom:14px;font-size:.9rem}
+.tl .what .muted{font-size:.8rem}
+@media (max-width:520px){.tl li{grid-template-columns:76px 16px 1fr}.tl .when{font-size:.72rem}}
+
+/* roads */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:inherit;font-size:.84rem;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:5px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.search{font:inherit;font-size:.9rem;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);flex:1 1 220px;min-width:0}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;max-height:560px;overflow-y:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;min-width:760px}
+th,td{padding:8px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-size:.76rem;letter-spacing:.04em;color:var(--faint);font-weight:600;background:var(--surface-2);position:sticky;top:0;z-index:1}
+tr:last-child td{border-bottom:0}
+td.road{font-weight:600}
+td.road small{display:block;font-weight:400;color:var(--muted)}
+td .mono{font-size:.82rem}
+.count{font-size:.85rem;color:var(--muted)}
+.segbar{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;width:fit-content;max-width:100%}
+.segbar button{font:inherit;font-size:.85rem;border:0;background:var(--surface-2);color:var(--ink);padding:7px 14px;cursor:pointer;border-right:1px solid var(--line)}
+.segbar button:last-child{border-right:0}
+.segbar button[aria-pressed="true"]{background:var(--accent);color:var(--surface);font-weight:600}
+.distbars{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:6px 18px}
+.db{display:grid;grid-template-columns:78px 1fr 30px;gap:8px;align-items:center;font-size:.82rem}
+.db .t2{height:10px;background:var(--surface-2);border:1px solid var(--line);border-radius:2px;position:relative}
+.db .t2 span{position:absolute;inset:0 auto 0 0;background:var(--bar);border-radius:1px}
+.db .n2{font-family:var(--f-mono);text-align:right}
+
+/* districts */
+.dlist{display:flex;flex-direction:column}
+.drow{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:start}
+.drow:last-child{border-bottom:0}
+.drow b{font-family:var(--f-display);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.8rem;border:1px solid var(--line);border-radius:6px;padding:2px 8px;background:var(--surface-2)}
+
+/* river cards */
+.gauges{display:flex;flex-direction:column;gap:10px}
+.gauge{display:grid;grid-template-columns:minmax(130px,190px) 1fr 92px;gap:10px;align-items:center;font-size:.85rem}
+.gauge .nm{line-height:1.3}
+.gauge .nm small{display:block;color:var(--faint);font-size:.72rem}
+.gbar{height:14px;border-radius:3px;background:var(--surface-2);border:1px solid var(--line);position:relative}
+.gbar span{position:absolute;left:0;top:0;bottom:0;border-radius:2px}
+.gauge .gv{font-family:var(--f-mono);font-weight:600;text-align:right;font-size:.85rem;line-height:1.25}
+.gauge .gv small{display:block;font-weight:500;color:var(--muted);font-size:.72rem}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.fact{border-left:3px solid var(--accent);padding:4px 0 4px 10px}
+.fact .v{font-family:var(--f-mono);font-size:1.2rem;font-weight:600}
+.fact .l{font-size:.82rem;color:var(--muted);line-height:1.35}
+
+ul.clean{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+ol.measures{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:6px}
+
+.do{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
+.docard{border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--surface-2)}
+
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px}
+.lnk{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:var(--surface-2)}
+.lnk:hover{border-color:var(--accent)}
+.lnk b{color:var(--accent);font-weight:600}
+.lnk span{font-size:.82rem;color:var(--muted);line-height:1.4}
+
+.srcgroup{display:flex;flex-direction:column;gap:6px}
+.srclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.84rem}
+.srclist li{display:grid;grid-template-columns:40px 1fr;gap:6px}
+.srclist .num{font-family:var(--f-mono);color:var(--faint)}
+.srclist a{word-break:break-word}
+
+.toast{font-size:.85rem;color:var(--ok)}
+.btn{font:inherit;font-weight:600;font-size:.9rem;padding:8px 16px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--surface);cursor:pointer}
+
+/* locate */
+.loc-form{display:flex;flex-wrap:wrap;gap:8px}
+.loc-form .search{flex:1 1 260px;font-size:1rem;padding:10px 14px}
+.loc-quick{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.loc-res{display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--surface-2)}
+.loc-res h3{font-size:1.15rem}
+.loc-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.loc-notes{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;font-size:.9rem}
+.loc-roads{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;background:var(--surface);max-height:340px;overflow-y:auto}
+.lr{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:9px 12px;border-bottom:1px solid var(--line);font-size:.88rem}
+.lr:last-child{border-bottom:0}
+.lr b{font-weight:600}
+.lr small{color:var(--muted);grid-column:1 / -1}
+.live-go{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:8px}
+.go{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border:1px solid var(--accent);border-radius:8px;text-decoration:none;color:var(--ink);background:var(--surface)}
+.go:hover{background:var(--accent-soft)}
+.go b{color:var(--accent)}
+.go span{font-size:.78rem;color:var(--muted);line-height:1.35}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+.how{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.how ol{margin:0;padding-left:1.3em;font-size:.84rem;display:flex;flex-direction:column;gap:3px}
+.how .what{font-size:.8rem;color:var(--muted)}
+
+/* disclaimer */
+.disc-bar{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;font-size:.86rem}
+.disc-bar b{font-weight:600}
+.disc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px 28px}
+.disc h3{font-size:.95rem;margin-bottom:4px}
+.disc p,.disc li{font-size:.86rem;color:var(--muted)}
+.disc ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:3px}
+footer{font-size:.8rem;color:var(--faint);text-align:center;padding-top:8px}
+
+/* travel */
+.trv-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.tcard{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;background:var(--surface-2)}
+.tcard .big{font-family:var(--f-mono);font-size:1.6rem;font-weight:600;line-height:1.1}
+.tcard ul{margin:0;padding-left:1.1em;font-size:.84rem;display:flex;flex-direction:column;gap:3px}
+.tcard.red{border-color:var(--crit)} .tcard.red .big{color:var(--crit)}
+.tcard.green{border-color:var(--ok)} .tcard.green .big{color:var(--ok)}
+.delay{display:flex;flex-direction:column;gap:6px}
+.dl{display:grid;grid-template-columns:minmax(120px,190px) 1fr 64px;gap:10px;align-items:center;font-size:.85rem}
+.dl .nm{line-height:1.3}
+.dl .nm small{display:block;color:var(--faint);font-size:.72rem}
+.dl .tr{height:14px;background:var(--surface-2);border:1px solid var(--line);border-radius:3px;position:relative}
+.dl .tr span{position:absolute;inset:0 auto 0 0;border-radius:2px}
+.dl .mv{font-family:var(--f-mono);font-weight:600;text-align:right}
+.match{font-size:.7rem;font-weight:600;color:var(--ok);white-space:nowrap}
+.transit{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px}
+.tr-item{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;font-size:.85rem}
+.tr-item b{font-family:var(--f-display);font-weight:600}
+.tr-item .n{font-family:var(--f-mono);color:var(--accent);font-weight:600}
+.park{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;font-size:.85rem}
+.pk b{font-weight:600}
+.depthtbl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.dp{border-left:4px solid var(--line);padding:6px 10px;font-size:.85rem}
+.dp .v{font-family:var(--f-mono);font-weight:600;font-size:1.05rem}
+.stale{border:1px solid var(--warn);background:var(--warn-soft);border-radius:10px;padding:10px 14px;font-size:.88rem}
+.age{font-size:.74rem;color:var(--faint);font-family:var(--f-mono)}
+.fc7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.fd{display:flex;flex-direction:column;align-items:center;gap:4px;border:1px solid var(--line);border-radius:8px;padding:8px 4px;background:var(--surface-2);font-size:.78rem;text-align:center}
+.fd b{font-family:var(--f-display);font-size:.82rem}
+.fd .col{width:14px;height:56px;background:var(--line);border-radius:3px;position:relative;overflow:hidden}
+.fd .col span{position:absolute;left:0;right:0;bottom:0;background:var(--bar)}
+.fd .pc{font-family:var(--f-mono);font-weight:600}
+.fd .tt{font-family:var(--f-mono);color:var(--muted);font-size:.72rem}
+.fd.today{border-color:var(--accent)}
+@media (max-width:520px){.fc7{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand img{height:40px;width:auto;display:block}
+</style>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="brand"><img src="data:image/png;base64,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" alt="efin" width="111" height="40"></div>
+    <div class="stamp">
+      <span class="level">เฝ้าระวังสูงสุด · ฝนหนักถึงหนักมาก</span>
+      <span id="asof"></span>
+      <span>ประกาศเตือนกรมอุตุฯ ที่ตรวจล่าสุด: ฉบับที่ 10 (226/2569) มีผลถึง 27 ก.ย.<a class="cite" href="#s23">[23]</a></span>
+    </div>
+    <h1 id="h1">สถานการณ์น้ำท่วมกรุงเทพฯ และปริมณฑล</h1>
+    <p class="lede">หย่อมความกดอากาศต่ำกำลังแรงปกคลุมภาคกลางตอนล่าง กรุงเทพฯ และปริมณฑล กรมอุตุฯ คาดว่ากรุงเทพฯ จะยังมีฝนตกหนักบางแห่งถึง 28 ก.ย. และฝนลดลงช่วง 29 ก.ย.–1 ต.ค.<a class="cite" href="#s21">[21]</a><a class="cite" href="#s22">[22]</a> ข้อมูลหลักในหน้านี้ตรวจสอบกับเว็บไซต์หน่วยงานต้นทางแล้ว ทุกตัวเลขมีเวลากำกับและเลขอ้างอิง ก่อนเดินทางให้เช็กสถานการณ์ล่าสุดที่ <a href="https://dds.bangkok.go.th/" target="_blank" rel="noopener">dds.bangkok.go.th</a></p>
+    <div class="kpis" id="kpis"></div>
+    <p class="hero-note">หน้านี้จัดทำเพื่อประโยชน์สาธารณะ ไม่ใช่ช่องทางทางการของหน่วยงานใด ตัวเลขอัปเดตอัตโนมัติราวทุก 3 ชั่วโมง ไม่ใช่เรียลไทม์ · <a href="#disclaimer">อ่านข้อจำกัดการใช้งาน</a></p>
+  </div>
+</header>
+
+<main class="wrap" style="margin-top:20px">
+  <div class="stale" id="stale" hidden></div>
+
+  <section class="section" id="hotline" aria-labelledby="h-hot">
+    <div class="sec-head"><h2 id="h-hot">เบอร์ฉุกเฉินและช่องทางแจ้งเหตุ</h2><span class="small muted">แตะเพื่อคัดลอกเบอร์ · ตรวจสอบกับเว็บไซต์หน่วยงาน 26 ก.ย. 69<a class="cite" href="#s28">[28]</a></span></div>
+    <div class="hotline" id="hotlines">
+      <button class="hl primary" data-num="1555"><span class="n">1555</span><span class="d">สายด่วน กทม. 24 ชม. แจ้งน้ำท่วม ขอความช่วยเหลือ<a class="cite" href="#s6">[6]</a></span></button>
+      <button class="hl" data-num="1669"><span class="n">1669</span><span class="d">เจ็บป่วยฉุกเฉิน (สพฉ.)</span></button>
+      <button class="hl" data-num="1784"><span class="n">1784</span><span class="d">สายด่วนนิรภัย ปภ. ขอความช่วยเหลือจากสาธารณภัย</span></button>
+      <button class="hl" data-num="0 2248 5115"><span class="n">0 2248 5115</span><span class="d">ศูนย์ควบคุมระบบป้องกันน้ำท่วม กทม. (หรือ 0 2246 0317-9)<a class="cite" href="#s24">[24]</a></span></button>
+      <button class="hl" data-num="1182"><span class="n">1182</span><span class="d">กรมอุตุนิยมวิทยา 24 ชม.</span></button>
+      <button class="hl" data-num="1197"><span class="n">1197</span><span class="d">สายด่วนจราจร สอบถามเส้นทาง 24 ชม.</span></button>
+      <button class="hl" data-num="1586"><span class="n">1586</span><span class="d">กรมทางหลวง (ทางหลวงในปริมณฑล)</span></button>
+      <button class="hl" data-num="1460"><span class="n">1460</span><span class="d">กรมชลประทาน</span></button>
+    </div>
+    <p class="small muted">แจ้งจุดน้ำท่วมหรือท่อตันผ่าน LINE <b>@traffyfondue</b> ระบบรับเรื่องของ กทม.<a class="cite" href="#s6">[6]</a> · ถ้ามีอันตรายต่อชีวิต โทร 1669 หรือ 191 ทันที</p>
+    <p class="toast" id="hl-toast" aria-live="polite"></p>
+  </section>
+
+  <section class="section" id="locate" aria-labelledby="h-loc">
+    <div class="sec-head"><h2 id="h-loc">เช็กน้ำท่วมตามตำแหน่ง</h2><span class="small muted">พิมพ์ชื่อเขต อำเภอ หรือถนน</span></div>
+    <form class="loc-form" id="loc-form" autocomplete="off">
+      <input class="search" id="loc-q" type="search" list="loc-list" placeholder="เช่น จตุจักร, ลาดกระบัง, ปากเกร็ด, ถนนรามคำแหง" aria-label="พิมพ์ชื่อเขต อำเภอ หรือถนน">
+      <datalist id="loc-list"></datalist>
+      <button class="btn" type="submit">เช็ก</button>
+    </form>
+    <div class="loc-quick small"><span class="muted">ลองกด:</span>
+      <button class="chip" type="button" data-q="ลาดพร้าว">ลาดพร้าว</button>
+      <button class="chip" type="button" data-q="บางกะปิ">บางกะปิ</button>
+      <button class="chip" type="button" data-q="จตุจักร">จตุจักร</button>
+      <button class="chip" type="button" data-q="ปากเกร็ด">ปากเกร็ด</button>
+      <button class="chip" type="button" data-q="บางนา">บางนา</button>
+    </div>
+    <div class="loc-res" id="loc-res" aria-live="polite"></div>
+    <div class="howto">
+      <div class="how"><h3>dds.bangkok.go.th</h3><span class="what">สำนักการระบายน้ำ กทม. · รายงานน้ำท่วมขัง ระดับน้ำคลอง ฝนรายสถานี เรดาร์</span>
+        <ol><li>เปิด <a href="https://dds.bangkok.go.th/" target="_blank" rel="noopener">dds.bangkok.go.th</a> แล้วกด “เข้าสู่เว็บไซต์”</li><li>เลือก “รายงานน้ำท่วมขัง” หรือ “ระบบตรวจวัดน้ำท่วมบนถนน”</li><li>ดูตามชื่อเขตของคุณ</li></ol></div>
+      <div class="how"><h3>Traffy Fondue</h3><span class="what">เรื่องที่ประชาชนแจ้งพร้อมพิกัดและรูป</span>
+        <ol><li>แอด LINE <b>@traffyfondue</b></li><li>ส่งรูปและแชร์ตำแหน่งเพื่อแจ้งน้ำท่วมหรือท่อตัน</li><li>ติดตามสถานะเรื่องได้ในแชท</li></ol></div>
+      <div class="how"><h3>Waze</h3><span class="what">ผู้ขับขี่แจ้งน้ำท่วมบนถนนแบบเรียลไทม์ ไม่มีตัวเลขความลึก</span>
+        <ol><li>เปิดแผนที่ดูไอคอนอันตรายบนเส้นทาง</li><li>แจ้งเอง: ปุ่มรายงาน → อันตราย → สภาพอากาศ → น้ำท่วม</li></ol></div>
+      <div class="how"><h3>thaiwater.net</h3><span class="what">ระดับน้ำคลองและแม่น้ำ ฝนรายสถานี จาก สสน. และหน่วยงานร่วม</span>
+        <ol><li>เปิด <a href="https://www.thaiwater.net/" target="_blank" rel="noopener">thaiwater.net</a></li><li>เลือกหัวข้อระดับน้ำหรือฝน แล้วดูสถานีใกล้บ้าน</li><li>สีส้มหรือแดง = น้ำสูงใกล้ตลิ่ง</li></ol></div>
+    </div>
+    <p class="small muted">ผลในช่องนี้มาจากข้อมูลชุดเดียวกับหน้านี้ ถ้าไม่มีรายงานในเขตของคุณ ไม่ได้แปลว่าไม่ท่วม ให้เช็กแหล่งสดทุกครั้ง ปุ่ม Google Maps และ Waze จะส่งชื่อสถานที่ที่คุณพิมพ์ไปยังบริการนั้นเมื่อกดเท่านั้น</p>
+  </section>
+
+  <section class="section" id="travel" aria-labelledby="h-trv">
+    <div class="sec-head"><h2 id="h-trv">การเดินทางวันนี้</h2><span class="small muted">สภาพจราจรเช้า 26 ก.ย. · ทางด่วน ขนส่งสาธารณะ ที่จอดรถหนีน้ำ</span></div>
+    <div class="trv-top">
+      <div class="tcard red"><span class="eyebrow">Google Maps 08:43–08:50 น.</span><span class="big" id="trv-red"></span><span class="small">ถนนสีแดง/ส้มที่ติดต่อเนื่องตั้งแต่ตีสี่ ซึ่งน่าจะมีน้ำท่วมขัง</span></div>
+      <div class="tcard"><span class="eyebrow">Google แจ้งปิดถนน</span><ul id="trv-closed"></ul></div>
+      <div class="tcard green"><span class="eyebrow">เส้นทางที่ยังเป็นสีเขียว</span><ul>
+        <li>ฝั่งธนบุรีเกือบทั้งหมด: ตลิ่งชัน บรมราชชนนี ภาษีเจริญ บางขุนเทียน (ยกเว้นช่วงสั้น ๆ ถ.เอกชัย และพระราม 2 แถวโลตัส)</li>
+        <li>ถ.บางนา-ตราด ช่วงบางนา–ศรีเอี่ยม</li>
+        <li>ดอนเมืองโทลล์เวย์ และทางพิเศษฉลองรัช</li>
+        <li>มอเตอร์เวย์ ช่วงลาดกระบัง</li>
+      </ul></div>
+    </div>
+
+    <div class="stale" id="gm-age" style="display:block"></div>
+    <div class="sec-head"><h3>ช้ากว่าปกติกี่นาที</h3><span class="vtag v-news">ข้อมูลจาก Google Maps ที่ผู้ใช้รวบรวม<a class="cite" href="#s32">[32]</a></span></div>
+    <div class="delay" id="delay"></div>
+    <div class="legend small"><span><i class="sw" style="background:var(--crit)"></i> สีแดง = หลีกเลี่ยง</span><span><i class="sw" style="background:var(--warn)"></i> สีส้ม = ขับช้า ระวัง</span><span class="match">✓ กทม.</span><span class="muted">= อยู่ในประกาศเลี่ยงเส้นทางของ กทม. 07:00 น. ด้วย<a class="cite" href="#s1">[1]</a></span></div>
+    <details><summary class="small" style="cursor:pointer">การเปลี่ยนแปลงจากรอบ 07:42 น.</summary>
+      <ul class="clean small" style="margin-top:8px">
+        <li><b>หนักขึ้น:</b> สุวินทวงศ์ 47→57 นาที · ลาดพร้าว 21→37 · รามคำแหง 16→25 · งามวงศ์วาน 14→21 · ศรีอยุธยา จากส้มเป็นแดง</li>
+        <li><b>เพิ่งเป็นสีแดง/ส้ม:</b> เพลินจิต (21 นาที) · พระราม 4 ช่วงพระโขนง (17) · เอกชัย ฝั่งธนฯ (ส้ม)</li>
+        <li><b>ดีขึ้น:</b> บางนา-ตราด ช่วงแยกศรีเอี่ยมกลับเป็นสีเขียว · กำแพงเพชร 2 หลุดจากรายการ · ดินแดง 32→21 · พัฒนาการ 25→22 · ลาดกระบัง 34→32</li>
+      </ul>
+    </details>
+    <p class="small muted">Google ไม่ได้บอกสาเหตุที่รถติด ผู้รวบรวมถือว่าสีส้มหรือแดงช่วงเช้ามืดมาจากน้ำท่วมขัง บางจุดอาจเกิดจากอุบัติเหตุ งานก่อสร้าง หรือปริมาณรถ ข้อมูลนี้ยังไม่ได้ตรวจสอบกับหน่วยงาน แต่ถนนส่วนใหญ่ตรงกับประกาศเลี่ยงเส้นทางของ กทม. ก่อนออกเดินทางให้เปิด Google Maps ดูสภาพล่าสุดอีกครั้ง</p>
+
+    <div class="sec-head"><h3>รถแบบไหนผ่านได้</h3><span class="vtag v-news">ข่าว<a class="cite" href="#s31">[31]</a></span></div>
+    <div class="depthtbl">
+      <div class="dp" style="border-color:var(--caution)"><div class="v">13–15 ซม.</div>ความสูงใต้ท้องรถเก๋งทั่วไป</div>
+      <div class="dp" style="border-color:var(--warn)"><div class="v">30 ซม.+</div>น้ำเริ่มเข้าห้องโดยสารรถเก๋ง</div>
+      <div class="dp" style="border-color:var(--crit)"><div class="v">60 ซม.+</div>เสี่ยงน้ำเข้าเครื่องยนต์จนเครื่องพัง</div>
+    </div>
+    <p class="small muted">จุดที่มีรายงานว่ารถเล็กควรเลี่ยงเช้า 26 ก.ย.: งามวงศ์วาน (ทางลงทางด่วน–แยกพงษ์เพชร–อุโมงค์เกษตร) 30–60 ซม. · เสนานิคม 1 50–60 ซม. · ลาดพร้าว-วังหิน โดยเฉพาะช่วงสะพานวังหิน 30–50 ซม. · อ่อนนุช ช่วงประเวศ–ลาดกระบัง<a class="cite" href="#s31">[31]</a> ระดับน้ำตามรายงานทางการของ สนน. ดูได้ในตาราง “ถนนที่ได้รับผลกระทบ” ด้านล่าง</p>
+
+    <div class="sec-head"><h3>ทางด่วนและขนส่งสาธารณะ</h3><span class="small muted">เบอร์ตรวจสอบกับเว็บไซต์ผู้ให้บริการ 26 ก.ย.<a class="cite" href="#s33">[33]</a></span></div>
+    <div class="transit">
+      <div class="tr-item"><b>ทางพิเศษ (กทพ.)</b><span class="n">1543</span><span class="muted">ทางด่วนช่วยเลี่ยงถนนพื้นราบที่น้ำท่วม<a class="cite" href="#s5">[5]</a></span></div>
+      <div class="tr-item"><b>รถเมล์ ขสมก.</b><span class="n">1348</span><span class="muted">สอบถามสายที่เปลี่ยนเส้นทางหรือล่าช้า</span></div>
+      <div class="tr-item"><b>รถไฟฟ้าสายสีแดง</b><span class="n">1690</span><span class="muted">ต่อสนามบินดอนเมืองและรังสิต</span></div>
+      <div class="tr-item"><b>BTS · MRT</b><span class="muted">ดูประกาศล่าสุดที่ <a href="https://www.bts.co.th/" target="_blank" rel="noopener">bts.co.th</a> และ <a href="https://metro.bemplc.co.th/" target="_blank" rel="noopener">metro.bemplc.co.th</a></span></div>
+    </div>
+    <p class="small muted">ณ เวลารวบรวม ยังไม่พบประกาศทางการเรื่องหยุดให้บริการรถไฟฟ้า ทางด่วน หรือสนามบินจากน้ำท่วมรอบนี้ ให้ตรวจสอบกับผู้ให้บริการก่อนเดินทาง</p>
+
+    <div class="sec-head"><h3>ที่จอดรถหนีน้ำ (ฟรี)</h3><span class="vtag v-news">ข่าว 25 ก.ย. 20:15 น.<a class="cite" href="#s30">[30]</a></span></div>
+    <div class="park">
+      <div class="pk"><b>วัดพระธรรมกาย</b><span>อาคารจอดรถ 1 ราว 1,000 คัน · คลองหลวง ปทุมธานี</span><span class="muted">25–28 ก.ย. · รถต้องสตาร์ทได้ ห้ามค้างคืนในรถ ห้ามสูบบุหรี่และดื่มสุรา</span></div>
+      <div class="pk"><b>เทศบาลนครรังสิต (5 จุด)</b><span>ฟิวเจอร์พาร์ค &amp; สเปลล์ ชั้น 1 (300 คัน) · โนโวเทล ฟิวเจอร์พาร์ค ชั้น 5–6 (200) · รังสิต เรสซิเดนซ์ (100) · โดมอเนกประสงค์ ซ.รังสิต-นครนายก 30 · หอประชุม 100 ปี ธัญบุรี</span><span class="muted">25–28 ก.ย. · โทร 0 2567 6000 ต่อ 602 หรือ 119 · 0 2567 3388 (24 ชม.)</span></div>
+      <div class="pk"><b>เซ็นทรัล อยุธยา</b><span>อาคารจอดรถ ชั้น 1</span><span class="muted">25–27 ก.ย. · ใช้สำเนาบัตรประชาชนและสำเนาคู่มือรถ ห้างไม่รับผิดชอบความเสียหาย · 035 952 555</span></div>
+    </div>
+    <p class="small muted">ตามข่าวไม่มีรายชื่อจุดจอดในเขตกรุงเทพฯ ติดต่อสำนักงานเขตหรือ 1555 เพื่อสอบถามจุดจอดรถของ กทม. ก่อนนำรถไปจอดให้โทรยืนยันว่ายังมีที่ว่าง</p>
+  </section>
+
+  <section class="section" id="timeline" aria-labelledby="h-tl">
+    <div class="sec-head"><h2 id="h-tl">ลำดับเหตุการณ์</h2><span class="small muted">21 ก.ย. – คาดการณ์ถึง 2 ต.ค. 69</span></div>
+    <ul class="tl" id="events"></ul>
+  </section>
+
+  <div class="grid-2">
+    <section class="section" aria-labelledby="h-fc">
+      <div class="sec-head"><h2 id="h-fc">พยากรณ์อากาศ กทม. และปริมณฑล</h2><span class="vtag v-src">ต้นทาง · กรมอุตุฯ</span></div>
+      <div class="fc7" id="fc7"></div>
+      <p class="small muted" id="fc7-note"></p>
+      <div class="eyebrow">คำบรรยายจากประกาศกรมอุตุฯ (ตรวจล่าสุด 26 ก.ย. 09:15 น.)</div>
+      <div class="fc">
+        <div class="day">
+          <span class="date">26 ก.ย.</span>
+          <span class="pct">เกือบทั่วไป</span>
+          <div class="meter"><span style="width:90%"></span></div>
+          <span class="pill p-crit">หนักถึงหนักมากหลายพื้นที่</span>
+          <span class="small muted">อุณหภูมิ 22–24 / 26–29 °C · ลมแปรปรวน 10–25 กม./ชม.<a class="cite" href="#s21">[21]</a></span>
+        </div>
+        <div class="day">
+          <span class="date">27–28 ก.ย.</span>
+          <span class="pct">60–80%<span class="small muted"> ของพื้นที่</span></span>
+          <div class="meter"><span style="width:70%"></span></div>
+          <span class="pill p-warn">ฝนตกหนักบางแห่ง</span>
+          <span class="small muted">ประกาศเตือนฉบับที่ 10 มีผลถึง 27 ก.ย.<a class="cite" href="#s22">[22]</a><a class="cite" href="#s23">[23]</a></span>
+        </div>
+        <div class="day">
+          <span class="date">29 ก.ย. – 1 ต.ค.</span>
+          <span class="pct">30–40%<span class="small muted"> ของพื้นที่</span></span>
+          <div class="meter"><span style="width:35%"></span></div>
+          <span class="pill p-caution">ฝนเริ่มลดลง</span>
+          <span class="small muted">อุณหภูมิ 24–27 / 31–35 °C · ลมตะวันตกเฉียงใต้ 10–20 กม./ชม.<a class="cite" href="#s22">[22]</a></span>
+        </div>
+      </div>
+      <p class="small muted">สาเหตุ: หย่อมความกดอากาศต่ำกำลังแรงเคลื่อนตามแนวร่องมรสุมที่พาดผ่านภาคกลาง ร่วมกับมรสุมตะวันตกเฉียงใต้ที่มีกำลังแรงขึ้น อ่าวไทยตอนบนคลื่นสูง 2–3 ม. เรือเล็กควรงดออกจากฝั่งถึง 27 ก.ย.<a class="cite" href="#s21">[21]</a> พยากรณ์ 7 วันออกประกาศ 25 ก.ย. 12:00 น. พยากรณ์ประจำวันออก 26 ก.ย. 05:00 น.</p>
+    </section>
+
+    <section class="section" aria-labelledby="h-rain">
+      <div class="sec-head"><h2 id="h-rain">ฝน 24 ชั่วโมง รายสถานี (มม.)</h2><span class="vtag v-src">ต้นทาง · thaiwater / สสน.</span></div>
+      <div class="bars" id="bars"></div>
+      <div class="axis"><span></span><div class="ticks"><span>0</span><span>80</span><span>160</span><span>240</span></div><span></span></div>
+      <div class="legend small">
+        <span><i class="sw" style="background:var(--bar)"></i> กรุงเทพฯ</span>
+        <span><i class="sw" style="background:var(--bar-2)"></i> ปริมณฑล</span>
+        <span style="color:var(--crit)">┆ 90.1 มม. = เกณฑ์ฝนหนักมากของกรมอุตุฯ</span>
+      </div>
+      <p class="small muted"><span id="r24-note"></span><a class="cite" href="#s27">[27]</a> แผนที่ฝนของ สนน. รอบ 07:00 น. 25 ก.ย. ถึง 07:00 น. 26 ก.ย. แสดงว่าพื้นที่ส่วนใหญ่ของ กทม. มีฝน 120–180 มม. และบางจุดทางเหนือและตะวันออกเกิน 200 มม.<a class="cite" href="#s25">[25]</a></p>
+    </section>
+  </div>
+
+  <section class="section" aria-labelledby="h-rh">
+    <div class="sec-head"><h2 id="h-rh">ฝนรายชั่วโมง</h2><span class="vtag v-src">ต้นทาง · สถานีโทรมาตร สสน.</span></div>
+    <div class="controls" role="group" aria-label="เลือกสถานีวัดฝน" id="rh-chips"></div>
+    <div class="chart" id="rh-chart"></div>
+    <div class="series-legend"><span><i style="background:var(--bar);height:10px;width:10px"></i>ฝนรายชั่วโมง (แกนซ้าย)</span><span><i style="background:var(--s2)"></i>ฝนสะสม (แกนขวา)</span></div>
+    <p class="chart-foot" id="rh-foot"></p>
+  </section>
+
+  <section class="section" aria-labelledby="h-rv">
+    <div class="sec-head"><h2 id="h-rv">ระดับน้ำเจ้าพระยาเทียบตลิ่ง 10 วันล่าสุด</h2><span class="vtag v-src">ต้นทาง · thaiwater (ชป. / สสน.)</span></div>
+    <p class="small muted">เส้นแสดงว่าระดับน้ำต่ำกว่าตลิ่งกี่เมตร เส้นประสีแดงที่ 0 คือระดับตลิ่ง ยิ่งเส้นเข้าใกล้ 0 ยิ่งใกล้ล้นตลิ่ง สถานีในกรุงเทพฯ ขึ้นลงตามน้ำทะเลหนุนวันละสองรอบ</p>
+    <div class="chart" id="rv-chart"></div>
+    <div class="series-legend" id="rv-legend"></div>
+    <div class="gauges" id="gauges"></div>
+    <p class="chart-foot"><span id="rv-latest"></span><a class="cite" href="#s27">[27]</a> ระดับตลิ่งเป็นค่าของแต่ละสถานีตามฐานข้อมูล thaiwater ในกรุงเทพฯ มีแนวคันกั้นน้ำของ กทม. สูงกว่าตลิ่งธรรมชาติ ที่ปากคลองตลาดน้ำสูงสุดเมื่อ 25 ก.ย. ยังต่ำกว่าคันกั้นน้ำช่วงที่ต่ำที่สุด 1.25 ม.<a class="cite" href="#s26">[26]</a></p>
+  </section>
+
+  <div class="grid-2">
+    <section class="section" aria-labelledby="h-q">
+      <div class="sec-head"><h2 id="h-q">ปริมาณน้ำไหลผ่าน (ลบ.ม./วินาที)</h2><span class="vtag v-src">ต้นทาง · thaiwater (ชป.)</span></div>
+      <div class="chart" id="q-chart"></div>
+      <div class="series-legend" id="q-legend"></div>
+      <ul class="clean small">
+        <li id="q-note1"></li>
+        <li id="q-note2"></li>
+        <li>กรมชลฯ คาดน้ำเหนือสูงสุดราว 2 ต.ค. ประมาณ 2,000 ลบ.ม./วินาที และจะคุมการระบายท้ายเขื่อนไม่ให้เกิน 2,000<a class="cite" href="#s14">[14]</a> <span class="vtag v-news">ข่าวอ้างกรมชลฯ</span></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="h-dist">
+      <div class="sec-head"><h2 id="h-dist">เขตและอำเภอที่ต้องจับตา</h2></div>
+      <div class="dlist">
+        <div class="drow">
+          <div><b>จุดน้ำท่วมขังมากที่สุด (สนน.)</b><p class="small muted" id="dist-top"></p></div>
+          <span class="vtag v-src">ต้นทาง</span>
+        </div>
+        <div class="drow">
+          <div><b>หนองจอก · สวนหลวง · คันนายาว</b><p class="small muted">มีรายงานว่า กทม. ประกาศเป็นพื้นที่ประสบสาธารณภัย 25 ก.ย. รวม 13 แขวง<a class="cite" href="#s7">[7]</a> และกำลังเตรียมประกาศครบ 50 เขต<a class="cite" href="#s8">[8]</a> ยังไม่พบประกาศต้นฉบับบนเว็บไซต์ กทม.</p></div>
+          <span class="vtag v-news">ข่าว</span>
+        </div>
+        <div class="drow">
+          <div><b>คลองประเวศบุรีรมย์</b><p class="small muted">มีรายงานว่าน้ำถึงระดับเตือนแดงหลายจุด กทม. เร่งสูบออกทางสถานีสูบน้ำพระโขนง<a class="cite" href="#s15">[15]</a></p></div>
+          <span class="vtag v-news">ข่าว</span>
+        </div>
+        <div class="drow">
+          <div><b>ปริมณฑล (สทนช. เตือน 26–30 ก.ย.)</b>
+            <div class="tags" style="margin-top:6px">
+              <span class="tag">นนทบุรี: เมืองฯ บางกรวย ปากเกร็ด</span>
+              <span class="tag">ปทุมธานี: เมืองฯ ลาดหลุมแก้ว</span>
+              <span class="tag">สมุทรปราการ: บางบ่อ บางเสาธง บางพลี</span>
+            </div>
+            <p class="small muted" style="margin-top:6px">กรุงเทพฯ ถูกระบุทั้งจังหวัด และจับตาพื้นที่นอกคันกั้นน้ำในอยุธยา สิงห์บุรี อ่างทอง<a class="cite" href="#s10">[10]</a></p>
+          </div>
+          <span class="vtag v-news">ข่าวอ้าง สทนช.</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="section" id="roads" aria-labelledby="h-roads">
+    <div class="sec-head">
+      <h2 id="h-roads">ถนนที่ได้รับผลกระทบ</h2>
+      <span class="count" id="road-count"></span>
+    </div>
+    <div class="segbar" role="group" aria-label="เลือกชุดข้อมูล">
+      <button type="button" data-set="bma" aria-pressed="true" id="seg-bma">รายงานทางการ สนน.</button>
+      <button type="button" data-set="adv" aria-pressed="false">ประกาศเลี่ยงเส้นทาง / ข่าว เช้า 26 ก.ย.</button>
+    </div>
+    <p class="small muted" id="set-note"></p>
+    <div class="controls" role="group" aria-label="กรองตามโซน">
+      <button class="chip" data-zone="all" aria-pressed="true">ทั้งหมด</button>
+      <button class="chip" data-zone="north" aria-pressed="false">กทม. เหนือ</button>
+      <button class="chip" data-zone="east" aria-pressed="false">กทม. ตะวันออก</button>
+      <button class="chip" data-zone="central" aria-pressed="false">กทม. ชั้นใน</button>
+      <button class="chip" data-zone="thon" aria-pressed="false">ฝั่งธนฯ</button>
+      <button class="chip" data-zone="vicinity" aria-pressed="false">ปริมณฑล</button>
+      <input class="search" id="road-q" type="search" placeholder="ค้นหาถนน เขต หรือซอย" aria-label="ค้นหาถนน">
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>ถนน / บริเวณ</th><th>เขต / พื้นที่</th><th>สถานะ</th><th>ระดับน้ำ / ผิวจราจร</th><th>เวลา</th><th>ที่มา</th></tr></thead>
+        <tbody id="road-body"></tbody>
+      </table>
+    </div>
+    <details>
+      <summary class="small" style="cursor:pointer">จำนวนจุดน้ำท่วมขังรายเขต (สนน.)</summary>
+      <div class="distbars" id="distbars" style="margin-top:10px"></div>
+    </details>
+  </section>
+
+  <div class="grid-2">
+    <section class="section" aria-labelledby="h-bma">
+      <div class="sec-head"><h2 id="h-bma">ความพร้อมระบบระบายน้ำ กทม.</h2><span class="vtag v-news">ข่าวอ้าง กทม.</span></div>
+      <div class="facts">
+        <div class="fact"><div class="v">1,980</div><div class="l">คลองที่พร่องน้ำรอรับ ยาว 2,745 กม.</div></div>
+        <div class="fact"><div class="v">207</div><div class="l">สถานีสูบน้ำ + บ่อสูบ 371 แห่ง</div></div>
+        <div class="fact"><div class="v">5</div><div class="l">อุโมงค์ระบายน้ำขนาดใหญ่</div></div>
+        <div class="fact"><div class="v">13.71</div><div class="l">ล้าน ลบ.ม. แก้มลิงและแหล่งกักเก็บ 38 แห่ง</div></div>
+        <div class="fact"><div class="v">244</div><div class="l">ประตูระบายน้ำ</div></div>
+        <div class="fact"><div class="v">24</div><div class="l">ทีม BEST เคลื่อนที่เร็ว สแตนด์บาย 24 ชม.</div></div>
+      </div>
+      <p class="small muted">ข้อมูลการเตรียมรับมือช่วง 23–27 ก.ย. ริมเจ้าพระยามีแนวป้องกัน 88 กม. และจุดเปราะบาง 51 จุด (รวม 2.7 กม.) ที่วางกระสอบทรายเสริม<a class="cite" href="#s16">[16]</a></p>
+    </section>
+
+    <section class="section" aria-labelledby="h-gov">
+      <div class="sec-head"><h2 id="h-gov">มาตรการรัฐและ กทม.</h2><span class="vtag v-news">ข่าว</span></div>
+      <h3>7 มาตรการของ กทม.<a class="cite" href="#s8">[8]</a></h3>
+      <ol class="measures small">
+        <li>เตรียมประกาศพื้นที่ภัยพิบัติทั้ง 50 เขต เพื่อเปิดสิทธิ์รับความช่วยเหลือ</li>
+        <li>สำรวจผู้ป่วยติดเตียงและกลุ่มเปราะบาง ประสานศูนย์บริการสาธารณสุขเพื่อย้ายหรือส่งต่อ</li>
+        <li>ใช้โรงเรียน กทม. เป็นศูนย์พักพิงชั่วคราว ประสานเอกชนหาที่จอดรถหนีน้ำ</li>
+        <li>สำนักการระบายน้ำแจกกระสอบทรายให้พื้นที่เสี่ยง</li>
+        <li>ประสานตำรวจจราจรยกรถเสีย จัดรถรับส่งประชาชน</li>
+        <li>ล้างท่อหลังน้ำลด จัดห้องน้ำเคลื่อนที่</li>
+        <li>ทุกหน่วยงานรายงานข้อมูลร่วมกันต่อเนื่อง</li>
+      </ol>
+      <p class="small muted">ระดับประเทศ: รัฐบาลตั้ง War Room ให้ ปภ. ส่งทีม ERT เรือ เครื่องสูบน้ำ รถอพยพ และโรงครัวเคลื่อนที่ ข้อมูล 25 ก.ย. มีผู้ได้รับผลกระทบ 12 จังหวัด 11,796 ครัวเรือน 37,036 คน (ยังไม่รวม กทม.)<a class="cite" href="#s17">[17]</a></p>
+    </section>
+  </div>
+
+  <section class="section" aria-labelledby="h-do">
+    <div class="sec-head"><h2 id="h-do">ควรทำอะไรตอนนี้</h2></div>
+    <div class="do">
+      <div class="docard">
+        <div class="sec-head"><h3>คำแนะนำจากหน่วยงาน</h3><span class="vtag v-src">มีแหล่งอ้างอิง</span></div>
+        <ul class="clean small">
+          <li>หลีกเลี่ยงเส้นทางที่น้ำท่วมซ้ำซาก โดยเฉพาะพื้นที่ลุ่มต่ำที่อาจมีน้ำท่วมขังในระยะสั้น<a class="cite" href="#s21">[21]</a></li>
+          <li>ระวังน้ำท่วมฉับพลันจากฝนตกสะสม<a class="cite" href="#s21">[21]</a></li>
+          <li>ถ้าต้องเดินทาง ใช้ทางพิเศษแทนถนนพื้นราบที่น้ำท่วม<a class="cite" href="#s5">[5]</a></li>
+          <li>ถ่ายรูปความเสียหายไว้เป็นหลักฐานขอรับความช่วยเหลือ<a class="cite" href="#s8">[8]</a></li>
+          <li>ถ้ามีผู้ป่วยติดเตียงหรือกลุ่มเปราะบาง แจ้งสำนักงานเขตหรือ 1555<a class="cite" href="#s8">[8]</a></li>
+          <li>บ้านริมคลองใน กทม. และปริมณฑลควรเฝ้าระวังเป็นพิเศษ<a class="cite" href="#s20">[20]</a> พื้นที่นอกคันกั้นน้ำเจ้าพระยาเตรียมรับน้ำเหนือช่วงต้น ต.ค.<a class="cite" href="#s14">[14]</a></li>
+        </ul>
+      </div>
+      <div class="docard">
+        <div class="sec-head"><h3>ความปลอดภัยทั่วไป</h3><span class="vtag v-gen">ความรู้ทั่วไป ไม่ได้มาจากประกาศรอบนี้</span></div>
+        <ul class="clean small">
+          <li>ยกของและปลั๊กไฟขึ้นที่สูง ถ้าน้ำเข้าบ้านให้ตัดไฟที่เบรกเกอร์หลักเมื่อทำได้อย่างปลอดภัย</li>
+          <li>รถเก๋งและจักรยานยนต์ไม่ควรฝ่าจุดที่ห้ามรถเล็ก น้ำสูงเกินครึ่งล้อเสี่ยงเครื่องดับ</li>
+          <li>อย่าเดินลุยน้ำไหลแรง และอยู่ห่างจากเสาไฟ ตู้ไฟ สายไฟที่แช่น้ำ</li>
+          <li>เตรียมยาประจำตัว เอกสารสำคัญ ไฟฉาย และแบตสำรองไว้ในที่สูง</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-live">
+    <div class="sec-head"><h2 id="h-live">ติดตามข้อมูลสดจากหน่วยงาน</h2><span class="small muted">ตรวจสอบว่าลิงก์ใช้งานได้ 26 ก.ย. 69</span></div>
+    <div class="links">
+      <a class="lnk" href="https://dds.bangkok.go.th/" target="_blank" rel="noopener"><b>สำนักการระบายน้ำ กทม.</b><span>รายงานน้ำท่วมขัง ระดับน้ำคลอง ฝนรายสถานี ภาพเรดาร์ กล้อง CCTV</span></a>
+      <a class="lnk" href="https://www.tmd.go.th/forecast/daily" target="_blank" rel="noopener"><b>กรมอุตุฯ พยากรณ์ประจำวัน</b><span>ออกวันละ 4 รอบ 05:00 11:00 17:00 23:00 น.</span></a>
+      <a class="lnk" href="https://www.tmd.go.th/warning-and-events/warning-storm" target="_blank" rel="noopener"><b>กรมอุตุฯ ประกาศเตือนภัย</b><span>ประกาศฉบับล่าสุดและฉบับก่อนหน้า</span></a>
+      <a class="lnk" href="https://www.tmd.go.th/forecast/heavyrainriskarea" target="_blank" rel="noopener"><b>พื้นที่เสี่ยงฝนตกหนัก</b><span>แผนที่ฝนหนักรายวันของกรมอุตุฯ</span></a>
+      <a class="lnk" href="https://www.thaiwater.net/" target="_blank" rel="noopener"><b>คลังข้อมูลน้ำแห่งชาติ</b><span>ระดับน้ำ ฝน เขื่อน ทั่วประเทศ (สสน.)</span></a>
+      <a class="lnk" href="https://water.rid.go.th/" target="_blank" rel="noopener"><b>กรมชลประทาน</b><span>สถานการณ์น้ำเจ้าพระยาและเขื่อน</span></a>
+      <a class="lnk" href="https://disaster.gistda.or.th/" target="_blank" rel="noopener"><b>GISTDA ภัยพิบัติ</b><span>พื้นที่น้ำท่วมจากภาพดาวเทียม</span></a>
+      <a class="lnk" href="https://www.onwr.go.th/" target="_blank" rel="noopener"><b>สทนช.</b><span>ประกาศเตือนพื้นที่เสี่ยงอุทกภัย</span></a>
+      <a class="lnk" href="https://www.disaster.go.th/" target="_blank" rel="noopener"><b>ปภ.</b><span>สถานการณ์สาธารณภัยและผู้ได้รับผลกระทบ</span></a>
+      <a class="lnk" href="https://hydro.navy.mi.th/waterlaveltable" target="_blank" rel="noopener"><b>กรมอุทกศาสตร์</b><span>ตารางน้ำขึ้นน้ำลงที่มีผลต่อการระบายน้ำ</span></a>
+    </div>
+  </section>
+
+  <section class="section" id="disclaimer" aria-labelledby="h-disc">
+    <div class="sec-head"><h2 id="h-disc">ข้อจำกัดความรับผิดชอบและเงื่อนไขการใช้งาน</h2></div>
+    <div class="disc">
+      <div><h3>วัตถุประสงค์</h3><p>หน้านี้จัดทำเพื่อเผยแพร่ข้อมูลเป็นประโยชน์สาธารณะ ไม่แสวงหากำไร ไม่ใช่เว็บไซต์หรือช่องทางทางการของหน่วยงานรัฐใด และไม่ได้รับการรับรองจากหน่วยงานที่อ้างถึง</p></div>
+      <div><h3>ที่มาของข้อมูล</h3><p>ข้อมูลรวบรวมจากเว็บไซต์หน่วยงานรัฐและสื่อมวลชนที่อ้างหน่วยงาน ตามรายการแหล่งอ้างอิงท้ายหน้า ข้อมูลที่มีป้าย “ต้นทาง” ตรวจสอบกับเว็บไซต์หน่วยงานโดยตรง ข้อมูลที่มีป้าย “ข่าว” ยังไม่ได้ยืนยันกับเอกสารต้นฉบับ สิทธิ์ในข้อมูลเป็นของหน่วยงานหรือสื่อต้นทาง การรวบรวมและจัดทำหน้านี้ใช้เครื่องมือ AI ช่วย</p></div>
+      <div><h3>ความถูกต้องและความทันสมัย</h3><p>ตัวเลขจาก thaiwater สำนักการระบายน้ำ กทม. และพยากรณ์ 7 วันของกรมอุตุฯ อัปเดตอัตโนมัติราวทุก 3 ชั่วโมงโดยไม่มีคนตรวจทุกรอบ ส่วนข้อมูลจากข่าว คำบรรยายประกาศกรมอุตุฯ และสภาพจราจรจาก Google Maps ไม่ได้อัปเดตอัตโนมัติ ทุกส่วนแสดงเวลาของข้อมูลไว้ สถานการณ์น้ำเปลี่ยนเร็ว ข้อมูลอาจล่าช้า คลาดเคลื่อน หรือไม่ครบถ้วน ผู้จัดทำไม่รับประกันความถูกต้อง ความครบถ้วน หรือความเหมาะสมกับวัตถุประสงค์ใดโดยเฉพาะ การไม่มีรายงานในพื้นที่ใดไม่ได้หมายความว่าพื้นที่นั้นปลอดภัย</p></div>
+      <div><h3>การใช้ข้อมูล</h3><ul><li>ใช้เป็นข้อมูลประกอบเท่านั้น ให้ยึดประกาศทางการ ข้อมูลจากหน่วยงานโดยตรง และคำสั่งของเจ้าหน้าที่ในพื้นที่เป็นหลัก</li><li>ข้อมูลในหน้านี้ไม่ใช่คำแนะนำทางวิชาชีพด้านวิศวกรรม การแพทย์ กฎหมาย หรือประกันภัย</li><li>ในเหตุฉุกเฉินให้ติดต่อ 1669, 191 หรือ 1784 ทันที</li></ul></div>
+      <div><h3>ความรับผิด</h3><p>ผู้จัดทำไม่รับผิดชอบต่อความสูญเสียหรือความเสียหายใด ๆ ทั้งทางตรงและทางอ้อม ที่เกิดจากการใช้หรืออ้างอิงข้อมูลในหน้านี้ ผู้ใช้ต้องพิจารณาและตัดสินใจด้วยตนเอง</p></div>
+      <div><h3>ลิงก์ภายนอกและความเป็นส่วนตัว</h3><p>ลิงก์ไปยังเว็บไซต์ภายนอกมีไว้เพื่อความสะดวก ผู้จัดทำไม่ได้ควบคุมเนื้อหาหรือนโยบายของเว็บไซต์เหล่านั้น หน้านี้ไม่เก็บข้อมูลส่วนบุคคล ช่องค้นหาทำงานในเครื่องของผู้ใช้ และส่งคำค้นไปยัง Google Maps หรือ Waze เฉพาะเมื่อกดปุ่มของบริการนั้น</p></div>
+      <div><h3>การส่งต่อและการแจ้งแก้ไข</h3><p>ส่งต่อหน้านี้ได้ โดยควรส่งเป็นลิงก์เพื่อให้ผู้รับเห็นเวอร์ชันล่าสุด และไม่ตัดทอนจนความหมายเปลี่ยน หากพบข้อมูลคลาดเคลื่อน โปรดแจ้งผู้ที่ส่งลิงก์นี้ให้คุณ พร้อมแหล่งอ้างอิง</p></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-src">
+    <h2 id="h-src">แหล่งอ้างอิง</h2>
+    <div class="srcgroup">
+      <div class="sec-head"><h3>ข้อมูลต้นทางจากหน่วยงาน</h3><span class="vtag v-src">ตรวจสอบโดยตรง 26 ก.ย. 69</span></div>
+      <ul class="srclist">
+        <li id="s21"><span class="num">[21]</span><span>กรมอุตุนิยมวิทยา — พยากรณ์อากาศประจำวัน ออกประกาศ 26 ก.ย. 2569 05:00 น. <a href="https://www.tmd.go.th/forecast/daily" target="_blank" rel="noopener">tmd.go.th/forecast/daily</a></span></li>
+        <li id="s22"><span class="num">[22]</span><span>กรมอุตุนิยมวิทยา — คาดหมายอากาศ 7 วัน ออกประกาศ 25 ก.ย. 2569 12:00 น. และ API พยากรณ์ 7 วันรายจังหวัด (data.tmd.go.th) ดึงอัตโนมัติ <a href="https://www.tmd.go.th/forecast/sevenday" target="_blank" rel="noopener">tmd.go.th/forecast/sevenday</a></span></li>
+        <li id="s23"><span class="num">[23]</span><span>กรมอุตุนิยมวิทยา — ประกาศเตือนภัย “ฝนตกหนักถึงหนักมากบริเวณประเทศไทย” ฉบับที่ 1–10 (217–226/2569) <a href="https://www.tmd.go.th/warning-and-events/warning-storm" target="_blank" rel="noopener">tmd.go.th/warning-and-events/warning-storm</a></span></li>
+        <li id="s24"><span class="num">[24]</span><span>สำนักการระบายน้ำ กทม. — รายงานน้ำท่วมขังบนถนนสายหลัก (กองสารสนเทศระบายน้ำ) ดึงข้อมูลล่าสุด <span class="src-asof"></span> <a href="https://dds.bangkok.go.th/flood_report.php" target="_blank" rel="noopener">dds.bangkok.go.th/flood_report.php</a></span></li>
+        <li id="s25"><span class="num">[25]</span><span>สำนักการระบายน้ำ กทม. — แผนที่ปริมาณฝนสะสม 25 ก.ย. 07:00 น. ถึง 26 ก.ย. 07:00 น. <a href="https://dds.bangkok.go.th/public_content/files/001/0004903_1.jpg" target="_blank" rel="noopener">dds.bangkok.go.th/…/0004903_1.jpg</a></span></li>
+        <li id="s26"><span class="num">[26]</span><span>สำนักการระบายน้ำ กทม. — แจ้งเตือนระดับน้ำแม่น้ำเจ้าพระยา 25 ก.ย. 2569 <a href="https://dds.bangkok.go.th/public_content/files/001/0004911_1.jpg" target="_blank" rel="noopener">dds.bangkok.go.th/…/0004911_1.jpg</a></span></li>
+        <li id="s27"><span class="num">[27]</span><span>คลังข้อมูลน้ำแห่งชาติ thaiwater.net (สสน.) — ระดับน้ำ ปริมาณน้ำไหลผ่าน และฝนรายสถานี จากสถานีของกรมชลประทาน สสน. และกรมอุตุฯ ดึงข้อมูลล่าสุด <span class="src-asof"></span> <a href="https://www.thaiwater.net/" target="_blank" rel="noopener">thaiwater.net</a></span></li>
+        <li id="s28"><span class="num">[28]</span><span>สายด่วนตรวจสอบกับเว็บไซต์หน่วยงาน: <a href="https://www.disaster.go.th/" target="_blank" rel="noopener">ปภ. 1784</a> · <a href="https://www.niems.go.th/" target="_blank" rel="noopener">สพฉ. 1669</a> · <a href="https://www.doh.go.th/" target="_blank" rel="noopener">กรมทางหลวง 1586</a> · <a href="https://saranitet.police.go.th/uncategorized_25082024_832/" target="_blank" rel="noopener">สตช. 1197</a> · <a href="https://kmc.rid.go.th/kcsecretary/index.php/km-activities/%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%94%E0%B9%88%E0%B8%A7%E0%B8%99-1460" target="_blank" rel="noopener">กรมชลประทาน 1460</a> · กรมอุตุฯ 1182 ตามประกาศเตือนภัย</span></li>
+        <li id="s33"><span class="num">[33]</span><span>เบอร์ผู้ให้บริการการเดินทางตรวจสอบกับเว็บไซต์: <a href="https://www.exat.co.th/" target="_blank" rel="noopener">กทพ. 1543</a> · <a href="https://www.bmta.co.th/" target="_blank" rel="noopener">ขสมก. 1348</a> · <a href="https://www.srtet.co.th/" target="_blank" rel="noopener">รถไฟฟ้าสายสีแดง 1690</a></span></li>
+        <li id="s29"><span class="num">[29]</span><span>สำนักการระบายน้ำ กทม. — สรุปสภาพฝนหน้าเว็บไซต์ (ดึงอัตโนมัติ) <a href="https://dds.bangkok.go.th/index2.php" target="_blank" rel="noopener">dds.bangkok.go.th</a></span></li>
+      </ul>
+    </div>
+    <div class="srcgroup">
+      <div class="sec-head"><h3>ข่าวที่อ้างหน่วยงาน</h3><span class="vtag v-news">ยังไม่ได้ยืนยันกับเอกสารต้นฉบับ</span></div>
+      <ul class="srclist">
+        <li id="s1"><span class="num">[1]</span><span>เดลินิวส์ อ้างเว็บไซต์ กทม. — เลี่ยง 18 เส้นทางน้ำท่วม (07:00 น. 26 ก.ย. 69) <a href="https://www.dailynews.co.th/news/6222319/" target="_blank" rel="noopener">dailynews.co.th/news/6222319</a></span></li>
+        <li id="s2"><span class="num">[2]</span><span>ไทยรัฐ อ้างศูนย์ป้องกันน้ำท่วม กทม. — พื้นที่ห้ามรถเล็กผ่าน (06:42 น. 26 ก.ย. 69) <a href="https://www.thairath.co.th/news/local/bangkok/2962089" target="_blank" rel="noopener">thairath.co.th/news/local/bangkok/2962089</a></span></li>
+        <li id="s3"><span class="num">[3]</span><span>Thai PBS — กทม.น้ำท่วมขังหลายจุด ถนนวิภาวดีสัญจรยากลำบาก (07:08 น. 26 ก.ย. 69) <a href="https://www.thaipbs.or.th/news/content/558575" target="_blank" rel="noopener">thaipbs.or.th/news/content/558575</a></span></li>
+        <li id="s4"><span class="num">[4]</span><span>กรุงเทพธุรกิจ — อัปเดตจุดน้ำท่วมขังบนถนนสายหลัก (25 ก.ย. 69) <a href="https://www.bangkokbiznews.com/news/news-update/1253591" target="_blank" rel="noopener">bangkokbiznews.com/news/news-update/1253591</a></span></li>
+        <li id="s5"><span class="num">[5]</span><span>The Nation — Bangkok faces widespread road flooding after prolonged rainfall (25 Sep 2026) <a href="https://www.nationthailand.com/news/general/40071470" target="_blank" rel="noopener">nationthailand.com/news/general/40071470</a></span></li>
+        <li id="s6"><span class="num">[6]</span><span>ไทยรัฐ อ้างเพจ กทม. — อัปเดต 22:00 น. 25 ก.ย. 69 (สายด่วน 1555, Traffy Fondue) <a href="https://www.thairath.co.th/news/local/bangkok/2962071" target="_blank" rel="noopener">thairath.co.th/news/local/bangkok/2962071</a></span></li>
+        <li id="s7"><span class="num">[7]</span><span>ไทยโพสต์ — กทม.ประกาศ 3 เขตประสบอุทกภัย <a href="https://www.thaipost.net/hi-light/1076527/" target="_blank" rel="noopener">thaipost.net/hi-light/1076527</a></span></li>
+        <li id="s8"><span class="num">[8]</span><span>ไทยโพสต์ — 7 มาตรการรับมือน้ำท่วมกรุง เตรียมประกาศภัยพิบัติ 50 เขต <a href="https://www.thaipost.net/hi-light/1076552/" target="_blank" rel="noopener">thaipost.net/hi-light/1076552</a></span></li>
+        <li id="s10"><span class="num">[10]</span><span>Thai PBS อ้าง สทนช. — พื้นที่เสี่ยงน้ำท่วม 26–30 ก.ย. <a href="https://www.thaipbs.or.th/news/content/558566" target="_blank" rel="noopener">thaipbs.or.th/news/content/558566</a></span></li>
+        <li id="s14"><span class="num">[14]</span><span>Spacebar อ้างกรมชลประทาน — เจ้าพระยารับน้ำเหนือเพิ่ม จับตาน้ำพีค 2 ต.ค. 69 <a href="https://spacebar.th/social/chao-phraya-river-water-rise-october-2-2026" target="_blank" rel="noopener">spacebar.th/…/chao-phraya-river-water-rise-october-2-2026</a></span></li>
+        <li id="s15"><span class="num">[15]</span><span>กรุงเทพธุรกิจ — โฟกัสฝั่งตะวันออก เร่งระบายคลองประเวศฯ <a href="https://www.bangkokbiznews.com/news/news-update/1253474" target="_blank" rel="noopener">bangkokbiznews.com/news/news-update/1253474</a></span></li>
+        <li id="s16"><span class="num">[16]</span><span>กรุงเทพธุรกิจ — กทม. เฝ้าระวังฝนตกหนัก-น้ำเหนือ 23–27 ก.ย. พร่องน้ำ 1,980 คลอง <a href="https://www.bangkokbiznews.com/news/news-update/1253203" target="_blank" rel="noopener">bangkokbiznews.com/news/news-update/1253203</a></span></li>
+        <li id="s17"><span class="num">[17]</span><span>ไทยรัฐ — รัฐบาลระดม ปภ. รับมืออุทกภัย 12 จังหวัด ตั้ง War Room <a href="https://www.thairath.co.th/news/politic/2962063" target="_blank" rel="noopener">thairath.co.th/news/politic/2962063</a></span></li>
+        <li id="s18"><span class="num">[18]</span><span>ผู้จัดการออนไลน์ — กรมชลฯ เพิ่มระบายเขื่อนเจ้าพระยา แจ้งเตือน 11 จังหวัด <a href="https://mgronline.com/local/detail/9690000092242" target="_blank" rel="noopener">mgronline.com/local/detail/9690000092242</a></span></li>
+        <li id="s30"><span class="num">[30]</span><span>ไทยรัฐ — จุดจอดรถฟรีช่วงน้ำท่วม (25 ก.ย. 69 20:15 น.) <a href="https://www.thairath.co.th/news/society/2962048" target="_blank" rel="noopener">thairath.co.th/news/society/2962048</a></span></li>
+        <li id="s31"><span class="num">[31]</span><span>ไทยรัฐ — เส้นทางน้ำท่วมสูงรถเล็กควรหลีกเลี่ยง (26 ก.ย. 69) <a href="https://www.thairath.co.th/news/auto/news/2962084" target="_blank" rel="noopener">thairath.co.th/news/auto/news/2962084</a></span></li>
+        <li id="s32"><span class="num">[32]</span><span>หน้าเว็บ “เลี่ยงถนนน้ำท่วม กทม.” รวบรวมจากชั้นข้อมูลการจราจรแบบเรียลไทม์ของ Google Maps 26 ก.ย. 69 08:43–08:50 น. (ผู้รวบรวมภายนอก ยังไม่ได้ตรวจสอบกับหน่วยงาน) <a href="https://claude.ai/artifact/N6umcENfSgoY6GMkhVKwZs" target="_blank" rel="noopener">claude.ai/artifact/N6umcENfSgoY6GMkhVKwZs</a></span></li>
+        <li id="s20"><span class="num">[20]</span><span>ไทยโพสต์ — ดร.เสรี เตือนฝนหนักต่อเนื่อง กทม.-8 จังหวัด <a href="https://www.thaipost.net/general-news/1076398/" target="_blank" rel="noopener">thaipost.net/general-news/1076398</a></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>จัดทำเพื่อประโยชน์สาธารณะ · <span id="foot-asof"></span> · ส่งต่อได้โดยอ้างอิงแหล่งที่มาต้นทาง</footer>
+</main>
+
+<script>
+var DATA={"river":{"C.2":{"name":"C.2 นครสวรรค์","bank":25.7,"t":["2026-09-16 01:00","2026-09-16 02:00","2026-09-16 03:00","2026-09-16 04:00","2026-09-16 05:00","2026-09-16 06:00","2026-09-16 07:00","2026-09-16 08:00","2026-09-16 09:00","2026-09-16 10:00","2026-09-16 11:00","2026-09-16 12:00","2026-09-16 13:00","2026-09-16 14:00","2026-09-16 15:00","2026-09-16 16:00","2026-09-16 17:00","2026-09-16 18:00","2026-09-16 19:00","2026-09-16 20:00","2026-09-16 21:00","2026-09-16 22:00","2026-09-16 23:00","2026-09-17 01:00","2026-09-17 02:00","2026-09-17 03:00","2026-09-17 04:00","2026-09-17 05:00","2026-09-17 06:00","2026-09-17 07:00","2026-09-17 08:00","2026-09-17 09:00","2026-09-17 10:00","2026-09-17 11:00","2026-09-17 12:00","2026-09-17 13:00","2026-09-17 14:00","2026-09-17 15:00","2026-09-17 16:00","2026-09-17 17:00","2026-09-17 18:00","2026-09-17 19:00","2026-09-17 20:00","2026-09-17 21:00","2026-09-17 22:00","2026-09-17 23:00","2026-09-18 01:00","2026-09-18 02:00","2026-09-18 03:00","2026-09-18 04:00","2026-09-18 05:00","2026-09-18 06:00","2026-09-18 07:00","2026-09-18 08:00","2026-09-18 09:00","2026-09-18 10:00","2026-09-18 11:00","2026-09-18 12:00","2026-09-18 13:00","2026-09-18 14:00","2026-09-18 15:00","2026-09-18 16:00","2026-09-18 17:00","2026-09-18 18:00","2026-09-18 19:00","2026-09-18 20:00","2026-09-18 21:00","2026-09-18 22:00","2026-09-18 23:00","2026-09-19 01:00","2026-09-19 02:00","2026-09-19 03:00","2026-09-19 04:00","2026-09-19 05:00","2026-09-19 06:00","2026-09-19 07:00","2026-09-19 08:00","2026-09-19 09:00","2026-09-19 10:00","2026-09-19 11:00","2026-09-19 12:00","2026-09-19 13:00","2026-09-19 14:00","2026-09-19 15:00","2026-09-19 16:00","2026-09-19 17:00","2026-09-19 18:00","2026-09-19 19:00","2026-09-19 20:00","2026-09-19 21:00","2026-09-19 22:00","2026-09-19 23:00","2026-09-20 01:00","2026-09-20 02:00","2026-09-20 03:00","2026-09-20 04:00","2026-09-20 05:00","2026-09-20 06:00","2026-09-20 07:00","2026-09-20 08:00","2026-09-20 09:00","2026-09-20 10:00","2026-09-20 11:00","2026-09-20 12:00","2026-09-20 13:00","2026-09-20 14:00","2026-09-20 15:00","2026-09-20 16:00","2026-09-20 17:00","2026-09-20 18:00","2026-09-20 19:00","2026-09-20 20:00","2026-09-20 21:00","2026-09-20 22:00","2026-09-20 23:00","2026-09-21 01:00","2026-09-21 02:00","2026-09-21 03:00","2026-09-21 04:00","2026-09-21 05:00","2026-09-21 06:00","2026-09-21 07:00","2026-09-21 08:00","2026-09-21 09:00","2026-09-21 10:00","2026-09-21 11:00","2026-09-21 12:00","2026-09-21 13:00","2026-09-21 14:00","2026-09-21 15:00","2026-09-21 16:00","2026-09-21 17:00","2026-09-21 18:00","2026-09-21 19:00","2026-09-21 20:00","2026-09-21 21:00","2026-09-21 22:00","2026-09-21 23:00","2026-09-22 01:00","2026-09-22 02:00","2026-09-22 03:00","2026-09-22 04:00","2026-09-22 05:00","2026-09-22 06:00","2026-09-22 07:00","2026-09-22 08:00","2026-09-22 09:00","2026-09-22 10:00","2026-09-22 11:00","2026-09-22 12:00","2026-09-22 13:00","2026-09-22 14:00","2026-09-22 15:00","2026-09-22 16:00","2026-09-22 17:00","2026-09-22 18:00","2026-09-22 19:00","2026-09-22 20:00","2026-09-22 21:00","2026-09-22 22:00","2026-09-22 23:00","2026-09-23 01:00","2026-09-23 02:00","2026-09-23 03:00","2026-09-23 04:00","2026-09-23 05:00","2026-09-23 06:00","2026-09-23 07:00","2026-09-23 08:00","2026-09-23 09:00","2026-09-23 10:00","2026-09-23 11:00","2026-09-23 12:00","2026-09-23 13:00","2026-09-23 14:00","2026-09-23 15:00","2026-09-23 16:00","2026-09-23 17:00","2026-09-23 18:00","2026-09-23 19:00","2026-09-23 20:00","2026-09-23 21:00","2026-09-23 22:00","2026-09-23 23:00","2026-09-24 01:00","2026-09-24 02:00","2026-09-24 03:00","2026-09-24 04:00","2026-09-24 05:00","2026-09-24 06:00","2026-09-24 07:00","2026-09-24 08:00","2026-09-24 09:00","2026-09-24 10:00","2026-09-24 11:00","2026-09-24 12:00","2026-09-24 13:00","2026-09-24 14:00","2026-09-24 15:00","2026-09-24 16:00","2026-09-24 17:00","2026-09-24 18:00","2026-09-24 19:00","2026-09-24 20:00","2026-09-24 21:00","2026-09-24 22:00","2026-09-24 23:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"wl":[19.27,19.27,19.27,19.280001,19.280001,19.280001,19.290001,19.290001,19.299999,19.299999,19.309999,19.309999,19.32,19.32,19.32,19.32,19.32,19.33,19.33,19.34,19.35,19.360001,19.360001,19.370001,19.379999,19.379999,19.389999,19.4,19.41,19.41,19.42,19.43,19.440001,19.450001,19.459999,19.469999,19.48,19.49,19.5,19.5,19.51,19.52,19.530001,19.540001,19.549999,19.559999,19.58,19.59,19.6,19.610001,19.610001,19.620001,19.629999,19.639999,19.65,19.66,19.67,19.67,19.68,19.68,19.690001,19.700001,19.709999,19.719999,19.73,19.73,19.74,19.74,19.74,19.75,19.75,19.76,19.76,19.76,19.77,19.77,19.77,19.780001,19.780001,19.790001,19.790001,19.799999,19.799999,19.799999,19.809999,19.809999,19.82,19.83,19.83,19.85,19.85,19.870001,19.92,19.969999,20.02,20.049999,20.07,20.09,20.120001,20.139999,20.16,20.190001,20.219999,20.25,20.290001,20.33,20.370001,20.41,20.459999,20.48,20.51,20.549999,20.58,20.620001,20.65,20.73,20.77,20.799999,20.860001,20.870001,20.92,20.950001,20.99,21.02,21.059999,21.09,21.120001,21.15,21.190001,21.219999,21.24,21.27,21.299999,21.33,21.360001,21.379999,21.41,21.440001,21.49,21.52,21.549999,21.57,21.6,21.629999,21.65,21.67,21.700001,21.73,21.75,21.77,21.790001,21.809999,21.82,21.84,21.85,21.870001,21.879999,21.9,21.91,21.92,21.940001,21.959999,21.969999,21.98,21.99,22,22.01,22.02,22.02,22.030001,22.040001,22.040001,22.049999,22.049999,22.049999,22.049999,22.059999,22.059999,22.059999,22.059999,22.07,22.07,22.08,22.08,22.09,22.1,22.1,22.110001,22.110001,22.120001,22.120001,22.129999,22.129999,22.129999,22.129999,22.139999,22.139999,22.15,22.15,22.15,22.15,22.15,22.15,22.16,22.17,22.18,22.18,22.17,22.17,22.17,22.17,22.17,22.17,22.18,22.190001,22.18,22.18,22.18,22.17,22.17,22.17,22.17,22.16,22.16,22.200001,22.23,22.23,22.23,22.23,22.23,22.23,22.23,22.24,22.26,22.26,22.26,22.25,22.25,22.25],"q":[856,856,856,859,859,859,862,862,866,866,869,869,872,872,872,872,872,875,875,878,881,884,884,887,890,890,893,896,899,899,902,905,908,911,914,917,920,923,927,927,930,933,936,939,942,945,951,954,957,960,960,963,966,969,972,975,978,978,981,981,984,988,991,994,997,997,1000,1000,1000,1003,1003,1006,1006,1006,1009,1009,1009,1012,1012,1015,1015,1018,1018,1018,1021,1021,1024,1027,1027,1033,1033,1039,1055,1070,1085,1095,1102,1108,1118,1124,1131,1141,1150,1160,1173,1186,1199,1212,1228,1235,1244,1257,1267,1280,1290,1316,1328,1338,1358,1361,1377,1387,1400,1410,1423,1433,1443,1453,1466,1476,1482,1492,1502,1512,1522,1528,1538,1548,1565,1575,1585,1591,1601,1611,1618,1624,1634,1644,1651,1657,1664,1670,1674,1680,1684,1690,1693,1700,1703,1707,1713,1720,1723,1726,1730,1733,1737,1740,1740,1744,1748,1748,1751,1751,1751,1751,1755,1755,1755,1755,1758,1758,1762,1762,1766,1769,1769,1773,1773,1777,1777,1780,1780,1780,1780,1784,1784,1787,1787,1787,1787,1787,1787,1791,1795,1798,1798,1795,1795,1795,1795,1795,1795,1798,1802,1798,1798,1798,1795,1795,1795,1795,1791,1791,1806,1816,1816,1816,1816,1816,1816,1816,1820,1827,1827,1827,1824,1824,1824]},"C.13":{"name":"C.13 ท้ายเขื่อนเจ้าพระยา","bank":16.34,"t":["2026-09-16 01:00","2026-09-16 02:00","2026-09-16 03:00","2026-09-16 04:00","2026-09-16 05:00","2026-09-16 06:00","2026-09-16 07:00","2026-09-16 08:00","2026-09-16 09:00","2026-09-16 10:00","2026-09-16 11:00","2026-09-16 12:00","2026-09-16 13:00","2026-09-16 14:00","2026-09-16 15:00","2026-09-16 16:00","2026-09-16 17:00","2026-09-16 18:00","2026-09-16 19:00","2026-09-16 20:00","2026-09-16 21:00","2026-09-16 22:00","2026-09-16 23:00","2026-09-17 01:00","2026-09-17 02:00","2026-09-17 03:00","2026-09-17 04:00","2026-09-17 05:00","2026-09-17 06:00","2026-09-17 07:00","2026-09-17 08:00","2026-09-17 09:00","2026-09-17 10:00","2026-09-17 11:00","2026-09-17 12:00","2026-09-17 13:00","2026-09-17 14:00","2026-09-17 15:00","2026-09-17 16:00","2026-09-17 17:00","2026-09-17 18:00","2026-09-17 19:00","2026-09-17 20:00","2026-09-17 21:00","2026-09-17 22:00","2026-09-17 23:00","2026-09-18 01:00","2026-09-18 02:00","2026-09-18 03:00","2026-09-18 04:00","2026-09-18 05:00","2026-09-18 06:00","2026-09-18 07:00","2026-09-18 08:00","2026-09-18 09:00","2026-09-18 10:00","2026-09-18 11:00","2026-09-18 12:00","2026-09-18 13:00","2026-09-18 14:00","2026-09-18 15:00","2026-09-18 16:00","2026-09-18 17:00","2026-09-18 18:00","2026-09-18 19:00","2026-09-18 20:00","2026-09-18 21:00","2026-09-18 22:00","2026-09-18 23:00","2026-09-19 01:00","2026-09-19 02:00","2026-09-19 03:00","2026-09-19 04:00","2026-09-19 05:00","2026-09-19 06:00","2026-09-19 07:00","2026-09-19 08:00","2026-09-19 09:00","2026-09-19 10:00","2026-09-19 11:00","2026-09-19 12:00","2026-09-19 13:00","2026-09-19 14:00","2026-09-19 15:00","2026-09-19 16:00","2026-09-19 17:00","2026-09-19 18:00","2026-09-19 19:00","2026-09-19 20:00","2026-09-19 21:00","2026-09-19 22:00","2026-09-19 23:00","2026-09-20 01:00","2026-09-20 02:00","2026-09-20 03:00","2026-09-20 04:00","2026-09-20 05:00","2026-09-20 06:00","2026-09-20 07:00","2026-09-20 08:00","2026-09-20 09:00","2026-09-20 10:00","2026-09-20 11:00","2026-09-20 12:00","2026-09-20 13:00","2026-09-20 14:00","2026-09-20 15:00","2026-09-20 16:00","2026-09-20 17:00","2026-09-20 18:00","2026-09-20 19:00","2026-09-20 20:00","2026-09-20 21:00","2026-09-20 22:00","2026-09-20 23:00","2026-09-21 01:00","2026-09-21 02:00","2026-09-21 03:00","2026-09-21 04:00","2026-09-21 05:00","2026-09-21 06:00","2026-09-21 07:00","2026-09-21 08:00","2026-09-21 09:00","2026-09-21 10:00","2026-09-21 11:00","2026-09-21 12:00","2026-09-21 13:00","2026-09-21 14:00","2026-09-21 15:00","2026-09-21 16:00","2026-09-21 17:00","2026-09-21 18:00","2026-09-21 19:00","2026-09-21 20:00","2026-09-21 21:00","2026-09-21 22:00","2026-09-21 23:00","2026-09-22 01:00","2026-09-22 02:00","2026-09-22 03:00","2026-09-22 04:00","2026-09-22 05:00","2026-09-22 06:00","2026-09-22 07:00","2026-09-22 08:00","2026-09-22 09:00","2026-09-22 10:00","2026-09-22 11:00","2026-09-22 12:00","2026-09-22 13:00","2026-09-22 14:00","2026-09-22 15:00","2026-09-22 16:00","2026-09-22 17:00","2026-09-22 18:00","2026-09-22 19:00","2026-09-22 20:00","2026-09-22 21:00","2026-09-22 22:00","2026-09-22 23:00","2026-09-23 01:00","2026-09-23 02:00","2026-09-23 03:00","2026-09-23 04:00","2026-09-23 05:00","2026-09-23 06:00","2026-09-23 07:00","2026-09-23 08:00","2026-09-23 09:00","2026-09-23 10:00","2026-09-23 11:00","2026-09-23 12:00","2026-09-23 13:00","2026-09-23 14:00","2026-09-23 15:00","2026-09-23 16:00","2026-09-23 17:00","2026-09-23 18:00","2026-09-23 19:00","2026-09-23 20:00","2026-09-23 21:00","2026-09-23 22:00","2026-09-23 23:00","2026-09-24 01:00","2026-09-24 02:00","2026-09-24 03:00","2026-09-24 04:00","2026-09-24 05:00","2026-09-24 06:00","2026-09-24 07:00","2026-09-24 08:00","2026-09-24 09:00","2026-09-24 10:00","2026-09-24 11:00","2026-09-24 12:00","2026-09-24 13:00","2026-09-24 14:00","2026-09-24 15:00","2026-09-24 16:00","2026-09-24 17:00","2026-09-24 18:00","2026-09-24 19:00","2026-09-24 20:00","2026-09-24 21:00","2026-09-24 22:00","2026-09-24 23:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"wl":[8.17,8.17,8.17,8.17,8.17,8.17,8.17,8.17,8.17,8.17,8.17,8.17,8.17,8.17,8.23,8.29,8.36,8.42,8.48,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.6,8.67,8.73,8.79,8.85,8.92,8.98,9.03,9.09,9.14,9.19,9.19,9.19,9.19,9.19,9.19,9.19,9.19,9.19,9.19,9.19,9.19,9.19,9.25,9.3,9.35,9.41,9.46,9.51,9.57,9.62,9.67,9.67,9.67,9.67,9.67,9.67,9.67,9.67,9.67,9.67,9.67,9.67,9.67,9.67,9.76,9.84,9.92,10,10.07,10.15,10.22,10.22,10.22,10.32,10.41,10.49,10.58,10.76,10.85,10.98,11.03,11.07,11.07,11.07,11.07,11.07,11.21,11.31,11.42,11.52,11.62,11.72,11.82,11.92,11.92,11.92,11.92,12,12.07,12.15,12.29,12.29,12.29,12.29,12.29,12.29,12.29,12.39,12.48,12.57,12.67,12.76,12.85,12.94,13.02,13.02,13.02,13.02,13.02,13.02,13.02,13.02,13.02,13.02,13.11,13.19,13.28,13.37,13.44,13.44,13.44,13.44,13.52,13.6,13.69,13.76,13.82,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.89,13.96,14.02,14.09,14.15,14.21,14.21,14.21,14.21,14.21],"q":[430,430,430,430,430,430,430,430,430,430,430,430,430,430,440,450,460,470,480,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,490,500,510,520,530,540,550,560,570,580,590,600,600,600,600,600,600,600,600,600,600,600,600,600,610,620,630,640,650,660,670,680,690,690,690,690,690,690,690,690,690,690,690,690,690,690,706,721,736,751,767,785,800,800,800,822,842,860,880,920,940,968,980,990,990,990,990,990,1025,1050,1076,1101,1126,1150,1175,1200,1200,1200,1200,1220,1240,1260,1300,1300,1300,1300,1300,1300,1300,1327,1351,1376,1404,1428,1453,1478,1500,1500,1500,1500,1500,1500,1500,1500,1500,1500,1526,1550,1575,1600,1620,1620,1620,1620,1644,1667,1693,1713,1730,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1750,1770,1790,1810,1830,1850,1850,1850,1850,1850]},"C.35":{"name":"C.35 บ้านป้อม อยุธยา","bank":4.35,"t":["2026-09-16 01:00","2026-09-16 02:00","2026-09-16 03:00","2026-09-16 04:00","2026-09-16 05:00","2026-09-16 06:00","2026-09-16 07:00","2026-09-16 08:00","2026-09-16 09:00","2026-09-16 10:00","2026-09-16 11:00","2026-09-16 12:00","2026-09-16 13:00","2026-09-16 14:00","2026-09-16 15:00","2026-09-16 16:00","2026-09-16 17:00","2026-09-16 18:00","2026-09-16 19:00","2026-09-16 20:00","2026-09-16 21:00","2026-09-16 22:00","2026-09-16 23:00","2026-09-17 01:00","2026-09-17 02:00","2026-09-17 03:00","2026-09-17 04:00","2026-09-17 05:00","2026-09-17 06:00","2026-09-17 07:00","2026-09-17 08:00","2026-09-17 09:00","2026-09-17 10:00","2026-09-17 11:00","2026-09-17 12:00","2026-09-17 13:00","2026-09-17 14:00","2026-09-17 15:00","2026-09-17 16:00","2026-09-17 17:00","2026-09-17 18:00","2026-09-17 19:00","2026-09-17 20:00","2026-09-17 21:00","2026-09-17 22:00","2026-09-17 23:00","2026-09-18 01:00","2026-09-18 02:00","2026-09-18 03:00","2026-09-18 04:00","2026-09-18 05:00","2026-09-18 06:00","2026-09-18 07:00","2026-09-18 08:00","2026-09-18 09:00","2026-09-18 10:00","2026-09-18 11:00","2026-09-18 12:00","2026-09-18 13:00","2026-09-18 14:00","2026-09-18 15:00","2026-09-18 16:00","2026-09-18 17:00","2026-09-18 18:00","2026-09-18 19:00","2026-09-18 20:00","2026-09-18 21:00","2026-09-18 22:00","2026-09-18 23:00","2026-09-19 01:00","2026-09-19 02:00","2026-09-19 03:00","2026-09-19 04:00","2026-09-19 05:00","2026-09-19 06:00","2026-09-19 07:00","2026-09-19 08:00","2026-09-19 09:00","2026-09-19 10:00","2026-09-19 11:00","2026-09-19 12:00","2026-09-19 13:00","2026-09-19 14:00","2026-09-19 15:00","2026-09-19 16:00","2026-09-19 17:00","2026-09-19 18:00","2026-09-19 19:00","2026-09-19 20:00","2026-09-19 21:00","2026-09-19 22:00","2026-09-19 23:00","2026-09-20 01:00","2026-09-20 02:00","2026-09-20 03:00","2026-09-20 04:00","2026-09-20 05:00","2026-09-20 06:00","2026-09-20 07:00","2026-09-20 08:00","2026-09-20 09:00","2026-09-20 10:00","2026-09-20 11:00","2026-09-20 12:00","2026-09-20 13:00","2026-09-20 14:00","2026-09-20 15:00","2026-09-20 16:00","2026-09-20 17:00","2026-09-20 18:00","2026-09-20 19:00","2026-09-20 20:00","2026-09-20 21:00","2026-09-20 22:00","2026-09-20 23:00","2026-09-21 01:00","2026-09-21 02:00","2026-09-21 03:00","2026-09-21 04:00","2026-09-21 05:00","2026-09-21 06:00","2026-09-21 07:00","2026-09-21 08:00","2026-09-21 09:00","2026-09-21 10:00","2026-09-21 11:00","2026-09-21 12:00","2026-09-21 13:00","2026-09-21 14:00","2026-09-21 15:00","2026-09-21 16:00","2026-09-21 17:00","2026-09-21 18:00","2026-09-21 19:00","2026-09-21 20:00","2026-09-21 21:00","2026-09-21 22:00","2026-09-21 23:00","2026-09-22 01:00","2026-09-22 02:00","2026-09-22 03:00","2026-09-22 04:00","2026-09-22 05:00","2026-09-22 06:00","2026-09-22 07:00","2026-09-22 08:00","2026-09-22 09:00","2026-09-22 10:00","2026-09-22 11:00","2026-09-22 12:00","2026-09-22 13:00","2026-09-22 14:00","2026-09-22 15:00","2026-09-22 16:00","2026-09-22 17:00","2026-09-22 18:00","2026-09-22 19:00","2026-09-22 20:00","2026-09-22 21:00","2026-09-22 22:00","2026-09-22 23:00","2026-09-23 01:00","2026-09-23 02:00","2026-09-23 03:00","2026-09-23 04:00","2026-09-23 05:00","2026-09-23 06:00","2026-09-23 07:00","2026-09-23 08:00","2026-09-23 09:00","2026-09-23 10:00","2026-09-23 11:00","2026-09-23 12:00","2026-09-23 13:00","2026-09-23 14:00","2026-09-23 15:00","2026-09-23 16:00","2026-09-23 17:00","2026-09-23 18:00","2026-09-23 19:00","2026-09-23 20:00","2026-09-23 21:00","2026-09-23 22:00","2026-09-23 23:00","2026-09-24 01:00","2026-09-24 02:00","2026-09-24 03:00","2026-09-24 04:00","2026-09-24 05:00","2026-09-24 06:00","2026-09-24 07:00","2026-09-24 08:00","2026-09-24 09:00","2026-09-24 10:00","2026-09-24 11:00","2026-09-24 12:00","2026-09-24 13:00","2026-09-24 14:00","2026-09-24 15:00","2026-09-24 16:00","2026-09-24 17:00","2026-09-24 18:00","2026-09-24 19:00","2026-09-24 20:00","2026-09-24 21:00","2026-09-24 22:00","2026-09-24 23:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"wl":[1.79,1.73,1.68,1.63,1.56,1.5,1.44,1.39,1.34,1.33,1.46,1.61,1.69,1.75,1.75,1.72,1.67,1.62,1.61,1.58,1.58,1.65,1.81,1.83,1.77,1.72,1.68,1.64,1.59,1.54,1.49,1.45,1.43,1.43,1.53,1.67,1.76,1.79,1.77,1.77,1.76,1.71,1.69,1.67,1.67,1.7,1.81,1.8,1.77,1.75,1.71,1.66,1.63,1.55,1.53,1.51,1.49,1.51,1.66,1.75,1.81,1.85,1.85,1.84,1.82,1.81,1.8,1.81,1.83,1.89,1.89,1.86,1.83,1.8,1.78,1.75,1.71,1.68,1.66,1.64,1.63,1.66,1.73,1.8,1.88,1.93,1.97,1.98,1.99,2.01,2.01,2.02,2.04,2.05,2.04,2.03,2.01,1.99,1.96,1.95,1.93,1.91,1.89,1.87,1.87,1.89,1.93,1.98,2.05,2.11,2.17,2.21,2.23,2.27,2.29,2.31,2.31,2.31,2.3,2.29,2.28,2.27,2.25,2.25,2.24,2.24,2.24,2.25,2.25,2.27,2.29,2.32,2.36,2.43,2.5,2.56,2.62,2.66,2.7,2.73,2.74,2.75,2.76,2.76,2.79,2.8,2.81,2.82,2.83,2.84,2.86,2.86,2.87,2.88,2.9,2.93,2.97,3.04,3.1,3.16,3.21,3.27,3.28,3.3,3.31,3.32,3.33,3.33,3.34,3.35,3.35,3.35,3.36,3.36,3.36,3.34,3.35,3.37,3.37,3.42,3.46,3.52,3.56,3.6,3.64,3.65,3.67,3.66,3.68,3.68,3.68,3.69,3.7,3.7,3.7,3.7,3.7,3.7,3.69,3.69,3.69,3.7,3.7,3.72,3.75,3.8,3.81,3.86,3.89,3.9,3.92,3.92,3.92,3.94,3.95,3.96,3.97,3.98,3.98,3.99,4.02,4.02,4.03,4.03,4.05,4.06,4.08,4.11,4.14,4.17,4.2,4.22,4.23,4.23,4.25,4.27,4.28,4.29,4.3],"q":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,632,630,625,625,622,622,622,625,625,630,635,642,652,670,687,702,717,727,737,745,747,750,752,752,760,762,765,767,770,772,777,777,780,782,787,795,805,822,837,852,865,880,883,888,890,893,895,895,898,900,900,900,903,903,903,898,900,905,905,918,928,943,953,964,974,977,982,979,984,984,984,987,990,990,990,990,990,990,987,987,987,990,990,995,1003,1015,1018,1031,1039,1041,1046,1046,1046,1052,1054,1057,1059,1062,1062,1064,1072,1072,1075,1075,1080,1083,1088,1096,1104,1112,1119,1125,1127,1127,1133,1138,1140,1143,1146]},"CPY014":{"name":"สะพานนวลฉวี นนทบุรี","bank":2.5,"t":["2026-09-16 00:00","2026-09-16 01:00","2026-09-16 02:00","2026-09-16 04:00","2026-09-16 05:00","2026-09-16 06:00","2026-09-16 07:00","2026-09-16 08:00","2026-09-16 10:00","2026-09-16 11:00","2026-09-16 12:00","2026-09-16 13:00","2026-09-16 14:00","2026-09-16 15:00","2026-09-16 16:00","2026-09-16 17:00","2026-09-16 18:00","2026-09-16 19:00","2026-09-16 20:00","2026-09-16 21:00","2026-09-16 22:00","2026-09-16 23:00","2026-09-17 00:00","2026-09-17 01:00","2026-09-17 02:00","2026-09-17 03:00","2026-09-17 04:00","2026-09-17 05:00","2026-09-17 06:00","2026-09-17 07:00","2026-09-17 08:00","2026-09-17 09:00","2026-09-17 10:00","2026-09-17 11:00","2026-09-17 12:00","2026-09-17 13:00","2026-09-17 14:00","2026-09-17 15:00","2026-09-17 16:00","2026-09-17 17:00","2026-09-17 18:00","2026-09-17 19:00","2026-09-17 20:00","2026-09-17 21:00","2026-09-17 22:00","2026-09-17 23:00","2026-09-18 00:00","2026-09-18 01:00","2026-09-18 02:00","2026-09-18 03:00","2026-09-18 04:00","2026-09-18 05:00","2026-09-18 06:00","2026-09-18 08:00","2026-09-18 09:00","2026-09-18 10:00","2026-09-18 11:00","2026-09-18 12:00","2026-09-18 13:00","2026-09-18 15:00","2026-09-18 16:00","2026-09-18 17:00","2026-09-18 18:00","2026-09-18 19:00","2026-09-18 20:00","2026-09-18 21:00","2026-09-18 22:00","2026-09-18 23:00","2026-09-19 00:00","2026-09-19 01:00","2026-09-19 02:00","2026-09-19 03:00","2026-09-19 04:00","2026-09-19 05:00","2026-09-19 06:00","2026-09-19 07:00","2026-09-19 08:00","2026-09-19 09:00","2026-09-19 10:00","2026-09-19 11:00","2026-09-19 12:00","2026-09-19 13:00","2026-09-19 14:00","2026-09-19 15:00","2026-09-19 16:00","2026-09-19 17:00","2026-09-19 18:00","2026-09-19 19:00","2026-09-19 20:00","2026-09-19 21:00","2026-09-19 22:00","2026-09-19 23:00","2026-09-20 00:00","2026-09-20 01:00","2026-09-20 02:00","2026-09-20 03:00","2026-09-20 04:00","2026-09-20 05:00","2026-09-20 06:00","2026-09-20 08:00","2026-09-20 09:00","2026-09-20 10:00","2026-09-20 11:00","2026-09-20 12:00","2026-09-20 13:00","2026-09-20 14:00","2026-09-20 15:00","2026-09-20 16:00","2026-09-20 17:00","2026-09-20 18:00","2026-09-20 19:00","2026-09-20 20:00","2026-09-20 21:00","2026-09-20 22:00","2026-09-20 23:00","2026-09-21 00:00","2026-09-21 01:00","2026-09-21 02:00","2026-09-21 03:00","2026-09-21 04:00","2026-09-21 05:00","2026-09-21 06:00","2026-09-21 07:00","2026-09-21 09:00","2026-09-21 10:00","2026-09-21 11:00","2026-09-21 12:00","2026-09-21 13:00","2026-09-21 14:00","2026-09-21 15:00","2026-09-21 16:00","2026-09-21 17:00","2026-09-21 18:00","2026-09-21 19:00","2026-09-21 20:00","2026-09-21 21:00","2026-09-21 22:00","2026-09-21 23:00","2026-09-22 00:00","2026-09-22 01:00","2026-09-22 02:00","2026-09-22 03:00","2026-09-22 04:00","2026-09-22 05:00","2026-09-22 06:00","2026-09-22 07:00","2026-09-22 08:00","2026-09-22 09:00","2026-09-22 10:00","2026-09-22 11:00","2026-09-22 13:00","2026-09-22 14:00","2026-09-22 15:00","2026-09-22 17:00","2026-09-22 18:00","2026-09-22 19:00","2026-09-22 20:00","2026-09-22 21:00","2026-09-22 22:00","2026-09-22 23:00","2026-09-23 00:00","2026-09-23 01:00","2026-09-23 02:00","2026-09-23 03:00","2026-09-23 04:00","2026-09-23 05:00","2026-09-23 06:00","2026-09-23 07:00","2026-09-23 08:00","2026-09-23 09:00","2026-09-23 10:00","2026-09-23 11:00","2026-09-23 12:00","2026-09-23 13:00","2026-09-23 14:00","2026-09-23 15:00","2026-09-23 16:00","2026-09-23 17:00","2026-09-23 18:00","2026-09-23 19:00","2026-09-23 20:00","2026-09-23 21:00","2026-09-23 22:00","2026-09-23 23:00","2026-09-24 00:00","2026-09-24 01:00","2026-09-24 02:00","2026-09-24 03:00","2026-09-24 04:00","2026-09-24 05:00","2026-09-24 06:00","2026-09-24 07:00","2026-09-24 08:00","2026-09-24 09:00","2026-09-24 10:00","2026-09-24 11:00","2026-09-24 12:00","2026-09-24 13:00","2026-09-24 14:00","2026-09-24 15:00","2026-09-24 16:00","2026-09-24 17:00","2026-09-24 18:00","2026-09-24 19:00","2026-09-24 20:00","2026-09-24 21:00","2026-09-24 22:00","2026-09-24 23:00","2026-09-25 00:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 00:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"wl":[1.35,1.2,1.06,0.76,0.66,0.61,0.67,1.02,1.35,1.41,1.46,1.35,1.26,1.15,1.07,1.01,1.03,1.24,1.55,1.56,1.49,1.41,1.2,1.14,1,0.86,0.73,0.62,0.51,0.51,0.6,0.94,1.2,1.28,1.32,1.3,1.25,1.15,1.09,1.02,0.98,1.02,1.13,1.29,1.37,1.28,1.19,1.1,0.96,0.83,0.7,0.58,0.47,0.46,0.61,0.92,1.14,1.22,1.33,1.32,1.29,1.28,1.26,1.28,1.3,1.44,1.44,1.41,1.31,1.2,1.08,0.96,0.86,0.75,0.65,0.58,0.55,0.6,0.77,0.97,1.08,1.26,1.3,1.37,1.38,1.39,1.39,1.37,1.37,1.45,1.4,1.36,1.32,1.24,1.13,1.01,0.91,0.8,0.74,0.33,0.61,0.65,0.74,0.91,1.06,1.22,1.33,1.41,1.52,1.53,1.6,1.59,1.59,1.57,1.49,1.47,1.34,1.27,1.16,1.07,0.98,0.9,0.83,0.71,0.69,0.68,0.73,0.8,0.92,1.06,1.21,1.38,1.49,1.55,1.55,1.49,1.52,1.44,1.38,1.31,1.25,1.17,1.1,1.03,0.97,0.92,0.85,0.81,0.77,0.74,0.77,0.83,0.98,1.37,1.54,1.64,1.69,1.66,1.61,1.53,1.48,1.41,1.35,1.31,1.26,1.21,1.16,1.1,1.05,0.96,0.89,0.83,0.82,0.83,0.89,0.98,1.18,1.44,1.64,1.71,1.74,1.7,1.62,1.56,1.47,1.41,1.35,1.32,1.29,1.26,1.25,1.21,1.17,1.1,1.05,1,0.94,0.9,0.87,0.94,1.11,1.33,1.57,1.75,1.79,1.76,1.67,1.62,1.53,1.49,1.42,1.44,1.46,1.51,1.57,1.56,1.52,1.48,1.22,1.38,1.38,1.41,1.53,1.74,1.94,2.02,2.11,2.11,2.07,2.02,2,1.95,1.93,1.92,1.91,1.99,2.05,2.13,2.16,2.13],"q":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"C.12":{"name":"C.12 สามเสน กทม.","bank":2.26,"t":["2026-09-16 01:00","2026-09-16 02:00","2026-09-16 03:00","2026-09-16 04:00","2026-09-16 05:00","2026-09-16 06:00","2026-09-16 07:00","2026-09-16 08:00","2026-09-16 09:00","2026-09-16 10:00","2026-09-16 11:00","2026-09-16 12:00","2026-09-16 13:00","2026-09-16 14:00","2026-09-16 15:00","2026-09-16 16:00","2026-09-16 17:00","2026-09-16 18:00","2026-09-16 19:00","2026-09-16 20:00","2026-09-16 21:00","2026-09-16 22:00","2026-09-16 23:00","2026-09-17 01:00","2026-09-17 02:00","2026-09-17 03:00","2026-09-17 04:00","2026-09-17 05:00","2026-09-17 06:00","2026-09-17 07:00","2026-09-17 08:00","2026-09-17 09:00","2026-09-17 10:00","2026-09-17 11:00","2026-09-17 12:00","2026-09-17 13:00","2026-09-17 14:00","2026-09-17 15:00","2026-09-17 16:00","2026-09-17 17:00","2026-09-17 18:00","2026-09-17 19:00","2026-09-17 20:00","2026-09-17 21:00","2026-09-17 22:00","2026-09-17 23:00","2026-09-18 01:00","2026-09-18 02:00","2026-09-18 03:00","2026-09-18 04:00","2026-09-18 05:00","2026-09-18 06:00","2026-09-18 07:00","2026-09-18 08:00","2026-09-18 09:00","2026-09-18 10:00","2026-09-18 11:00","2026-09-18 12:00","2026-09-18 13:00","2026-09-18 14:00","2026-09-18 15:00","2026-09-18 16:00","2026-09-18 17:00","2026-09-18 18:00","2026-09-18 19:00","2026-09-18 20:00","2026-09-18 21:00","2026-09-18 22:00","2026-09-18 23:00","2026-09-19 01:00","2026-09-19 02:00","2026-09-19 03:00","2026-09-19 04:00","2026-09-19 05:00","2026-09-19 06:00","2026-09-19 07:00","2026-09-19 08:00","2026-09-19 09:00","2026-09-19 10:00","2026-09-19 11:00","2026-09-19 12:00","2026-09-19 13:00","2026-09-19 14:00","2026-09-19 15:00","2026-09-19 16:00","2026-09-19 17:00","2026-09-19 18:00","2026-09-19 19:00","2026-09-19 20:00","2026-09-19 21:00","2026-09-19 22:00","2026-09-19 23:00","2026-09-20 01:00","2026-09-20 02:00","2026-09-20 03:00","2026-09-20 04:00","2026-09-20 05:00","2026-09-20 06:00","2026-09-20 07:00","2026-09-20 08:00","2026-09-20 09:00","2026-09-20 10:00","2026-09-20 11:00","2026-09-20 12:00","2026-09-20 13:00","2026-09-20 14:00","2026-09-20 15:00","2026-09-20 16:00","2026-09-20 17:00","2026-09-20 18:00","2026-09-20 19:00","2026-09-20 20:00","2026-09-20 21:00","2026-09-20 22:00","2026-09-20 23:00","2026-09-21 01:00","2026-09-21 02:00","2026-09-21 03:00","2026-09-21 04:00","2026-09-21 05:00","2026-09-21 06:00","2026-09-21 07:00","2026-09-21 08:00","2026-09-21 09:00","2026-09-21 10:00","2026-09-21 11:00","2026-09-21 12:00","2026-09-21 13:00","2026-09-21 14:00","2026-09-21 15:00","2026-09-21 16:00","2026-09-21 17:00","2026-09-21 18:00","2026-09-21 19:00","2026-09-21 20:00","2026-09-21 21:00","2026-09-21 22:00","2026-09-21 23:00","2026-09-22 01:00","2026-09-22 02:00","2026-09-22 03:00","2026-09-22 04:00","2026-09-22 05:00","2026-09-22 06:00","2026-09-22 07:00","2026-09-22 08:00","2026-09-22 09:00","2026-09-22 10:00","2026-09-22 11:00","2026-09-22 12:00","2026-09-22 13:00","2026-09-22 14:00","2026-09-22 15:00","2026-09-22 16:00","2026-09-22 17:00","2026-09-22 18:00","2026-09-22 19:00","2026-09-22 20:00","2026-09-22 21:00","2026-09-22 22:00","2026-09-22 23:00","2026-09-23 01:00","2026-09-23 02:00","2026-09-23 03:00","2026-09-23 04:00","2026-09-23 05:00","2026-09-23 06:00","2026-09-23 07:00","2026-09-23 08:00","2026-09-23 09:00","2026-09-23 10:00","2026-09-23 11:00","2026-09-23 12:00","2026-09-23 13:00","2026-09-23 14:00","2026-09-23 15:00","2026-09-23 16:00","2026-09-23 17:00","2026-09-23 18:00","2026-09-23 19:00","2026-09-23 20:00","2026-09-23 21:00","2026-09-23 22:00","2026-09-23 23:00","2026-09-24 01:00","2026-09-24 02:00","2026-09-24 03:00","2026-09-24 04:00","2026-09-24 05:00","2026-09-24 06:00","2026-09-24 07:00","2026-09-24 08:00","2026-09-24 09:00","2026-09-24 10:00","2026-09-24 11:00","2026-09-24 12:00","2026-09-24 13:00","2026-09-24 14:00","2026-09-24 15:00","2026-09-24 16:00","2026-09-24 17:00","2026-09-24 18:00","2026-09-24 19:00","2026-09-24 20:00","2026-09-24 21:00","2026-09-24 22:00","2026-09-24 23:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"wl":[0.68,0.46,0.3,0.16,0.12,0.28,0.78,1.23,1.4,1.38,1.33,1.22,1.06,0.87,0.8,0.73,0.74,1.04,1.37,1.59,1.31,1.26,0.95,0.62,0.43,0.24,0.1,0.02,0.06,0.23,0.66,1.11,1.28,1.27,1.16,1.04,0.92,0.8,0.72,0.72,0.69,0.93,1.16,1.28,1.19,1.03,0.61,0.4,0.2,0.05,-0.09,-0.13,0.01,0.29,0.74,1.05,1.17,1.21,1.21,1.13,1.09,1.06,1.07,1.13,1.18,1.34,1.34,1.31,1.13,0.77,0.58,0.41,0.27,0.16,0.06,0.09,0.21,0.5,0.83,1,1.14,1.19,1.24,1.24,1.19,1.24,1.21,1.22,1.26,1.23,1.22,1.13,0.85,0.66,0.49,0.34,0.27,0.19,0.13,0.14,0.29,0.44,0.7,0.91,1.09,1.19,1.27,1.35,1.38,1.47,1.43,1.44,1.4,1.3,1.26,0.93,0.79,0.65,0.54,0.41,0.32,0.24,0.21,0.23,0.22,0.32,0.48,0.7,0.87,1.07,1.25,1.38,1.42,1.39,1.26,1.31,1.18,1.1,0.9,0.77,0.69,0.59,0.5,0.41,0.33,0.27,0.23,0.23,0.26,0.35,0.47,0.69,0.96,1.19,1.39,1.48,1.53,1.47,1.39,1.23,1.13,0.94,0.89,0.8,0.74,0.66,0.57,0.47,0.39,0.3,0.22,0.19,0.23,0.37,0.58,0.88,1.19,1.41,1.6,1.56,1.5,1.3,1.2,1.04,0.85,0.8,0.76,0.74,0.72,0.7,0.61,0.49,0.42,0.35,0.27,0.24,0.21,0.39,0.65,1.01,1.3,1.52,1.61,1.57,1.38,1.24,1.07,0.84,0.87,0.93,1.04,1.16,1.17,1.1,1.04,0.96,0.91,0.84,0.71,0.68,0.72,0.92,1.38,1.66,1.76,1.91,1.84,1.75,1.63,1.48,1.3,1.32,1.35,1.49,1.6,1.74,1.71,1.66,1.57],"q":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"CPY015":{"name":"สะพานกรุงเทพ กทม.","bank":2.16,"t":["2026-09-16 02:00","2026-09-16 03:00","2026-09-16 04:00","2026-09-16 05:00","2026-09-16 06:00","2026-09-16 07:00","2026-09-16 08:00","2026-09-16 09:00","2026-09-16 10:00","2026-09-16 11:00","2026-09-16 12:00","2026-09-16 13:00","2026-09-16 14:00","2026-09-16 15:00","2026-09-16 16:00","2026-09-16 17:00","2026-09-16 18:00","2026-09-16 19:00","2026-09-16 21:00","2026-09-16 22:00","2026-09-17 00:00","2026-09-17 01:00","2026-09-17 02:00","2026-09-17 03:00","2026-09-17 04:00","2026-09-17 05:00","2026-09-17 06:00","2026-09-17 07:00","2026-09-17 08:00","2026-09-17 09:00","2026-09-17 10:00","2026-09-17 11:00","2026-09-17 12:00","2026-09-17 13:00","2026-09-17 14:00","2026-09-17 15:00","2026-09-17 16:00","2026-09-17 17:00","2026-09-17 18:00","2026-09-17 19:00","2026-09-17 20:00","2026-09-17 21:00","2026-09-17 22:00","2026-09-17 23:00","2026-09-18 00:00","2026-09-18 01:00","2026-09-18 02:00","2026-09-18 03:00","2026-09-18 04:00","2026-09-18 05:00","2026-09-18 06:00","2026-09-18 07:00","2026-09-18 08:00","2026-09-18 09:00","2026-09-18 10:00","2026-09-18 11:00","2026-09-18 12:00","2026-09-18 13:00","2026-09-18 14:00","2026-09-18 15:00","2026-09-18 16:00","2026-09-18 17:00","2026-09-18 18:00","2026-09-18 19:00","2026-09-18 20:00","2026-09-18 21:00","2026-09-18 22:00","2026-09-18 23:00","2026-09-19 00:00","2026-09-19 01:00","2026-09-19 07:00","2026-09-19 11:00","2026-09-19 12:00","2026-09-19 13:00","2026-09-19 14:00","2026-09-19 15:00","2026-09-19 16:00","2026-09-19 17:00","2026-09-19 18:00","2026-09-19 19:00","2026-09-19 20:00","2026-09-19 22:00","2026-09-19 23:00","2026-09-20 00:00","2026-09-20 01:00","2026-09-20 02:00","2026-09-20 03:00","2026-09-20 10:00","2026-09-20 11:00","2026-09-20 12:00","2026-09-20 13:00","2026-09-20 14:00","2026-09-20 15:00","2026-09-20 16:00","2026-09-20 17:00","2026-09-20 18:00","2026-09-20 19:00","2026-09-20 20:00","2026-09-20 21:00","2026-09-20 22:00","2026-09-20 23:00","2026-09-21 00:00","2026-09-21 01:00","2026-09-21 02:00","2026-09-21 03:00","2026-09-21 04:00","2026-09-21 05:00","2026-09-21 06:00","2026-09-21 07:00","2026-09-21 09:00","2026-09-21 10:00","2026-09-21 11:00","2026-09-21 12:00","2026-09-21 13:00","2026-09-21 14:00","2026-09-21 15:00","2026-09-21 16:00","2026-09-21 17:00","2026-09-21 18:00","2026-09-21 19:00","2026-09-21 20:00","2026-09-21 21:00","2026-09-21 22:00","2026-09-21 23:00","2026-09-22 00:00","2026-09-22 01:00","2026-09-22 02:00","2026-09-22 03:00","2026-09-22 04:00","2026-09-22 05:00","2026-09-22 06:00","2026-09-22 07:00","2026-09-22 08:00","2026-09-22 09:00","2026-09-22 10:00","2026-09-22 11:00","2026-09-22 12:00","2026-09-22 13:00","2026-09-22 14:00","2026-09-22 15:00","2026-09-22 16:00","2026-09-22 17:00","2026-09-22 18:00","2026-09-22 19:00","2026-09-22 21:00","2026-09-22 22:00","2026-09-22 23:00","2026-09-23 00:00","2026-09-23 01:00","2026-09-23 02:00","2026-09-23 03:00","2026-09-23 04:00","2026-09-23 05:00","2026-09-23 06:00","2026-09-23 07:00","2026-09-23 08:00","2026-09-23 09:00","2026-09-23 10:00","2026-09-23 11:00","2026-09-23 12:00","2026-09-23 13:00","2026-09-23 14:00","2026-09-23 15:00","2026-09-23 16:00","2026-09-23 17:00","2026-09-23 18:00","2026-09-23 19:00","2026-09-23 20:00","2026-09-23 21:00","2026-09-23 22:00","2026-09-23 23:00","2026-09-24 00:00","2026-09-24 01:00","2026-09-24 02:00","2026-09-24 03:00","2026-09-24 04:00","2026-09-24 05:00","2026-09-24 06:00","2026-09-24 07:00","2026-09-24 08:00","2026-09-24 09:00","2026-09-24 10:00","2026-09-24 11:00","2026-09-24 12:00","2026-09-24 13:00","2026-09-24 14:00","2026-09-24 15:00","2026-09-24 16:00","2026-09-24 17:00","2026-09-24 18:00","2026-09-24 19:00","2026-09-24 20:00","2026-09-24 21:00","2026-09-24 22:00","2026-09-24 23:00","2026-09-25 00:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 00:00","2026-09-26 01:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"wl":[-0.21,-0.37,-0.49,-0.37,0.03,0.73,1.09,1.21,1.2,1.1,0.86,0.65,0.44,0.34,0.31,0.49,0.87,1.32,1.26,0.86,0.32,0,-0.26,-0.46,-0.58,-0.59,-0.38,0.02,0.61,0.96,1.07,1.02,0.83,0.67,0.5,0.37,0.29,0.28,0.48,0.76,0.99,1.06,0.89,0.69,0.35,0.04,-0.24,-0.46,-0.63,-0.75,-0.68,-0.33,0.15,0.59,0.88,0.99,1,0.93,0.84,0.78,0.73,0.75,0.87,0.94,1.11,1.08,0.99,0.76,0.5,0.22,-0.38,0.78,0.94,0.93,0.96,0.91,0.96,0.92,0.94,0.91,1.06,0.86,0.74,0.62,0.31,0.08,-0.1,0.2,0.5,0.73,0.91,0.99,1.01,1.1,1.08,1.16,1.17,1.1,1.07,0.87,0.81,0.53,0.41,0.24,0.06,-0.08,-0.21,-0.31,-0.36,-0.28,-0.17,0,0.2,0.44,0.69,0.84,1.07,1.13,1.12,1.1,0.94,0.93,0.75,0.68,0.52,0.39,0.24,0.12,0.02,-0.05,-0.16,-0.25,-0.27,-0.32,-0.29,-0.2,-0.03,0.18,0.47,0.8,1.01,1.17,1.21,1.21,1.01,0.81,0.7,0.54,0.45,0.38,0.3,0.22,0.1,-0.02,-0.15,-0.28,-0.39,-0.43,-0.38,-0.25,-0.02,0.24,0.64,1.02,1.25,1.26,1.28,1.1,0.89,0.69,0.48,0.37,0.27,0.22,0.21,0.18,0.21,0.13,0,-0.11,-0.26,-0.34,-0.46,-0.41,-0.37,0,0.43,0.79,1.09,1.33,1.32,1.19,0.95,0.77,0.48,0.38,0.22,0.32,0.44,0.56,0.72,0.64,0.51,0.93,0.12,0.04,-0.06,0,0.09,0.52,1.09,1.41,1.47,1.57,1.44,1.25,0.99,0.8,0.61,0.57,1.1,1.27,1.16,1.04,0.86],"q":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"CPY011":{"name":"อยุธยา (เกาะเมือง)","bank":5.06,"t":["2026-09-16 00:00","2026-09-16 01:00","2026-09-16 02:00","2026-09-16 03:00","2026-09-16 04:00","2026-09-16 05:00","2026-09-16 06:00","2026-09-16 07:00","2026-09-16 08:00","2026-09-16 09:00","2026-09-16 10:00","2026-09-16 11:00","2026-09-16 12:00","2026-09-16 13:00","2026-09-16 14:00","2026-09-16 15:00","2026-09-16 16:00","2026-09-16 17:00","2026-09-16 18:00","2026-09-16 19:00","2026-09-16 20:00","2026-09-16 21:00","2026-09-16 22:00","2026-09-16 23:00","2026-09-17 00:00","2026-09-17 01:00","2026-09-17 02:00","2026-09-17 03:00","2026-09-17 04:00","2026-09-17 05:00","2026-09-17 06:00","2026-09-17 07:00","2026-09-17 08:00","2026-09-17 09:00","2026-09-17 10:00","2026-09-17 11:00","2026-09-17 12:00","2026-09-17 13:00","2026-09-17 14:00","2026-09-17 15:00","2026-09-17 16:00","2026-09-17 17:00","2026-09-17 18:00","2026-09-17 19:00","2026-09-17 20:00","2026-09-17 21:00","2026-09-17 22:00","2026-09-17 23:00","2026-09-18 00:00","2026-09-18 01:00","2026-09-18 02:00","2026-09-18 03:00","2026-09-18 04:00","2026-09-18 05:00","2026-09-18 06:00","2026-09-18 07:00","2026-09-18 08:00","2026-09-18 09:00","2026-09-18 10:00","2026-09-18 11:00","2026-09-18 12:00","2026-09-18 13:00","2026-09-18 14:00","2026-09-18 15:00","2026-09-18 16:00","2026-09-18 17:00","2026-09-18 18:00","2026-09-18 19:00","2026-09-18 20:00","2026-09-18 21:00","2026-09-18 22:00","2026-09-18 23:00","2026-09-19 00:00","2026-09-19 01:00","2026-09-19 02:00","2026-09-19 03:00","2026-09-19 04:00","2026-09-19 05:00","2026-09-19 06:00","2026-09-19 07:00","2026-09-19 08:00","2026-09-19 09:00","2026-09-19 10:00","2026-09-19 11:00","2026-09-19 12:00","2026-09-19 13:00","2026-09-19 14:00","2026-09-19 15:00","2026-09-19 16:00","2026-09-19 17:00","2026-09-19 18:00","2026-09-19 19:00","2026-09-19 20:00","2026-09-19 21:00","2026-09-19 22:00","2026-09-19 23:00","2026-09-20 00:00","2026-09-20 01:00","2026-09-20 02:00","2026-09-20 03:00","2026-09-20 04:00","2026-09-20 05:00","2026-09-20 06:00","2026-09-20 07:00","2026-09-20 08:00","2026-09-20 09:00","2026-09-20 10:00","2026-09-20 11:00","2026-09-20 12:00","2026-09-20 13:00","2026-09-20 14:00","2026-09-20 15:00","2026-09-20 16:00","2026-09-20 17:00","2026-09-20 18:00","2026-09-20 19:00","2026-09-20 20:00","2026-09-20 21:00","2026-09-20 22:00","2026-09-20 23:00","2026-09-21 00:00","2026-09-21 01:00","2026-09-21 02:00","2026-09-21 03:00","2026-09-21 04:00","2026-09-21 05:00","2026-09-21 06:00","2026-09-21 07:00","2026-09-21 08:00","2026-09-21 09:00","2026-09-21 10:00","2026-09-21 11:00","2026-09-21 12:00","2026-09-21 13:00","2026-09-21 14:00","2026-09-21 15:00","2026-09-21 16:00","2026-09-21 17:00","2026-09-21 18:00","2026-09-21 19:00","2026-09-21 20:00","2026-09-21 21:00","2026-09-21 22:00","2026-09-21 23:00","2026-09-22 00:00","2026-09-22 01:00","2026-09-22 02:00","2026-09-22 03:00","2026-09-22 04:00","2026-09-22 05:00","2026-09-22 06:00","2026-09-22 07:00","2026-09-22 08:00","2026-09-22 09:00","2026-09-22 10:00","2026-09-22 11:00","2026-09-22 12:00","2026-09-22 13:00","2026-09-22 14:00","2026-09-22 15:00","2026-09-22 16:00","2026-09-22 17:00","2026-09-22 18:00","2026-09-22 19:00","2026-09-22 20:00","2026-09-22 21:00","2026-09-22 22:00","2026-09-22 23:00","2026-09-23 00:00","2026-09-23 01:00","2026-09-23 02:00","2026-09-23 03:00","2026-09-23 04:00","2026-09-23 05:00","2026-09-23 06:00","2026-09-23 07:00","2026-09-23 08:00","2026-09-23 09:00","2026-09-23 10:00","2026-09-23 11:00","2026-09-23 12:00","2026-09-23 13:00","2026-09-23 14:00","2026-09-23 15:00","2026-09-23 16:00","2026-09-23 17:00","2026-09-23 18:00","2026-09-23 19:00","2026-09-23 20:00","2026-09-23 21:00","2026-09-23 22:00","2026-09-23 23:00","2026-09-24 00:00","2026-09-24 01:00","2026-09-24 02:00","2026-09-24 03:00","2026-09-24 04:00","2026-09-24 05:00","2026-09-24 06:00","2026-09-24 07:00","2026-09-24 08:00","2026-09-24 09:00","2026-09-24 10:00","2026-09-24 11:00","2026-09-24 12:00","2026-09-24 13:00","2026-09-24 14:00","2026-09-24 15:00","2026-09-24 16:00","2026-09-24 17:00","2026-09-24 18:00","2026-09-24 19:00","2026-09-24 20:00","2026-09-24 21:00","2026-09-24 22:00","2026-09-24 23:00","2026-09-25 00:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 00:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"wl":[1.546,1.528,1.478,1.42,1.362,1.294,1.229,1.169,1.114,1.088,1.104,1.265,1.4,1.451,1.515,1.495,1.453,1.386,1.369,1.372,1.328,1.354,1.467,1.604,1.552,1.574,1.521,1.478,1.435,1.383,1.334,1.28,1.24,1.191,1.179,1.206,1.355,1.464,1.524,1.542,1.524,1.524,1.503,1.463,1.446,1.421,1.442,1.491,1.556,1.567,1.552,1.523,1.489,1.446,1.403,1.361,1.313,1.287,1.258,1.252,1.292,1.41,1.506,1.56,1.597,1.588,1.579,1.57,1.56,1.553,1.569,1.604,1.635,1.646,1.638,1.61,1.583,1.556,1.525,1.489,1.451,1.42,1.403,1.383,1.388,1.443,1.506,1.584,1.661,1.696,1.72,1.726,1.755,1.765,1.777,1.782,1.792,1.803,1.801,1.797,1.785,1.764,1.742,1.723,1.699,1.675,1.652,1.638,1.618,1.634,1.644,1.69,1.763,1.822,1.887,1.937,1.978,2.012,2.033,2.054,2.061,2.069,2.067,2.065,2.054,2.043,2.034,2.022,2.006,2.002,1.99,1.981,1.982,2.009,2.013,2.03,2.05,2.087,2.136,2.215,2.295,2.351,2.401,2.422,2.45,2.462,2.493,2.496,2.507,2.519,2.514,2.545,2.563,2.571,2.586,2.587,2.601,2.594,2.609,2.609,2.623,2.654,2.687,2.747,2.817,2.889,2.93,2.984,3.01,3.033,3.055,3.057,3.062,3.073,3.088,3.09,3.085,3.079,3.117,3.098,3.104,3.114,3.087,3.091,3.113,3.107,3.14,3.192,3.236,3.294,3.33,3.36,3.385,3.397,3.419,3.425,3.432,3.426,3.434,3.435,3.444,3.448,3.449,3.449,3.452,3.447,3.448,3.445,3.427,3.433,3.442,3.451,3.48,3.523,3.55,3.572,3.574,3.611,3.639,3.657,3.669,3.667,3.665,3.676,3.701,3.714,3.717,3.73,3.737,3.728,3.773,3.767,3.769,3.792,3.803,3.813,3.836,3.868,3.892,3.926,3.943,3.958,3.971,3.981,3.981,3.997,4.014,4.031,4.008,4.038],"q":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]}},"r24":[{"p":"กรุงเทพมหานคร","a":"บางเขน","s":"คลองลาดพร้าว วัดบางบัว","v":237.2,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"บางนา","s":"กรุงเทพฯ บางนา สกษ.","v":200.6,"t":"2026-09-26 07:00","ag":"อต."},{"p":"สมุทรปราการ","a":"เมืองสมุทรปราการ","s":"สมุทรปราการ สกษ.","v":199.4,"t":"2026-09-26 07:00","ag":"อต."},{"p":"กรุงเทพมหานคร","a":"บางกะปิ","s":"คลองแสนแสบ บางกะปิ","v":197,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นครปฐม","a":"นครชัยศรี","s":"สะพานนครชัยศรี","v":185,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นครปฐม","a":"นครชัยศรี","s":"อบต.นครชัยศรี","v":183.8,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"ลาดกระบัง","s":"คลองลำปลาทิว ลาดกระบัง","v":181.2,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรปราการ","a":"บางเสาธง","s":"อบต.ศีรษะจรเข้น้อย","v":179.6,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"จตุจักร","s":"อาคารเลขที่ ๙๐๑","v":179.5,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"คลองเตย","s":"กรุงเทพฯ ท่าเรือคลองเตย","v":176.4,"t":"2026-09-26 07:00","ag":"อต."},{"p":"กรุงเทพมหานคร","a":"คลองเตย","s":"กรุงเทพมหานคร","v":169.4,"t":"2026-09-26 07:00","ag":"อต."},{"p":"สมุทรปราการ","a":"บางเสาธง","s":"คลองจระเข้ใหญ่ บางเสาธง (วัดศรีวารีน้อย)","v":161.2,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"บางแค","s":"คลองภาษีเจริญ เพชรเกษม69","v":159.6,"t":"2026-09-26 05:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"ลาดพร้าว","s":"คลองลาดพร้าว ปากคลอง2สายใต้","v":159,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรปราการ","a":"บางพลี","s":"สนามบินสุวรรณภูมิ","v":152.4,"t":"2026-09-26 07:00","ag":"อต."},{"p":"กรุงเทพมหานคร","a":"สายไหม","s":"คลองลาดพร้าว ท้ายปตร.คลอง2","v":147.8,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นนทบุรี","a":"ปากเกร็ด","s":"สะพานนวลฉวี","v":142.4,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"ดอนเมือง","s":"สนามบินดอนเมือง","v":130,"t":"2026-09-26 07:00","ag":"อต."},{"p":"สมุทรสาคร","a":"เมืองสมุทรสาคร","s":"เมืองสมุทรสาคร","v":127.6,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรปราการ","a":"พระสมุทรเจดีย์","s":"อบต.แหลมฟ้าผ่า","v":126.2,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"ธัญบุรี","s":"ปตร.จุฬาลงกรณ์","v":124,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"ธัญบุรี","s":"ท้ายปตร.พระธรรมราชา","v":120.4,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"ธัญบุรี","s":"เหนือปตร.พระธรรมราชา","v":119.2,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรสาคร","a":"กระทุ่มแบน","s":"วัดท่ากระบือ","v":119,"t":"2026-09-25 21:00","ag":"ชป."},{"p":"ปทุมธานี","a":"เมืองปทุมธานี","s":"คลองเปรมประชากร หลักหก","v":118.8,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"ตลิ่งชัน","s":"คลองมหาสวัสดิ บางกรวย-สวนผัก","v":109.4,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นครปฐม","a":"พุทธมณฑล","s":"ศาลาดิน","v":109,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรปราการ","a":"พระประแดง","s":"ปตร. คลองลัดบางยอ 1","v":107.6,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรปราการ","a":"พระประแดง","s":"ปตร.วัดบางกระเจ้านอก","v":105.8,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นครปฐม","a":"กำแพงแสน","s":"อบต.กำแพงแสน","v":104.8,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"ลำลูกกา","s":"คลองหกวา ลำลูกกา คลอง8","v":103,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรสาคร","a":"เมืองสมุทรสาคร","s":"คลองมหาชัย วัดพันท้ายนรสิงห์","v":103,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรปราการ","a":"พระประแดง","s":"ปตร. คลองแพ","v":100.6,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"คลองหลวง","s":"คลองระพีพัฒน์แยกตก","v":98.4,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นครปฐม","a":"บางเลน","s":"คลองนราภิรมย์ (บางเลน)","v":96,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"คลองหลวง","s":"รร.วัดอู่ข้าว","v":94.2,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรสาคร","a":"เมืองสมุทรสาคร","s":"อบต.บางกระเจ้า","v":90.6,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นนทบุรี","a":"ไทรน้อย","s":"คลองพระพิมล (ไทรน้อย)","v":90.4,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"วัฒนา","s":"อโศก","v":90.2,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นครปฐม","a":"กำแพงแสน","s":"นครปฐม","v":84.4,"t":"2026-09-26 07:00","ag":"อต."},{"p":"สมุทรปราการ","a":"พระประแดง","s":"ตลาดน้ำบางน้ำผึ้ง","v":83,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นครปฐม","a":"บางเลน","s":"บางเลน","v":80.2,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"หนองเสือ","s":"บ้านน้อยสว่าง","v":70.4,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"หนองเสือ","s":"คลองระพีพัฒน์แยกใต้ หนองเสือ","v":65.6,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นนทบุรี","a":"ไทรน้อย","s":"อบต.ราษฎร์นิยม","v":64,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"ปทุมธานี","a":"คลองหลวง","s":"ปทุมธานี สกษ.","v":51.3,"t":"2026-09-26 07:00","ag":"อต."},{"p":"สมุทรปราการ","a":"พระสมุทรเจดีย์","s":"นำร่อง","v":44,"t":"2026-09-26 07:00","ag":"อต."},{"p":"สมุทรปราการ","a":"พระประแดง","s":"ปตร. คลองบางน้ำผึ้ง","v":3,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"นครปฐม","a":"บางเลน","s":"โรงเรียนวัดบางปลา","v":0,"t":"2026-09-26 08:00","ag":"ชป."},{"p":"สมุทรสาคร","a":"บ้านแพ้ว","s":"บ้านแพ้ว","v":0,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"สมุทรสาคร","a":"เมืองสมุทรสาคร","s":"ปากแม่น้ำท่าจีน","v":0,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"ธนบุรี","s":"สะพานกรุงเทพ","v":0,"t":"2026-09-26 09:00","ag":"สสน."},{"p":"กรุงเทพมหานคร","a":"พญาไท","s":"กรมทรัพยากรน้ำ","v":0,"t":"2026-09-26 08:00","ag":"ทน."}],"rainh":{"1":{"name":"บางเขน (คลองลาดพร้าว วัดบางบัว)","t":["2026-09-25 00:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 00:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"v":[0,0.2,0,0,0.2,0,0.2,0,0.2,0.2,5,61.6,3.4,0.6,3.6,20.4,11,0.6,3.2,1,8.2,0.4,8.6,1.4,10.4,6.6,34.4,21,2.2,0.6,13.4,12.2,3.8,3.6]},"2":{"name":"บางกะปิ (คลองแสนแสบ)","t":["2026-09-25 00:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 00:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"v":[1.8,6.4,6.6,19,14.8,2,1.2,1.8,12,3.2,4.6,1.4,1.4,2,3.2,25,19.6,4,5.2,2,5.6,5.4,3.4,6.8,12.2,10,21,30,5.6,1.8,4.8,15.2,4.8,2]},"3":{"name":"ลาดกระบัง (คลองลำปลาทิว)","t":["2026-09-25 00:00","2026-09-25 01:00","2026-09-25 02:00","2026-09-25 03:00","2026-09-25 04:00","2026-09-25 05:00","2026-09-25 06:00","2026-09-25 07:00","2026-09-25 08:00","2026-09-25 09:00","2026-09-25 10:00","2026-09-25 11:00","2026-09-25 12:00","2026-09-25 13:00","2026-09-25 14:00","2026-09-25 15:00","2026-09-25 16:00","2026-09-25 17:00","2026-09-25 18:00","2026-09-25 19:00","2026-09-25 20:00","2026-09-25 21:00","2026-09-25 22:00","2026-09-25 23:00","2026-09-26 00:00","2026-09-26 01:00","2026-09-26 02:00","2026-09-26 03:00","2026-09-26 04:00","2026-09-26 05:00","2026-09-26 06:00","2026-09-26 07:00","2026-09-26 08:00","2026-09-26 09:00"],"v":[8.6,12.8,4.8,19.4,54.2,1.6,7.8,1.8,0.2,0.2,0.4,1.8,0.4,1.2,8.4,22.6,18.4,4.2,1.8,18.2,7.2,1,2.4,3.4,4,6.2,38.2,15.2,10.4,3.2,2,3.8,4.2,2.6]}},"bma":{"date":"2026-09-25","rows":[{"d":"คลองเตย","r":"สุขุมวิท","at":"ซอยสุขุมวิท 26 ช่วงกลางซอย","cm":15,"len":200,"lane":"1-2 เลน","on":"16:40","off":"18:05","dur":"01:25"},{"d":"จตุจักร","r":"พหลโยธิน","at":"BTSเกษตร-กรมป่าไม้","cm":20,"len":300,"lane":"เต็มผิว","on":"15:45","off":"00:00","dur":""},{"d":"จตุจักร","r":"พหลโยธิน","at":"หน้าม.เกษตร","cm":15,"len":300,"lane":"1-2 เลน","on":"14:35","off":"00:00","dur":""},{"d":"ดอนเมือง","r":"ช่างอากาศอุทิศ","at":"ซ.ช่างอากาศอุทิศ 15","cm":15,"len":300,"lane":"1-2 เลน","on":"14:20","off":"00:00","dur":""},{"d":"ดินแดง","r":"รัชดาภิเษก","at":"ช่วงหน้าสถานฑูตจีน","cm":15,"len":200,"lane":"1-2 เลน","on":"16:45","off":"00:00","dur":""},{"d":"ดินแดง","r":"รัชดาภิเษก","at":"ถนนพระราม 9 ถึง ทางรถไฟ","cm":15,"len":300,"lane":"4 เลน","on":"21:55","off":"00:00","dur":""},{"d":"ดินแดง","r":"ดินแดง","at":"จากแยกประชาสงเคราะห์ - ถนนวิภาวดีรังสิต","cm":35,"len":400,"lane":"เต็มผิว","on":"22:55","off":"00:00","dur":""},{"d":"ดินแดง","r":"ประชาสุข","at":"ซ.อินทามระ34","cm":20,"len":200,"lane":"เต็มผิว","on":"14:40","off":"17:15","dur":"02:35"},{"d":"บางกะปิ","r":"นวมินทร์","at":"ตรงข้าม สน.ลาดพร้าว","cm":20,"len":300,"lane":"เต็มผิว","on":"15:05","off":"00:00","dur":""},{"d":"บางกะปิ","r":"รามคำแหง","at":"ช่วงซอยรามคำแหง 19/1","cm":10,"len":200,"lane":"1-2 เลน","on":"16:50","off":"00:00","dur":""},{"d":"บางกะปิ","r":"รามคำแหง","at":"ช่วงตรงข้าม ซ.รามคำแหง 43","cm":30,"len":150,"lane":"เต็มผิว","on":"10:15","off":"00:00","dur":""},{"d":"บางกะปิ","r":"นวมินทร์","at":"แยกบางกะปิ","cm":20,"len":200,"lane":"เต็มผิว","on":"14:35","off":"00:00","dur":""},{"d":"บางกะปิ","r":"รามคำแหง","at":"ซ.รามคำแหง20","cm":20,"len":300,"lane":"เต็มผิว","on":"14:30","off":"00:00","dur":""},{"d":"บางกะปิ","r":"รามคำแหง","at":"ซ.รามคำแหง33","cm":20,"len":300,"lane":"เต็มผิว","on":"14:35","off":"00:00","dur":""},{"d":"บางกะปิ","r":"หัวหมาก","at":"ซ.รามคำแหง24","cm":20,"len":300,"lane":"เต็มผิว","on":"14:50","off":"00:00","dur":""},{"d":"บางขุนเทียน","r":"บางกระดี่","at":"ซอยบางกระดี่ 35-35/1","cm":10,"len":200,"lane":"1 เลน","on":"22:10","off":"08:05","dur":"09:55"},{"d":"บางขุนเทียน","r":"บางกระดี่","at":"หน้าตลาดบางกระดี่ - บางกระดี่ 8","cm":15,"len":200,"lane":"2 เลน","on":"22:10","off":"08:05","dur":"09:55"},{"d":"บางนา","r":"บางนา-ตราด","at":"แยกบางนาขาออก","cm":20,"len":300,"lane":"1-2 เลน","on":"15:25","off":"00:00","dur":""},{"d":"บางนา","r":"ศรีนครินทร์","at":"ช่วงวัดศรีเอี่ยม","cm":15,"len":200,"lane":"1-2 เลน","on":"16:35","off":"00:00","dur":""},{"d":"บางรัก","r":"ศาลาแดง","at":"ช่วง ซ.ศาลาแดง 1/1","cm":15,"len":300,"lane":"1-2 เลน","on":"15:10","off":"21:10","dur":"06:00"},{"d":"บางเขน","r":"แจ้งวัฒนะ","at":"หน้ามหาวิทยาลัยราชภัฎพระนคร","cm":20,"len":300,"lane":"เต็มผิว","on":"15:05","off":"00:00","dur":""},{"d":"บางเขน","r":"เทพรักษ์","at":"ช่วงบิ๊กซีสะพานใหม่","cm":15,"len":200,"lane":"เต็มผิว","on":"16:00","off":"00:00","dur":""},{"d":"บางเขน","r":"พหลโยธิน","at":"ช่วงหน้ากรมทหาราบที่ 11 ประตู2","cm":10,"len":150,"lane":"1 เลน","on":"10:40","off":"12:40","dur":"02:00"},{"d":"บางเขน","r":"รามอินทรา","at":"ซ.รามอินทรา5","cm":20,"len":300,"lane":"เต็มผิว","on":"13:50","off":"00:00","dur":""},{"d":"บางแค","r":"หมู่บ้านเศรษฐกิจ","at":"ถนนรอบวงเวียน ที่ 3","cm":15,"len":300,"lane":"เต็มผิว","on":"11:30","off":"12:40","dur":"01:10"},{"d":"บึงกุ่ม","r":"นวมินทร์","at":"ช่วงซอยนวมินทร์ 38","cm":10,"len":400,"lane":"1 เลน","on":"03:10","off":"05:00","dur":"01:50"},{"d":"บึงกุ่ม","r":"นวมินทร์","at":"ช่วงซอย 46 สันติอโศก","cm":15,"len":200,"lane":"1-2 เลน","on":"03:10","off":"04:15","dur":"01:05"},{"d":"บึงกุ่ม","r":"นวมินทร์","at":"ซ.นวมินทร์46สันติอโศก","cm":20,"len":300,"lane":"เต็มผิว","on":"14:45","off":"00:00","dur":""},{"d":"บึงกุ่ม","r":"นวมินทร์","at":"ซ.นวมินทร์155","cm":20,"len":300,"lane":"เต็มผิว","on":"15:00","off":"21:05","dur":"06:05"},{"d":"บึงกุ่ม","r":"นวมินทร์","at":"ซ.นวมินทร์38","cm":20,"len":300,"lane":"เต็มผิว","on":"14:15","off":"00:00","dur":""},{"d":"ประเวศ","r":"เฉลิมพระเกียรติ ร.๙","at":"ช่วงแยกศรีอุดม","cm":20,"len":200,"lane":"1-2 เลน","on":"16:35","off":"00:00","dur":""},{"d":"ประเวศ","r":"อ่อนนุช","at":"ปั้มบางจาก - ซอยอ่อนุช 74","cm":25,"len":1000,"lane":"เต็มผิว","on":"23:10","off":"00:00","dur":""},{"d":"ประเวศ","r":"อ่อนนุช","at":"ช่วงซอยอ่อนนุช 59","cm":15,"len":300,"lane":"เต็มผิว","on":"03:20","off":"06:50","dur":"03:30"},{"d":"ประเวศ","r":"อ่อนนุช","at":"ช่วงซอยอ่อนนุช 59","cm":20,"len":400,"lane":"เต็มผิว","on":"07:00","off":"00:00","dur":""},{"d":"พระโขนง","r":"สุขุมวิท 101/1","at":"ซ.3แยกวัดทุ่ง","cm":20,"len":300,"lane":"เต็มผิว","on":"14:40","off":"00:00","dur":""},{"d":"มีนบุรี","r":"สีหบุรานุกิจ","at":"ช่วงซอยสีหบุรานุกิจ 14","cm":15,"len":300,"lane":"","on":"16:50","off":"00:00","dur":""},{"d":"มีนบุรี","r":"สุวินทวงศ์","at":"ช่วงถนนหทัยราษฎร์","cm":20,"len":200,"lane":"1 เลน","on":"02:20","off":"00:00","dur":""},{"d":"มีนบุรี","r":"สีหบุรานุกิจ","at":"ช่วงซอยสหบุรานุกิจ 14","cm":15,"len":300,"lane":"1-2 เลน","on":"03:00","off":"06:15","dur":"03:15"},{"d":"ราชเทวี","r":"ศรีอยุธยา","at":"ช่วงหน้าวังสวนผักกาด","cm":10,"len":150,"lane":"2 เลน","on":"16:10","off":"18:20","dur":"02:10"},{"d":"ลาดกระบัง","r":"หลวงแพ่ง","at":"ช่วงโลตัสลาดกระบัง","cm":20,"len":300,"lane":"เต็มผิว","on":"14:10","off":"00:00","dur":""},{"d":"ลาดกระบัง","r":"หลวงแพ่ง","at":"ช่วงโลตัสหลวงแพ่ง","cm":20,"len":400,"lane":"เต็มผิว","on":"03:15","off":"07:30","dur":"04:15"},{"d":"ลาดกระบัง","r":"เจ้าคุณทหาร","at":"ช่วงปั้มน้ำมัน PT สาขาเจ้าคุณทหาร 2","cm":15,"len":200,"lane":"1-2 เลน","on":"03:10","off":"07:10","dur":"04:00"},{"d":"ลาดกระบัง","r":"ลาดกระบัง","at":"แยกกิ่งแก้ว (ช่วงทางโค้ง)","cm":20,"len":800,"lane":"1-2 เลน","on":"01:30","off":"00:00","dur":""},{"d":"ลาดพร้าว","r":"สุคนธสวัสดิ์","at":"ตรงข้ามซอยสุคนธสวัสดิ์25/2","cm":20,"len":300,"lane":"เต็มผิว","on":"14:05","off":"00:00","dur":""},{"d":"ลาดพร้าว","r":"โชคชัย 4","at":"ช่วงซอยโชคชัย 40","cm":20,"len":300,"lane":"เต็มผิว","on":"14:25","off":"00:00","dur":""},{"d":"ลาดพร้าว","r":"ลาดพร้าววังหิน","at":"ช่วงซอยลาดพร้าววังหิน 64","cm":15,"len":1000,"lane":"1-2 เลน","on":"16:10","off":"00:00","dur":""},{"d":"ลาดพร้าว","r":"นาคนิวาส","at":"ช่วงซอยนาคนิวาส 38","cm":20,"len":300,"lane":"เต็มผิว","on":"14:55","off":"00:00","dur":""},{"d":"ลาดพร้าว","r":"นาคนิวาส","at":"ช่วงซอยนาคนิวาส 38","cm":10,"len":200,"lane":"เต็มผิว","on":"02:35","off":"04:20","dur":"01:45"},{"d":"ลาดพร้าว","r":"สุคนธสวัสดิ์","at":"ช่วงซอยตรงข้าม สุคนธสวัสดิ์ 25/2","cm":10,"len":150,"lane":"เต็มผิว","on":"02:45","off":"06:10","dur":"03:25"},{"d":"ลาดพร้าว","r":"โชคชัย 4","at":"ช่วงปากซอยโชคชัย 4 40","cm":10,"len":200,"lane":"เต็มผิว","on":"02:50","off":"04:05","dur":"01:15"},{"d":"ลาดพร้าว","r":"สุคนธสวัสดิ์","at":"ช่วงตรงข้าม ซ.สุคนธสวัสดิ์ 25/2","cm":15,"len":1000,"lane":"เต็มผิว","on":"08:30","off":"00:00","dur":""},{"d":"วังทองหลาง","r":"ลาดพร้าว","at":"ช่วงซอยลาดพร้าว 89","cm":20,"len":300,"lane":"เต็มผิว","on":"16:35","off":"00:00","dur":""},{"d":"วังทองหลาง","r":"ลาดพร้าว","at":"ช่วงซอยลาดพร้าว 122","cm":20,"len":300,"lane":"เต็มผิว","on":"16:35","off":"00:00","dur":""},{"d":"วังทองหลาง","r":"ลาดพร้าว","at":"ช่วงซอยลาดพร้าว 110","cm":20,"len":300,"lane":"เต็มผิว","on":"14:25","off":"00:00","dur":""},{"d":"วังทองหลาง","r":"ลาดพร้าว","at":"ภายในซอยลาดพร้าว 122 หน้าโรงแรมชารีน่า","cm":25,"len":400,"lane":"2 เลน","on":"15:25","off":"00:00","dur":""},{"d":"วังทองหลาง","r":"ลาดพร้าว","at":"ช่วงซอยลาดพร้าว 110","cm":15,"len":250,"lane":"เต็มผิว","on":"02:55","off":"04:50","dur":"01:55"},{"d":"วังทองหลาง","r":"ลาดพร้าว","at":"ช่วงซอยลาดพร้าว 89","cm":15,"len":300,"lane":"เต็มผิว","on":"03:20","off":"04:20","dur":"01:00"},{"d":"สวนหลวง","r":"สุขุมวิท 71","at":"ช่วงแยกคลองตัน","cm":20,"len":300,"lane":"เต็มผิว","on":"15:45","off":"00:00","dur":""},{"d":"สวนหลวง","r":"ศรีนครินทร์","at":"ช่วงถนนกำแพงเพชร 7","cm":20,"len":300,"lane":"เต็มผิว","on":"14:50","off":"00:00","dur":""},{"d":"สวนหลวง","r":"พัฒนาการ","at":"ซ.พัฒนาการ 53","cm":15,"len":300,"lane":"1-2 เลน","on":"15:15","off":"00:00","dur":""},{"d":"สวนหลวง","r":"ศรีนครินทร์","at":"ช่วงถนนกำแพงเพชร 7","cm":10,"len":100,"lane":"1-2 เลน","on":"03:50","off":"05:25","dur":"01:35"},{"d":"หนองแขม","r":"มาเจริญ","at":"หน้าบริษัทไทยรุ่ง","cm":10,"len":100,"lane":"1 เลน","on":"22:10","off":"06:30","dur":"08:20"},{"d":"หลักสี่","r":"วิภาวดีรังสิต","at":"ช่วงซอยวิภาวดี64-68","cm":15,"len":600,"lane":"2 เลน","on":"06:00","off":"12:10","dur":"06:10"},{"d":"ห้วยขวาง","r":"ประชาอุทิศ","at":"ตรงข้ามสำนักงานเขตห้วยขวาง","cm":15,"len":300,"lane":"1-2 เลน","on":"15:00","off":"19:10","dur":"04:10"},{"d":"ห้วยขวาง","r":"เพชรบุรีตัดใหม่","at":"ช่วงสิงห์คอมเพล็กซ์","cm":10,"len":200,"lane":"1-2 เลน","on":"15:10","off":"00:00","dur":""},{"d":"ห้วยขวาง","r":"เพชรบุรี","at":"ช่วงสิงห์คอมเพล็กซ์","cm":10,"len":150,"lane":"เต็มผิว","on":"08:15","off":"09:45","dur":"01:30"}],"pending":"2026-09-26"},"bmaStatus":"วันที่ 26 กันยายน 2569 เวลา 09.00 น. /พื้นที่ กทม. ฝนเล็กน้อยสลับปานกลางปกคลุมพื้นที่กรุงเทพมหานครทั้งหมด เคลื่อนตัวทิศตะวันออกเฉียงใต้ แนวโน้มคงที่","tmd7":{"built":"2026-09-26 09:42:06","days":[{"d":"2026-09-26","rain":80,"tmax":29.0,"tmin":23.0,"desc":"ฝนฟ้าคะนอง"},{"d":"2026-09-27","rain":80,"tmax":30.0,"tmin":23.0,"desc":"ฝนฟ้าคะนอง"},{"d":"2026-09-28","rain":60,"tmax":29.0,"tmin":24.0,"desc":"ฝนฟ้าคะนอง"},{"d":"2026-09-29","rain":40,"tmax":30.0,"tmin":23.0,"desc":"ฝนฟ้าคะนอง"},{"d":"2026-09-30","rain":30,"tmax":30.0,"tmin":23.0,"desc":"ฝนฟ้าคะนอง"},{"d":"2026-10-01","rain":20,"tmax":31.0,"tmin":23.0,"desc":"ฝนฟ้าคะนอง"},{"d":"2026-10-02","rain":30,"tmax":30.0,"tmin":24.0,"desc":"ฝนฟ้าคะนอง"}]},"meta":{"src":{"river":"2026-09-26 09:41","r24":"2026-09-26 09:41","rainh":"2026-09-26 09:41","bma":"2026-09-26 09:41","bmaStatus":"2026-09-26 09:41","tmd7":"2026-09-26 09:41"},"built":"2026-09-26 09:42"}};
+(function(){
+  var TH_M=["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
+  var BKK=7*3600e3;
+  function pt(s){var a=s.split(/[- :\/]/);return Date.UTC(+a[0],+a[1]-1,+a[2],+a[3]||0,+a[4]||0)-BKK;}
+  function bd(ms){return new Date(ms+BKK);}
+  function fmtT(ms,withDay){var d=bd(ms);var hh=('0'+d.getUTCHours()).slice(-2)+':'+('0'+d.getUTCMinutes()).slice(-2);return withDay?(d.getUTCDate()+' '+TH_M[d.getUTCMonth()]+' '+hh):hh;}
+  function fmtD(ms){var d=bd(ms);return d.getUTCDate()+' '+TH_M[d.getUTCMonth()];}
+  function ago(ms){var h=(Date.now()-ms)/3600e3; if(h<0) return 'เพิ่งอัปเดต'; if(h<1) return Math.max(1,Math.round(h*60))+' นาทีที่แล้ว'; if(h<48) return Math.round(h)+' ชม. ที่แล้ว'; return Math.round(h/24)+' วันที่แล้ว';}
+  var BUILT=pt(DATA.meta.built);
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function cite(n){return '<a class="cite" href="#s'+n+'">['+n+']</a>';}
+  function nf(v,d){return v==null?'–':Number(v).toLocaleString('en-US',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});}
+  var SVGNS='http://www.w3.org/2000/svg';
+
+  // ---------- events timeline ----------
+  var EV=[
+    {w:"21 ก.ย.",c:"past",t:"กรมอุตุฯ ออกประกาศเตือนฉบับที่ 1 ฝนตกหนักถึงหนักมาก 23–27 ก.ย. ครอบคลุมกรุงเทพฯ และปริมณฑล",s:[23]},
+    {w:"22 ก.ย.",c:"past",t:"กรมชลฯ เพิ่มการระบายน้ำเขื่อนเจ้าพระยา แจ้งเตือน 11 จังหวัดลุ่มเจ้าพระยา รวม กทม. นนทบุรี ปทุมธานี สมุทรปราการ",s:[18],n:1},
+    {w:"25 ก.ย. เช้า",c:"past",t:"ฝนตกต่อเนื่องจากคืน 24 ก.ย. ถนนวิภาวดีฯ งามวงศ์วาน แจ้งวัฒนะ รถติดหนัก",s:[5],n:1},
+    {w:"25 ก.ย.",c:"past",t:"มีรายงานว่า กทม. ประกาศหนองจอก สวนหลวง คันนายาว เป็นพื้นที่ประสบสาธารณภัย",s:[7],n:1},
+    {w:"25 ก.ย. 19:00",c:"past",t:"เจ้าพระยาที่ปากคลองตลาดสูงสุด +1.75 ม.รทก. ต่ำกว่าคันกั้นน้ำช่วงต่ำสุด 1.25 ม.",s:[26]},
+    {w:"25→26 ก.ย.",c:"past",t:"ฝนสะสม 24 ชม. พื้นที่ส่วนใหญ่ของ กทม. 120–180 มม. สูงสุด 236.2 มม. ที่บางเขน สนน. บันทึกน้ำท่วมขังถนนสายหลัก 66 จุด 22 เขต",s:[25,27,24]},
+    {w:"26 ก.ย. 05:00",c:"past",t:"กรมอุตุฯ พยากรณ์ กทม. มีฝนฟ้าคะนองเกือบทั่วไป ฝนตกหนักถึงหนักมากหลายพื้นที่ และออกประกาศเตือนฉบับที่ 10",s:[21,23]},
+    {w:"26 ก.ย. 07:00",c:"past",t:"กทม. แนะนำเลี่ยง 18 เส้นทาง วิภาวดีฯ ขาเข้าน้ำสูงกว่า 1 ม. รถเล็กผ่านไม่ได้",s:[1,3],n:1},
+    {w:"26 ก.ย. 08:45",c:"past",t:"Google Maps: ถนน 27 สายเป็นสีแดง/ส้ม หนักสุด สุวินทวงศ์ ช้ากว่าปกติ 57 นาที",s:[32],n:1},
+    {w:"27–28 ก.ย.",c:"future",t:"คาดการณ์: ฝนฟ้าคะนอง 60–80% ของพื้นที่ ฝนตกหนักบางแห่ง ประกาศเตือนมีผลถึง 27 ก.ย.",s:[22,23]},
+    {w:"29 ก.ย.–1 ต.ค.",c:"future",t:"คาดการณ์: ฝนลดลงเหลือ 30–40% ของพื้นที่",s:[22]},
+    {w:"≈2 ต.ค.",c:"future",t:"คาดการณ์: น้ำเหนือสูงสุดราว 2,000 ลบ.ม./วินาที พื้นที่ริมน้ำและนอกคันกั้นน้ำเฝ้าระวัง",s:[14],n:1}
+  ];
+  if(DATA.bmaStatus){var mm=DATA.bmaStatus.match(/เวลา ([\d.:]+) น\.\s*\/?\s*(.*)$/);EV.push({w:'ล่าสุด '+(mm?mm[1].replace('.',':'):''),c:'now',t:'สนน.: '+(mm?mm[2]:DATA.bmaStatus),s:[29]});}
+  var nowTs=BUILT; EV.forEach(function(e){ if(e.c==='future'&&e.until&&pt(e.until)<nowTs) e.c='past'; });
+  EV.sort(function(a,b){var o={past:0,now:1,future:2};return o[a.c]-o[b.c];});
+  document.getElementById('events').innerHTML=EV.map(function(e){
+    return '<li class="'+e.c+'"><span class="when">'+e.w+'</span><span class="rail"><span class="dot"></span></span><div class="what">'+e.t+e.s.map(cite).join('')+(e.n?' <span class="vtag v-news">ข่าว</span>':'')+(e.c==='now'?' <span class="pill p-crit">ล่าสุด</span>':'')+'</div></li>';
+  }).join('');
+
+  // ---------- rainfall 24h bars ----------
+  var top=DATA.r24.slice().sort(function(a,b){return b.v-a.v;}).slice(0,12), max=240, bars=document.getElementById('bars');
+  top.forEach(function(r){
+    var bkk=r.p==="กรุงเทพมหานคร";
+    var row=document.createElement('div'); row.className='brow';
+    row.innerHTML='<div class="name">'+esc(r.s)+'<small>'+esc((bkk?'เขต':'อ.')+r.a+(bkk?'':' '+r.p))+' · '+esc(r.ag)+' · '+r.t.slice(11)+' น.</small></div>'+
+      '<div class="track"><span class="'+(bkk?'':'alt')+'" style="width:'+Math.min(100,r.v/max*100).toFixed(1)+'%"></span><i class="ref" style="left:'+(90.1/max*100).toFixed(1)+'%"></i></div>'+
+      '<div class="val">'+nf(r.v,1)+'</div>';
+    bars.appendChild(row);
+  });
+
+  // ---------- dynamic header / notes ----------
+  (function(){
+    var built=BUILT, age=(Date.now()-built)/3600e3;
+    document.getElementById('asof').innerHTML='ข้อมูล ณ <b class="mono">'+fmtT(built,true)+' น.</b> <span style="opacity:.8">('+ago(built)+')</span>';
+    document.getElementById('foot-asof').textContent='ข้อมูล ณ '+fmtT(built,true)+' น.';
+    document.querySelectorAll('.src-asof').forEach(function(e){e.textContent=fmtT(built,true)+' น.';});
+    if(age>6){var st=document.getElementById('stale');st.hidden=false;st.innerHTML='<b>ข้อมูลอาจไม่เป็นปัจจุบัน</b> ตัวเลขในหน้านี้อัปเดตล่าสุดเมื่อ '+fmtT(built,true)+' น. ('+ago(built)+') ระบบอัปเดตอัตโนมัติอาจหยุดทำงาน โปรดเช็กข้อมูลล่าสุดที่ <a href="https://dds.bangkok.go.th/" target="_blank" rel="noopener">dds.bangkok.go.th</a> และ <a href="https://www.tmd.go.th/" target="_blank" rel="noopener">tmd.go.th</a>';}
+    var bk=DATA.r24.filter(function(r){return r.p==='กรุงเทพมหานคร';}).sort(function(a,b){return b.v-a.v;})[0];
+    var rows=DATA.bma.rows, nd={}; rows.forEach(function(r){nd[r.d]=1;}); var ndist=Object.keys(nd).length, tlen=rows.reduce(function(a,r){return a+r.len;},0);
+    function last(k){var s=DATA.river[k],i=s.wl.length-1;while(i>0&&s.wl[i]==null)i--;return {wl:s.wl[i],q:s.q[i],t:s.t[i],bank:s.bank,name:s.name,first:s.wl.find(function(v){return v!=null;}),q0:s.q.find(function(v){return v!=null;})};}
+    var c12=last('C.12'),c35=last('C.35'),c13=last('C.13');
+    var bdate=fmtD(pt(DATA.bma.date+' 12:00'));
+    function gapTxt(x){var g=x.bank-x.wl;return g>=0?(g<1?Math.round(g*100)+'<small>ซม.</small>':g.toFixed(2)+'<small>ม.</small>'):'+'+Math.round(-g*100)+'<small>ซม. เหนือตลิ่ง</small>';}
+    var k=[];
+    if(bk) k.push('<div class="kpi"><span class="v">'+nf(bk.v,1)+'<small>มม.</small></span><span class="l">ฝน 24 ชม. สูงสุดใน กทม.</span><span class="t">'+esc(bk.s)+' เขต'+esc(bk.a)+' · '+esc(bk.ag)+' '+bk.t.slice(11)+' น.'+cite(27)+'</span></div>');
+    k.push('<div class="kpi"><span class="v">'+rows.length+'<small>จุด</small></span><span class="l">น้ำท่วมขังถนนสายหลัก '+ndist+' เขต</span><span class="t">รวมยาว '+(tlen/1000).toFixed(1)+' กม. · สนน. รอบ '+bdate+cite(24)+'</span></div>');
+    k.push('<div class="kpi"><span class="v">'+gapTxt(c12)+'</span><span class="l">ระยะน้ำถึงตลิ่ง เจ้าพระยาที่สามเสน กทม.</span><span class="t">'+c12.wl.toFixed(2)+' / '+c12.bank.toFixed(2)+' ม.รทก. · '+fmtT(pt(c12.t),true)+' น.'+cite(27)+'</span></div>');
+    k.push('<div class="kpi"><span class="v">'+gapTxt(c35)+'</span><span class="l">ระยะน้ำถึงตลิ่ง C.35 บ้านป้อม อยุธยา</span><span class="t">'+c35.wl.toFixed(2)+' / '+c35.bank.toFixed(2)+' ม.รทก. · '+fmtT(pt(c35.t),true)+' น.'+cite(27)+'</span></div>');
+    k.push('<div class="kpi"><span class="v">'+nf(c13.q)+'<small>ลบ.ม./วิ</small></span><span class="l">น้ำไหลผ่านท้ายเขื่อนเจ้าพระยา (C.13)</span><span class="t">10 วันก่อน '+nf(c13.q0)+' · '+fmtT(pt(c13.t),true)+' น.'+cite(27)+'</span></div>');
+    document.getElementById('kpis').innerHTML=k.join('');
+    document.getElementById('h1').textContent=(bk?'ฝน 24 ชม. สูงสุดใน กทม. '+nf(bk.v,1)+' มม. ':'')+'· ถนนสายหลักท่วมขัง '+rows.length+' จุดใน '+ndist+' เขต (รอบ '+bdate+')';
+    var nb=DATA.r24.length, tmax=DATA.r24.reduce(function(a,r){return r.t>a?r.t:a;},'');
+    document.getElementById('r24-note').textContent='12 สถานีที่ฝนมากที่สุดจาก '+nb+' สถานีใน กทม. นนทบุรี ปทุมธานี สมุทรปราการ สมุทรสาคร นครปฐม ค่าฝนสะสม 24 ชม. ล่าสุดถึง '+fmtT(pt(tmax),true)+' น.';
+    document.getElementById('rv-latest').textContent='ค่าล่าสุด '+fmtT(pt(c12.t),true)+' น.';
+    document.getElementById('q-note1').innerHTML='ท้ายเขื่อนเจ้าพระยา (C.13) '+nf(c13.q0)+' → '+nf(c13.q)+' ลบ.ม./วินาที ในช่วง 10 วัน'+cite(27);
+    document.getElementById('q-note2').innerHTML='บ้านป้อม อยุธยา (C.35) '+nf(c35.q)+' ลบ.ม./วินาที เทียบความจุลำน้ำประมาณ 1,159 ลบ.ม./วินาที ตามฐานข้อมูลสถานี'+cite(27);
+    var dc={}; rows.forEach(function(x){dc[x.d]=(dc[x.d]||0)+1;}); var dk=Object.keys(dc).sort(function(a,b){return dc[b]-dc[a];});
+    document.getElementById('dist-top').innerHTML=dk.slice(0,8).map(function(d){return esc(d)+' '+dc[d];}).join(' · ')+' จุด · รอบ '+bdate+cite(24);
+    document.getElementById('seg-bma').textContent='รายงานทางการ สนน. ('+rows.length+' จุด · รอบ '+bdate+')';
+    // 7-day forecast
+    if(DATA.tmd7){
+      var today=fmtD(built);
+      document.getElementById('fc7').innerHTML=DATA.tmd7.days.map(function(d){var ms=pt(d.d+' 12:00');var lbl=fmtD(ms);return '<div class="fd'+(lbl===today?' today':'')+'"><b>'+lbl+'</b><div class="col" title="'+d.rain+'%"><span style="height:'+d.rain+'%"></span></div><span class="pc">'+d.rain+'%</span><span class="tt">'+Math.round(d.tmin)+'–'+Math.round(d.tmax)+'°</span></div>';}).join('');
+      document.getElementById('fc7-note').innerHTML='ร้อยละของพื้นที่ที่มีฝน และอุณหภูมิต่ำสุด–สูงสุด กรุงเทพมหานคร จาก API พยากรณ์ 7 วันของกรมอุตุฯ ปรับปรุง '+fmtT(pt(DATA.tmd7.built),true)+' น.'+cite(22);
+    }
+    // Google Maps age
+    var gmT=pt('2026-09-26 08:50');
+    document.getElementById('gm-age').innerHTML='<b>ข้อมูลส่วนนี้ไม่อัปเดตอัตโนมัติ</b> สภาพจราจรจาก Google Maps เก็บเมื่อ 26 ก.ย. 08:43–08:50 น. ('+ago(gmT)+') สภาพจริงตอนนี้อาจต่างไปมาก เปิด <a href="https://www.google.com/maps/@13.78,100.58,12z/data=!5m1!1e1" target="_blank" rel="noopener">Google Maps ชั้นข้อมูลการจราจร</a> เพื่อดูสภาพล่าสุด';
+  })();
+
+  // ---------- generic svg helpers ----------
+  function el(tag,attrs,parent){var e=document.createElementNS(SVGNS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+  function tipBox(host){var t=document.createElement('div');t.className='tip';t.hidden=true;host.appendChild(t);return t;}
+  function placeTip(tip,host,px,W){var hw=host.clientWidth, x=px/W*hw; tip.hidden=false; var tw=tip.offsetWidth; var left=x+12; if(left+tw>hw) left=x-tw-12; if(left<0) left=0; tip.style.left=left+'px'; tip.style.top='8px';}
+
+  // ---------- line chart ----------
+  function lineChart(host,opt){
+    host.innerHTML='';
+    var W=860,H=opt.h||300,m={l:54,r:18,t:14,b:34};
+    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':opt.label},host);
+    var x0=opt.t0,x1=opt.t1,y0=opt.y0,y1=opt.y1;
+    function X(t){return m.l+(t-x0)/(x1-x0)*(W-m.l-m.r);} function Y(v){return m.t+(1-(v-y0)/(y1-y0))*(H-m.t-m.b);}
+    opt.yTicks.forEach(function(v){el('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),'class':'gl'},svg);var tx=el('text',{x:m.l-8,y:Y(v)+4,'text-anchor':'end','class':'ax'},svg);tx.textContent=opt.yFmt?opt.yFmt(v):v;});
+    opt.xTicks.forEach(function(t){el('line',{x1:X(t),x2:X(t),y1:m.t,y2:H-m.b,'class':'gl'},svg);var tx=el('text',{x:X(t),y:H-m.b+18,'text-anchor':'middle','class':'ax'},svg);tx.textContent=opt.xFmt(t);});
+    (opt.refs||[]).forEach(function(r){el('line',{x1:m.l,x2:W-m.r,y1:Y(r.v),y2:Y(r.v),'class':'zero'},svg);var tx=el('text',{x:m.l+6,y:Y(r.v)-6,'text-anchor':'start','class':'reflbl'},svg);tx.textContent=r.label;});
+    if(opt.yLabel){var yl=el('text',{x:m.l-8,y:m.t-2,'text-anchor':'end','class':'axl'},svg);yl.textContent='';}
+    opt.series.forEach(function(s){
+      var d='',pen=false;
+      s.t.forEach(function(t,i){var v=s.v[i]; if(v==null){pen=false;return;} d+=(pen?'L':'M')+X(t).toFixed(1)+','+Y(v).toFixed(1); pen=true;});
+      el('path',{d:d,fill:'none',stroke:s.color,'stroke-width':s.w||2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+      var li=s.v.length-1; while(li>0&&s.v[li]==null) li--;
+      el('circle',{cx:X(s.t[li]),cy:Y(s.v[li]),r:4,fill:s.color,stroke:'var(--surface)','stroke-width':2},svg);
+    });
+    var cur=el('line',{y1:m.t,y2:H-m.b,'class':'cursor',visibility:'hidden'},svg);
+    var tip=tipBox(host);
+    var hit=el('rect',{x:m.l,y:m.t,width:W-m.l-m.r,height:H-m.t-m.b,fill:'transparent'},svg);
+    function move(ev){
+      var r=svg.getBoundingClientRect(); var px=(ev.clientX-r.left)/r.width*W; var t=x0+(px-m.l)/(W-m.l-m.r)*(x1-x0);
+      var rows='',tt=null;
+      opt.series.forEach(function(s){var bi=-1,bd=Infinity; for(var i=0;i<s.t.length;i++){var dd=Math.abs(s.t[i]-t); if(dd<bd&&s.v[i]!=null){bd=dd;bi=i;}} if(bi<0||bd>3*3600e3) return; if(tt==null)tt=s.t[bi]; rows+='<div class="row"><span><i class="sw" style="background:'+s.color+'"></i> '+esc(s.short||s.name)+'</span><b>'+opt.vFmt(s.v[bi])+'</b></div>';});
+      if(tt==null){tip.hidden=true;cur.setAttribute('visibility','hidden');return;}
+      cur.setAttribute('x1',X(tt));cur.setAttribute('x2',X(tt));cur.setAttribute('visibility','visible');
+      tip.innerHTML='<div class="muted" style="margin-bottom:4px">'+fmtT(tt,true)+' น.</div>'+rows; placeTip(tip,host,X(tt),W);
+    }
+    hit.addEventListener('pointermove',move); hit.addEventListener('pointerdown',move);
+    hit.addEventListener('pointerleave',function(){tip.hidden=true;cur.setAttribute('visibility','hidden');});
+  }
+  function dayTicks(t0,t1,step){var out=[],d=bd(t0);d=Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())-BKK;if(d<t0)d+=864e5;for(;d<=t1;d+=864e5*step)out.push(d);return out;}
+  function legend(id,series){document.getElementById(id).innerHTML=series.map(function(s){return '<span><i style="background:'+s.color+'"></i>'+esc(s.name)+'</span>';}).join('');}
+
+  // ---------- river gap chart ----------
+  var RS=[['C.35','var(--s2)','บ้านป้อม'],['CPY014','var(--s5)','นวลฉวี'],['C.12','var(--s1)','สามเสน'],['CPY015','var(--s3)','สะพานกรุงเทพ'],['CPY011','var(--s4)','อยุธยา']];
+  var rvSeries=RS.map(function(r){var s=DATA.river[r[0]];return {name:s.name,short:r[2],color:r[1],t:s.t.map(pt),v:s.wl.map(function(v){return v==null?null:+(v-s.bank).toFixed(2);}),w:1.8};});
+  var t0=pt(DATA.river['C.2'].t[0].slice(0,10)+' 00:00'),t1=BUILT+3*3600e3;
+  lineChart(document.getElementById('rv-chart'),{label:'ระดับน้ำเทียบตลิ่ง 5 สถานี',series:rvSeries,t0:t0,t1:t1,y0:-3.6,y1:0.4,yTicks:[-3,-2,-1,0],yFmt:function(v){return v+' ม.';},xTicks:dayTicks(t0,t1,2),xFmt:fmtD,refs:[{v:0,label:'ระดับตลิ่ง'}],vFmt:function(v){return (v>0?'+':'')+v.toFixed(2)+' ม.';},h:320});
+  legend('rv-legend',rvSeries);
+
+  // gauges
+  var GS=['C.35','CPY014','C.12','CPY011','CPY015','C.13','C.2'];
+  document.getElementById('gauges').innerHTML=GS.map(function(k){
+    var s=DATA.river[k], i=s.wl.length-1; while(i>0&&s.wl[i]==null) i--;
+    var wl=s.wl[i], gap=s.bank-wl, first=s.wl.find(function(v){return v!=null;});
+    var span=Math.max(3, s.bank-first+0.5), pct=Math.max(2,Math.min(100,(1-gap/span)*100));
+    var col=gap<0.5?'var(--crit)':gap<1?'var(--warn)':'var(--bar)';
+    return '<div class="gauge"><div class="nm">'+esc(s.name)+'<small>ตลิ่ง '+s.bank.toFixed(2)+' ม.รทก. · '+s.t[i].slice(8,10)+' ก.ย. '+s.t[i].slice(11)+' น.</small></div>'+
+      '<div class="gbar" role="img" aria-label="ต่ำกว่าตลิ่ง '+gap.toFixed(2)+' เมตร"><span style="width:'+pct.toFixed(1)+'%;background:'+col+'"></span></div>'+
+      '<div class="gv" style="color:'+col+'">−'+gap.toFixed(2)+' ม.<small>ระดับ '+wl.toFixed(2)+'</small></div></div>';
+  }).join('');
+
+  // ---------- discharge chart ----------
+  var QS=[['C.2','var(--s3)','C.2 นครสวรรค์'],['C.13','var(--s1)','C.13 ท้ายเขื่อนเจ้าพระยา'],['C.35','var(--s2)','C.35 บ้านป้อม อยุธยา']];
+  var qSeries=QS.map(function(r){var s=DATA.river[r[0]];return {name:r[2],short:r[0],color:r[1],t:s.t.map(pt),v:s.q};});
+  lineChart(document.getElementById('q-chart'),{label:'ปริมาณน้ำไหลผ่าน 3 สถานี',series:qSeries,t0:t0,t1:t1,y0:0,y1:2200,yTicks:[0,500,1000,1500,2000],yFmt:function(v){return v.toLocaleString('en-US');},xTicks:dayTicks(t0,t1,3),xFmt:fmtD,refs:[{v:2000,label:'2,000 เพดานระบายตามแผนกรมชลฯ'}],vFmt:function(v){return nf(v)+' ลบ.ม./วิ';},h:280});
+  legend('q-legend',qSeries);
+
+  // ---------- hourly rain chart ----------
+  var RH_ORDER=['3','2','1'];
+  var rhChips=document.getElementById('rh-chips'), rhSel='3';
+  RH_ORDER.forEach(function(k){var b=document.createElement('button');b.className='chip';b.type='button';b.dataset.st=k;b.textContent=DATA.rainh[k].name;b.setAttribute('aria-pressed',k===rhSel?'true':'false');rhChips.appendChild(b);b.addEventListener('click',function(){rhSel=k;drawRH();});});
+  function drawRH(){
+    rhChips.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c.dataset.st===rhSel?'true':'false');});
+    var s=DATA.rainh[rhSel], host=document.getElementById('rh-chart'); host.innerHTML='';
+    var W=860,H=280,m={l:46,r:52,t:14,b:34};
+    var ts=s.t.map(pt), n=ts.length, t0=ts[0]-1800e3, t1=ts[n-1]+1800e3;
+    var cum=[],c=0; s.v.forEach(function(v){c+=v||0;cum.push(+c.toFixed(1));});
+    var yMax=70, cMax=300;
+    function X(t){return m.l+(t-t0)/(t1-t0)*(W-m.l-m.r);} function Y(v){return m.t+(1-v/yMax)*(H-m.t-m.b);} function YC(v){return m.t+(1-v/cMax)*(H-m.t-m.b);}
+    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'ฝนรายชั่วโมง '+s.name},host);
+    [0,20,40,60].forEach(function(v){el('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),'class':'gl'},svg);var tx=el('text',{x:m.l-8,y:Y(v)+4,'text-anchor':'end','class':'ax'},svg);tx.textContent=v;});
+    [0,100,200,300].forEach(function(v){var tx=el('text',{x:W-m.r+8,y:YC(v)+4,'text-anchor':'start','class':'ax',fill:'var(--s2)'},svg);tx.textContent=v;});
+    var bw=(W-m.l-m.r)/n*0.72;
+    el('line',{x1:m.l,x2:W-m.r,y1:Y(35.1),y2:Y(35.1),'class':'zero'},svg);
+    var rl=el('text',{x:m.l+4,y:Y(35.1)-6,'class':'reflbl'},svg); rl.textContent='35 มม./ชม. ขึ้นไป = ฝนหนักมากในชั่วโมงเดียว (ระบาย กทม. รับได้ราว 60 มม./ชม. ในพื้นที่หลัก)';
+    rl.textContent='35 มม./ชม.';
+    ts.forEach(function(t,i){var v=s.v[i]||0; el('rect',{x:X(t)-bw/2,y:Y(v),width:bw,height:Math.max(0,Y(0)-Y(v)),fill:'var(--bar)',rx:1.5},svg);});
+    var d=''; ts.forEach(function(t,i){d+=(i?'L':'M')+X(t).toFixed(1)+','+YC(cum[i]).toFixed(1);});
+    el('path',{d:d,fill:'none',stroke:'var(--s2)','stroke-width':2.2},svg);
+    el('circle',{cx:X(ts[n-1]),cy:YC(cum[n-1]),r:4,fill:'var(--s2)',stroke:'var(--surface)','stroke-width':2},svg);
+    ts.forEach(function(t){var h=bd(t).getUTCHours(); if(h%6===0){var tx=el('text',{x:X(t),y:H-m.b+18,'text-anchor':'middle','class':'ax'},svg);tx.textContent=h===0?fmtD(t):('0'+h).slice(-2)+':00';}});
+    var tip=tipBox(host), cur=el('line',{y1:m.t,y2:H-m.b,'class':'cursor',visibility:'hidden'},svg);
+    var hit=el('rect',{x:m.l,y:m.t,width:W-m.l-m.r,height:H-m.t-m.b,fill:'transparent'},svg);
+    function mv(ev){var r=svg.getBoundingClientRect(),px=(ev.clientX-r.left)/r.width*W,t=t0+(px-m.l)/(W-m.l-m.r)*(t1-t0),bi=0,bd=Infinity;ts.forEach(function(x,i){var dd=Math.abs(x-t);if(dd<bd){bd=dd;bi=i;}});
+      cur.setAttribute('x1',X(ts[bi]));cur.setAttribute('x2',X(ts[bi]));cur.setAttribute('visibility','visible');
+      tip.innerHTML='<div class="muted" style="margin-bottom:4px">'+fmtT(ts[bi],true)+' น.</div><div class="row"><span>ฝนชั่วโมงนี้</span><b>'+nf(s.v[bi],1)+' มม.</b></div><div class="row"><span>สะสม</span><b>'+nf(cum[bi],1)+' มม.</b></div>';placeTip(tip,host,X(ts[bi]),W);}
+    hit.addEventListener('pointermove',mv);hit.addEventListener('pointerdown',mv);hit.addEventListener('pointerleave',function(){tip.hidden=true;cur.setAttribute('visibility','hidden');});
+    var mx=0,mi=0; s.v.forEach(function(v,i){if((v||0)>mx){mx=v;mi=i;}});
+    document.getElementById('rh-foot').innerHTML='สถานี '+esc(s.name)+': ฝนสะสม <b class="mono">'+nf(cum[n-1],1)+' มม.</b> ตั้งแต่ 00:00 น. 25 ก.ย. ถึง '+fmtT(ts[n-1],true)+' น. · ชั่วโมงที่ตกหนักสุด <b class="mono">'+nf(mx,1)+' มม.</b> เวลา '+fmtT(ts[mi],true)+' น.'+cite(27);
+  }
+  drawRH();
+
+  // ---------- roads ----------
+  var DIST={
+    north:["บางเขน","ดอนเมือง","หลักสี่","สายไหม","จตุจักร","ลาดพร้าว","บางซื่อ"],
+    east:["มีนบุรี","หนองจอก","คลองสามวา","ลาดกระบัง","ประเวศ","สวนหลวง","บางกะปิ","สะพานสูง","คันนายาว","บึงกุ่ม","วังทองหลาง","บางนา","พระโขนง"],
+    central:["พระนคร","ป้อมปราบศัตรูพ่าย","สัมพันธวงศ์","ปทุมวัน","บางรัก","สาทร","บางคอแหลม","ยานนาวา","คลองเตย","วัฒนา","ราชเทวี","พญาไท","ดินแดง","ห้วยขวาง","ดุสิต"],
+    thon:["ธนบุรี","คลองสาน","บางกอกใหญ่","บางกอกน้อย","บางพลัด","ตลิ่งชัน","ทวีวัฒนา","ภาษีเจริญ","บางแค","หนองแขม","บางบอน","จอมทอง","ราษฎร์บูรณะ","ทุ่งครุ","บางขุนเทียน"]
+  };
+  var ZOF={}; Object.keys(DIST).forEach(function(z){DIST[z].forEach(function(d){ZOF[d]=z;});});
+  function depthPill(cm){var c=cm>=35?'p-crit':cm>=25?'p-warn':cm>=15?'p-caution':'p-info';return '<span class="pill '+c+'">'+cm+' ซม.</span>';}
+  var BMA=DATA.bma.rows.map(function(x){
+    var dry=x.off&&x.off!=='00:00';
+    return {set:'bma',r:x.r,seg:x.at,d:x.d,z:ZOF[x.d]||'central',cm:x.cm,dry:dry,
+      st:dry?'<span class="pill p-ok">แห้งแล้ว '+x.off+' น.</span>':'<span class="pill p-warn">ยังไม่รายงานว่าแห้ง</span>',
+      dep:depthPill(x.cm)+' <span class="small muted">'+esc(x.lane||'ไม่ระบุเลน')+' · ยาว '+x.len+' ม.</span>',
+      t:'เริ่ม '+x.on+' น.'+(dry?' · ท่วม '+x.dur+' ชม.':''),src:[24],rank:dry?5:(x.cm>=30?1:x.cm>=20?2:3)};
+  });
+  var ST={crit:["p-crit","สัญจรไม่ได้/ห้ามรถเล็ก",0],avoid:["p-warn","ควรเลี่ยง",1],slow:["p-caution","ขับช้า ระวัง",2],low:["p-info","น้ำขังระดับต่ำ",3]};
+  var ADV_RAW=[
+    {r:"วิภาวดีรังสิต",seg:"จตุจักร–หลักสี่–ดอนเมือง · ขาเข้าใกล้การบินไทย",d:"จตุจักร / หลักสี่ / ดอนเมือง",z:"north",st:"crit",dep:"สูงกว่า 1 ม. (ขาเข้า)",t:"26 ก.ย. 06:42–07:08",src:[1,2,3]},
+    {r:"พหลโยธิน",seg:"ห้าแยกลาดพร้าว–เกษตร–บางบัว–หลักสี่–สะพานใหม่",d:"จตุจักร / บางเขน / หลักสี่",z:"north",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"พหลโยธิน ซอยบางบัว",seg:"พหลโยธิน 49/1 และชุมชนบางบัว",d:"บางเขน",z:"north",st:"crit",dep:"≈60 ซม. · ในชุมชน 30–50 ซม.",t:"26 ก.ย. 07:08",src:[3]},
+    {r:"งามวงศ์วาน",seg:"เดอะมอลล์งามวงศ์วาน–แยกเกษตร · แยกพงษ์เพชร",d:"จตุจักร / นนทบุรี",z:"north",st:"crit",dep:"ห้ามรถเล็ก (แยกพงษ์เพชร)",t:"26 ก.ย. 06:42",src:[1,2]},
+    {r:"แจ้งวัฒนะ",seg:"หลักสี่–ศูนย์ราชการ–ทางด่วนแจ้งวัฒนะ",d:"หลักสี่ / ปากเกร็ด",z:"north",st:"crit",dep:"ห้ามรถเล็ก",t:"26 ก.ย. 06:42",src:[1,2]},
+    {r:"เสนานิคม",seg:"",d:"จตุจักร / ลาดพร้าว",z:"north",st:"crit",dep:"ห้ามรถเล็ก",t:"26 ก.ย. 06:42",src:[2]},
+    {r:"รัชดาภิเษก",seg:"พระราม 9–ห้วยขวาง–แยกรัชดาฯลาดพร้าว–รัชโยธิน (ช่วงจตุจักรปิด)",d:"ห้วยขวาง / จตุจักร",z:"north",st:"crit",dep:"ช่วงจตุจักรปิดการจราจร",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"ลาดพร้าว",seg:"แยกรัชดาฯ–วังทองหลาง–บางกะปิ (ลาดพร้าว 101–130)",d:"ลาดพร้าว / วังทองหลาง / บางกะปิ",z:"north",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"รามอินทรา",seg:"อนุสาวรีย์หลักสี่–รามอินทรา กม.2",d:"บางเขน",z:"north",st:"slow",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"ประดิษฐ์มนูธรรม",seg:"เลียบทางด่วนรามอินทรา–อาจณรงค์",d:"ลาดพร้าว / วังทองหลาง",z:"north",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"สายไหม ซอย 43, 80",seg:"",d:"สายไหม",z:"north",st:"avoid",dep:"20–30 ซม.",t:"25 ก.ย.",src:[5]},
+    {r:"สุวินทวงศ์",seg:"มีนบุรี–วัดแสนสุข",d:"มีนบุรี / หนองจอก",z:"east",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"สีหบุรานุกิจ",seg:"ตลาดมีนบุรี–แยกมีนบุรี (ระดับวิกฤต)",d:"มีนบุรี",z:"east",st:"crit",dep:"ระดับวิกฤต",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"ลาดกระบัง / แยกกิ่งแก้ว",seg:"หน้าสนามบินสุวรรณภูมิ · แยกกิ่งแก้ว",d:"ลาดกระบัง",z:"east",st:"crit",dep:"ห้ามรถเล็ก (แยกกิ่งแก้ว)",t:"26 ก.ย. 06:42",src:[1,2]},
+    {r:"รามคำแหง",seg:"ม.รามคำแหง–บางกะปิ–สะพานสูง (ซอยรอบมหาวิทยาลัยปิด)",d:"บางกะปิ / สะพานสูง",z:"east",st:"crit",dep:"ห้ามรถเล็ก (หน้า ม.ราม)",t:"26 ก.ย. 06:42",src:[1,2]},
+    {r:"ศรีนครินทร์",seg:"บางกะปิ–หัวหมาก–พัฒนาการ–อ่อนนุช–ซีคอน–บางนา",d:"บางกะปิ / สวนหลวง / ประเวศ",z:"east",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"พัฒนาการ",seg:"ปิดหลายช่วง",d:"สวนหลวง / ประเวศ",z:"east",st:"crit",dep:"ปิดการจราจรหลายช่วง",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"อ่อนนุช (สุขุมวิท 77)",seg:"อ่อนนุช 17–แยกศรีนครินทร์–ประเวศ",d:"สวนหลวง / ประเวศ",z:"east",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"สุขุมวิท",seg:"บางนา–อุดมสุข",d:"บางนา / พระโขนง",z:"east",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"เพชรบุรีตัดใหม่",seg:"มักกะสัน–อโศก–ทองหล่อ–เอกมัย (ปิดหลายช่วง)",d:"ราชเทวี / วัฒนา / ห้วยขวาง",z:"central",st:"crit",dep:"ปิดการจราจรหลายช่วง",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"สุขุมวิท 63 (เอกมัย)",seg:"",d:"วัฒนา",z:"central",st:"crit",dep:"ห้ามรถเล็ก",t:"26 ก.ย. 06:42",src:[2]},
+    {r:"ดินแดง",seg:"แยกดินแดง–แยกอโศก-ดินแดง",d:"ดินแดง",z:"central",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"อโศก-ดินแดง",seg:"ดินแดง–เพชรบุรี (ท่วมซ้ำ)",d:"ดินแดง / ห้วยขวาง",z:"central",st:"avoid",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"พหลโยธิน (ช่วงใน)",seg:"สะพานควาย–อารีย์",d:"พญาไท",z:"central",st:"slow",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"พระราม 2",seg:"ช่วงทางยกระดับ บางขุนเทียน",d:"บางขุนเทียน",z:"thon",st:"slow",dep:"",t:"26 ก.ย. 07:00",src:[1]},
+    {r:"บางกรวย-ไทรน้อย",seg:"บางบัวทอง",d:"บางบัวทอง นนทบุรี",z:"vicinity",st:"avoid",dep:"",t:"25 ก.ย. เช้า",src:[5]},
+    {r:"จุดกลับรถใต้สะพานบางบัว",seg:"",d:"นนทบุรี",z:"vicinity",st:"crit",dep:"น้ำลึก รถเล็กผ่านไม่ได้",t:"25 ก.ย. เช้า",src:[5]},
+    {r:"เมืองทองธานี",seg:"แจ้งวัฒนะ · บอนด์สตรีท · ถ.คลองประปา",d:"ปากเกร็ด นนทบุรี",z:"vicinity",st:"crit",dep:"รถเล็กผ่านไม่ได้",t:"25 ก.ย. เช้า",src:[5]},
+    {r:"งามวงศ์วาน (ทางลงทางด่วน–อุโมงค์เกษตร)",seg:"ทางลงทางด่วน–แยกพงษ์เพชร–อุโมงค์เกษตร",d:"จตุจักร / นนทบุรี",z:"north",st:"crit",dep:"30–60 ซม.",t:"26 ก.ย. เช้า",src:[31]},
+    {r:"เสนานิคม 1",seg:"",d:"จตุจักร / ลาดพร้าว",z:"north",st:"crit",dep:"50–60 ซม. รถเล็กผ่านไม่ได้ 04:00–05:30 น.",t:"26 ก.ย. เช้า",src:[31]},
+    {r:"ลาดพร้าว-วังหิน",seg:"โดยเฉพาะช่วงสะพานวังหิน",d:"ลาดพร้าว",z:"north",st:"crit",dep:"30–50 ซม.",t:"26 ก.ย. เช้า",src:[31]},
+    {r:"พหลโยธิน (วังน้อย) ขาเข้า",seg:"",d:"วังน้อย อยุธยา",z:"vicinity",st:"avoid",dep:"",t:"25 ก.ย. เช้า",src:[5]}
+  ];
+  var ADV=ADV_RAW.map(function(x){return {set:'adv',r:x.r,seg:x.seg,d:x.d,z:x.z,st:'<span class="pill '+ST[x.st][0]+'">'+ST[x.st][1]+'</span>',dep:x.dep?esc(x.dep):'<span class="muted">ไม่ระบุ</span>',t:x.t,src:x.src,rank:ST[x.st][2],sev:x.st};});
+  BMA.sort(function(a,b){return a.rank-b.rank||b.cm-a.cm;}); ADV.sort(function(a,b){return a.rank-b.rank;});
+  var ALL=BMA.concat(ADV);
+  var NOTES={bma:'รายงานของสำนักการระบายน้ำ กทม. เฉพาะถนนสายหลักที่ สนน. รับผิดชอบ รอบวันที่ '+fmtD(pt(DATA.bma.date+' 12:00'))+' (เวลาหลังเที่ยงคืนคือเช้าวันถัดไป)'+(DATA.bma.pending?' · รอบวันที่ '+fmtD(pt(DATA.bma.pending+' 12:00'))+' ยังอยู่ระหว่างจัดทำ':'')+' · “ยังไม่รายงานว่าแห้ง” หมายถึงรายงานไม่มีเวลาแห้ง · ดึงข้อมูล '+fmtT(pt(DATA.meta.src.bma||DATA.meta.built),true)+' น.'+cite(24),
+               adv:'ประกาศเลี่ยงเส้นทางของ กทม. และจุดที่สื่อรายงานเช้า 26 ก.ย. ครอบคลุมถนนที่ไม่อยู่ในรายงาน สนน. และปริมณฑล ระดับน้ำจากข่าวอาจสูงกว่ารายงาน สนน. เพราะวัดคนละจุดและคนละเวลา'};
+  var set='bma', zone='all', q='';
+  try{ var sv=localStorage.getItem('bkkflood-zone'); if(sv) zone=sv; }catch(e){}
+  var body=document.getElementById('road-body'), cnt=document.getElementById('road-count');
+  function render(){
+    var qq=q.trim().toLowerCase(), n=0, html='', pool=set==='bma'?BMA:ADV;
+    pool.forEach(function(x){
+      if(zone!=='all'&&x.z!==zone) return;
+      if(qq&&(x.r+' '+x.seg+' '+x.d).toLowerCase().indexOf(qq)<0) return;
+      n++;
+      html+='<tr><td class="road">'+esc(x.r)+(x.seg?'<small>'+esc(x.seg)+'</small>':'')+'</td><td>'+esc(x.d)+'</td><td>'+x.st+'</td><td>'+x.dep+'</td><td class="mono">'+x.t+'</td><td>'+x.src.map(function(s){return '<a class="cite" style="vertical-align:baseline" href="#s'+s+'">['+s+']</a>';}).join(' ')+'</td></tr>';
+    });
+    body.innerHTML=html||'<tr><td colspan="6" class="muted">ไม่พบรายการที่ตรงกับตัวกรอง ลองเลือก “ทั้งหมด” หรือพิมพ์ชื่อถนนอีกแบบ</td></tr>';
+    cnt.textContent='แสดง '+n+' จาก '+pool.length+' รายการ';
+    document.getElementById('set-note').innerHTML=NOTES[set];
+    document.querySelectorAll('.chip[data-zone]').forEach(function(c){c.setAttribute('aria-pressed',c.dataset.zone===zone?'true':'false');});
+    document.querySelectorAll('.segbar button').forEach(function(c){c.setAttribute('aria-pressed',c.dataset.set===set?'true':'false');});
+  }
+  document.querySelectorAll('.chip[data-zone]').forEach(function(c){c.addEventListener('click',function(){zone=c.dataset.zone;try{localStorage.setItem('bkkflood-zone',zone);}catch(e){}render();});});
+  document.querySelectorAll('.segbar button').forEach(function(c){c.addEventListener('click',function(){set=c.dataset.set;render();});});
+  document.getElementById('road-q').addEventListener('input',function(e){q=e.target.value;render();});
+  render();
+
+  // district bars
+  var dc={}; DATA.bma.rows.forEach(function(x){dc[x.d]=(dc[x.d]||0)+1;});
+  var dk=Object.keys(dc).sort(function(a,b){return dc[b]-dc[a];}), dmax=dc[dk[0]];
+  document.getElementById('distbars').innerHTML=dk.map(function(k){return '<div class="db"><span>'+esc(k)+'</span><div class="t2"><span style="width:'+(dc[k]/dmax*100)+'%"></span></div><span class="n2">'+dc[k]+'</span></div>';}).join('');
+
+
+  // ---------- travel (Google Maps compilation) ----------
+  var GZ={"เหนือ":"north","กลาง":"central","ตะวันออก":"east","ธนบุรี":"thon"};
+  var GROADS=[
+    {n:"ถ.สุวินทวงศ์",s:"มีนบุรี – สะพานวัดแสนสุข",d:"มีนบุรี",z:"ตะวันออก",l:"r",m:57,f:"หนักขึ้นจาก 47 นาที"},
+    {n:"ถ.วิภาวดีรังสิต",s:"จตุจักร – หลักสี่ – ดอนเมือง",d:"จตุจักร, หลักสี่, ดอนเมือง",z:"เหนือ",l:"r",m:38,f:"ปิดถนนช่วงหลักสี่–บางเขน"},
+    {n:"ถ.ลาดพร้าว",s:"แยกรัชดา-ลาดพร้าว – วังทองหลาง – บางกะปิ (ลาดพร้าว 101–130)",d:"จตุจักร, วังทองหลาง, บางกะปิ",z:"เหนือ",l:"r",m:37,f:"หนักขึ้นจาก 21 นาที"},
+    {n:"ถ.พหลโยธิน",s:"ห้าแยกลาดพร้าว – ม.เกษตร – บางบัว – หลักสี่ – สะพานใหม่",d:"จตุจักร, บางเขน, หลักสี่",z:"เหนือ",l:"r",m:35},
+    {n:"ถ.ลาดกระบัง",s:"หน้าสนามบินสุวรรณภูมิ – ลาดกระบัง",d:"ลาดกระบัง",z:"ตะวันออก",l:"r",m:32},
+    {n:"ถ.รัชดาภิเษก",s:"พระราม 9 – ห้วยขวาง – แยกลาดพร้าว – รัชโยธิน",d:"ห้วยขวาง, จตุจักร",z:"กลาง",l:"r",m:32,f:"ปิดถนนช่วงจตุจักร"},
+    {n:"ถ.แจ้งวัฒนะ",s:"หลักสี่ – ทางด่วนแจ้งวัฒนะ",d:"หลักสี่",z:"เหนือ",l:"r",m:29},
+    {n:"ถ.รามคำแหง",s:"ม.รามคำแหง – บางกะปิ – สะพานสูง – มีนบุรี",d:"บางกะปิ, สะพานสูง, มีนบุรี",z:"ตะวันออก",l:"r",m:25,f:"หนักขึ้นจาก 16 นาที"},
+    {n:"ถ.ศรีนครินทร์",s:"บางกะปิ – หัวหมาก – พัฒนาการ – อ่อนนุช – ซีคอน – บางนา",d:"บางกะปิ, สวนหลวง, ประเวศ",z:"ตะวันออก",l:"r",m:23,f:"ปิดถนนช่วงหัวหมาก"},
+    {n:"ถ.พัฒนาการ",s:"ตลอดแนว",d:"สวนหลวง",z:"ตะวันออก",l:"r",m:22,f:"ปิดถนนหลายจุด"},
+    {n:"ถ.ดินแดง",s:"แยกดินแดง – แยก ถ.อโศก-ดินแดง",d:"ดินแดง",z:"กลาง",l:"r",m:21},
+    {n:"ถ.งามวงศ์วาน",s:"เดอะมอลล์งามวงศ์วาน – แยกเกษตร",d:"จตุจักร",z:"เหนือ",l:"r",m:21,f:"หนักขึ้นจาก 14 นาที"},
+    {n:"ถ.เพลินจิต",s:"ชิดลม – เพลินจิต – นานา",d:"ปทุมวัน",z:"กลาง",l:"r",m:21,f:"ใหม่"},
+    {n:"ถ.อ่อนนุช (สุขุมวิท 77)",s:"อ่อนนุช 17 – แยกศรีนครินทร์ – ประเวศ",d:"สวนหลวง, ประเวศ",z:"ตะวันออก",l:"r",m:20},
+    {n:"ถ.เพชรบุรีตัดใหม่",s:"มักกะสัน – อโศก – ทองหล่อ – เอกมัย",d:"ราชเทวี, วัฒนา, ห้วยขวาง",z:"กลาง",l:"r",m:17,f:"ปิดถนนหลายจุด"},
+    {n:"ถ.พระราม 4",s:"ช่วงแยกพระโขนง",d:"คลองเตย, พระโขนง",z:"กลาง",l:"r",m:17,f:"ใหม่"},
+    {n:"ถ.ประดิษฐ์มนูธรรม",s:"เลียบทางด่วนรามอินทรา",d:"ลาดพร้าว, บางเขน",z:"เหนือ",l:"r",m:16},
+    {n:"ถ.อโศก–ดินแดง",s:"ดินแดง – เพชรบุรี",d:"ดินแดง, ห้วยขวาง",z:"กลาง",l:"r",m:14},
+    {n:"ถ.สุขุมวิท",s:"บางนา – อุดมสุข",d:"บางนา, พระโขนง",z:"ตะวันออก",l:"r",m:13},
+    {n:"ถ.ศรีอยุธยา",s:"พญาไท – ดุสิต",d:"ราชเทวี, ดุสิต",z:"กลาง",l:"r",m:11,f:"หนักขึ้นเป็นสีแดง"},
+    {n:"ถ.พระราม 9",s:"แยกพระราม 9 – เซ็นทรัลพระราม 9 – RCA",d:"ห้วยขวาง",z:"กลาง",l:"r"},
+    {n:"ถ.สีหบุรานุกิจ",s:"ตลาดมีนบุรี – แยกมีนบุรี",d:"มีนบุรี",z:"ตะวันออก",l:"r"},
+    {n:"ถ.พหลโยธิน (ช่วงใน)",s:"สะพานควาย – อารีย์",d:"พญาไท",z:"กลาง",l:"r"},
+    {n:"ถ.รามอินทรา",s:"อนุสาวรีย์บางเขน – รามอินทรา กม.4 – ตลาดนัดเลียบด่วนรามอินทรา",d:"บางเขน",z:"เหนือ",l:"r"},
+    {n:"ถ.ราชวิถี",s:"อนุสาวรีย์ชัยฯ – ดุสิต",d:"ราชเทวี, ดุสิต",z:"กลาง",l:"a",m:6},
+    {n:"ถ.เอกชัย",s:"ช่วงสั้น ๆ ใกล้วัดกำแพง",d:"บางบอน",z:"ธนบุรี",l:"a",m:6,f:"ใหม่"},
+    {n:"ถ.พระราม 2",s:"ช่วงสั้น ๆ แถวโลตัสพระราม 2",d:"บางขุนเทียน",z:"ธนบุรี",l:"a"}
+  ];
+  function bare(n){return n.replace(/^ถ\./,'').replace(/\s*\(.*\)$/,'').replace('–','-').trim();}
+  var advNames=ADV_RAW.filter(function(a){return (a.src||[]).indexOf(1)>=0;}).map(function(a){return a.r.replace('–','-');});
+  GROADS.forEach(function(g){var b=bare(g.n); g.bma=advNames.some(function(a){return a.indexOf(b)===0||b.indexOf(a.split(' ')[0])===0;});});
+  var reds=GROADS.filter(function(g){return g.l==='r';}).length, ambers=GROADS.length-reds;
+  document.getElementById('trv-red').innerHTML=GROADS.length+' <small style="font-size:.8rem;font-weight:500">สาย · แดง '+reds+' · ส้ม '+ambers+'</small>';
+  document.getElementById('trv-closed').innerHTML=GROADS.filter(function(g){return g.f&&g.f.indexOf('ปิดถนน')===0;}).map(function(g){return '<li>'+esc(g.n)+' '+esc(g.f.replace('ปิดถนน',''))+'</li>';}).join('')+'<li>ซอยย่านลาดพร้าว 101–130 และรอบรามคำแหง หลายจุด</li>';
+  var gm=GROADS.filter(function(g){return g.m;}), gmax=60;
+  document.getElementById('delay').innerHTML=gm.map(function(g){
+    var col=g.l==='r'?'var(--crit)':'var(--warn)';
+    return '<div class="dl"><div class="nm">'+esc(g.n)+(g.bma?' <span class="match">✓ กทม.</span>':'')+'<small>'+esc(g.s)+(g.f?' · '+esc(g.f):'')+'</small></div><div class="tr"><span style="width:'+(g.m/gmax*100).toFixed(1)+'%;background:'+col+'"></span></div><div class="mv">+'+g.m+' นาที</div></div>';
+  }).join('')+'<p class="small muted">ไม่มีตัวเลขนาที: '+GROADS.filter(function(g){return !g.m;}).map(function(g){return esc(g.n);}).join(' · ')+'</p>';
+  GROADS.forEach(function(g){
+    ALL.push({set:'gmap',r:g.n.replace(/^ถ\./,''),seg:g.s,d:g.d,z:GZ[g.z],st:'<span class="pill '+(g.l==='r'?'p-crit':'p-warn')+'">'+(g.l==='r'?'Google สีแดง':'Google สีส้ม')+'</span>',dep:(g.m?'ช้ากว่าปกติ '+g.m+' นาที':''),t:'08:43–08:50 น.',src:[32],rank:g.l==='r'?0:2});
+  });
+
+  // ---------- locate ----------
+  var ZNAME={north:"กทม. โซนเหนือ",east:"กทม. โซนตะวันออก",central:"กทม. ชั้นใน",thon:"กทม. ฝั่งธนบุรี"};
+  var VIC={"นนทบุรี":["เมืองนนทบุรี","บางกรวย","ปากเกร็ด","บางบัวทอง","บางใหญ่","ไทรน้อย"],"ปทุมธานี":["เมืองปทุมธานี","ลาดหลุมแก้ว","คลองหลวง","ธัญบุรี","ลำลูกกา","สามโคก","หนองเสือ"],"สมุทรปราการ":["เมืองสมุทรปราการ","บางบ่อ","บางเสาธง","บางพลี","พระประแดง","พระสมุทรเจดีย์"],"สมุทรสาคร":["เมืองสมุทรสาคร","กระทุ่มแบน","บ้านแพ้ว"],"นครปฐม":["เมืองนครปฐม","นครชัยศรี","พุทธมณฑล","สามพราน","กำแพงแสน","บางเลน"]};
+  var ONWR_RISK=["เมืองนนทบุรี","บางกรวย","ปากเกร็ด","เมืองปทุมธานี","ลาดหลุมแก้ว","บางบ่อ","บางเสาธง","บางพลี"];
+  var DECLARED={"หนองจอก":8,"สวนหลวง":3,"คันนายาว":2};
+  var PLACES=[];
+  Object.keys(DIST).forEach(function(z){DIST[z].forEach(function(d){PLACES.push({name:d,kind:"เขต",prov:"กรุงเทพมหานคร",zone:z});});});
+  Object.keys(VIC).forEach(function(p){VIC[p].forEach(function(a){PLACES.push({name:a,kind:"อำเภอ",prov:p});});});
+  PLACES.push({name:"วังน้อย",kind:"อำเภอ",prov:"พระนครศรีอยุธยา"});
+  var dl=document.getElementById('loc-list'), seen={};
+  function addOpt(v){if(!seen[v]){seen[v]=1;var o=document.createElement('option');o.value=v;dl.appendChild(o);}}
+  PLACES.forEach(function(p){addOpt(p.name);}); ALL.forEach(function(r){addOpt(r.r.split(' (')[0].split(' /')[0]);});
+  function norm(t){return (t||'').replace(/^\s*(เขต|อำเภอ|อ\.|ถนน|ถ\.|แขวง)\s*/,'').replace(/\s+/g,'').toLowerCase();}
+  var res=document.getElementById('loc-res'), locQ=document.getElementById('loc-q');
+  function locate(raw){
+    var q=norm(raw);
+    if(!q){res.innerHTML='<p class="small muted">พิมพ์ชื่อเขต อำเภอ หรือถนนด้านบน แล้วกด “เช็ก”</p>';return;}
+    var place=null;
+    PLACES.forEach(function(p){var n=norm(p.name);if(!place&&(n===q||n.replace('เมือง','')===q))place=p;});
+    if(!place)PLACES.forEach(function(p){var n=norm(p.name);if(!place&&q.length>=3&&(n.indexOf(q)>=0||q.indexOf(n)>=0))place=p;});
+    var kn=norm(place?place.name:raw).replace('เมือง','');
+    var hits=ALL.filter(function(r){return norm(r.r+r.seg+r.d).indexOf(kn)>=0||norm(r.r).indexOf(q)>=0;});
+    var hb=hits.filter(function(r){return r.set==='bma';}), ha=hits.filter(function(r){return r.set==='adv';}), hg=hits.filter(function(r){return r.set==='gmap';});
+    var rainHere=DATA.r24.filter(function(r){return place&&(r.a===place.name||r.a===place.name.replace('เมือง','เมือง'));}).sort(function(a,b){return b.v-a.v;});
+    var pills=[],notes=[];
+    if(hb.length){var wet=hb.filter(function(r){return !r.dry;}).length;pills.push('<span class="pill p-warn">สนน. รายงานน้ำท่วมขัง '+hb.length+' จุด</span>');notes.push('สำนักการระบายน้ำ กทม. รายงานน้ำท่วมขังถนนสายหลักที่ตรงกับคำค้นนี้ '+hb.length+' จุด ('+(hb.length-wet)+' จุดแห้งแล้ว ณ เวลารายงาน) ลึกสุด '+Math.max.apply(null,hb.map(function(r){return r.cm;}))+' ซม.'+cite(24));}
+    if(ha.length){var worst=Math.min.apply(null,ha.map(function(r){return r.rank;}));pills.push('<span class="pill '+(worst===0?'p-crit':'p-warn')+'">ประกาศเลี่ยง/ข่าว '+ha.length+' รายการ</span>');}
+    if(hg.length){pills.push('<span class="pill p-crit">Google Maps สีแดง/ส้ม '+hg.length+' สาย</span>');notes.push('สภาพจราจร Google Maps 08:43–08:50 น.: '+hg.map(function(r){return esc(r.r)+(r.dep?' ('+r.dep+')':'');}).join(' · ')+cite(32));}
+    if(rainHere.length){notes.push('ฝน 24 ชม. ถึงเช้า 26 ก.ย.: '+rainHere.map(function(r){return esc(r.s)+' '+nf(r.v,1)+' มม.';}).join(' · ')+cite(27));}
+    if(place){
+      if(DECLARED[place.name]){pills.push('<span class="pill p-crit">มีรายงานประกาศพื้นที่ประสบภัย</span>');notes.push('มีรายงานข่าวว่า กทม. ประกาศเป็นพื้นที่ประสบสาธารณภัย 25 ก.ย. ('+DECLARED[place.name]+' แขวง) ยังไม่พบประกาศต้นฉบับ'+cite(7));}
+      if(ONWR_RISK.indexOf(place.name)>=0){pills.push('<span class="pill p-warn">สทนช. เตือนเสี่ยงท่วม 26–30 ก.ย.</span>');notes.push('อยู่ในรายชื่ออำเภอเสี่ยงน้ำท่วมของ สทนช. (ตามข่าว)'+cite(10));}
+      if(place.prov==="กรุงเทพมหานคร")notes.push('กรมอุตุฯ พยากรณ์ กทม. วันนี้มีฝนฟ้าคะนองเกือบทั่วไป ฝนตกหนักถึงหนักมากหลายพื้นที่'+cite(21));
+      if(["นนทบุรี","ปทุมธานี","สมุทรปราการ","พระนครศรีอยุธยา"].indexOf(place.prov)>=0)notes.push('อยู่ในจังหวัดที่กรมชลฯ เตือนเฝ้าระวังน้ำเจ้าพระยา (ตามข่าว) คาดน้ำเหนือสูงสุดราว 2 ต.ค.'+cite(18)+cite(14));
+    }
+    if(!hits.length&&place)pills.push('<span class="pill p-info">ไม่มีรายงานถนนในข้อมูลชุดนี้</span>');
+    var title=place?(place.kind+place.name+' · '+place.prov+(place.zone?' ('+ZNAME[place.zone]+')':'')):('“'+raw.trim()+'”');
+    var h='<div class="loc-head"><h3>'+esc(title)+'</h3><span class="age">ข้อมูล ณ '+fmtT(BUILT,true)+' น. · '+ago(BUILT)+'</span></div>';
+    if(pills.length)h+='<div class="loc-head">'+pills.join('')+'</div>';
+    if(!place&&!hits.length)h+='<p class="small muted">ไม่พบชื่อนี้ในข้อมูลของหน้านี้ ลองพิมพ์ชื่อเขตหรืออำเภอ หรือเปิดแผนที่สดด้านล่าง</p>';
+    if(notes.length)h+='<ul class="loc-notes">'+notes.map(function(n){return '<li>'+n+'</li>';}).join('')+'</ul>';
+    if(hits.length)h+='<div class="loc-roads">'+hits.filter(function(r){return r.set!=='gmap';}).map(function(r){return '<div class="lr"><b>'+esc(r.r)+(r.seg?' · <span style="font-weight:400">'+esc(r.seg)+'</span>':'')+'</b>'+r.st+'<small>'+(r.set==='bma'?'สนน. · '+r.cm+' ซม. · '+r.t:r.set==='gmap'?'Google Maps · '+(r.dep||'ไม่มีตัวเลขความล่าช้า')+' · '+r.t+' ':'ข่าว/ประกาศเลี่ยง · '+(r.dep.indexOf('<')===0?'ไม่ระบุระดับน้ำ':r.dep)+' · '+r.t)+' '+r.src.map(cite).join('')+'</small></div>';}).join('')+'</div>';
+    var term=place?(place.kind==="เขต"?"เขต"+place.name+" กรุงเทพมหานคร":"อำเภอ"+place.name+" "+place.prov):raw.trim();
+    var enc=encodeURIComponent(term);
+    h+='<div><div class="eyebrow" style="margin-bottom:6px">เช็กสดตอนนี้</div><div class="live-go">'+
+      '<a class="go" href="https://www.google.com/maps/search/?api=1&query='+enc+'" target="_blank" rel="noopener"><b>Google Maps</b><span>เปิดจุดนี้ แล้วกดปุ่มเลเยอร์ → การจราจร</span></a>'+
+      '<a class="go" href="https://waze.com/ul?q='+enc+'" target="_blank" rel="noopener"><b>Waze</b><span>ดูไอคอนน้ำท่วมที่ผู้ขับขี่แจ้งรอบจุดนี้</span></a>'+
+      (place&&place.prov!=="กรุงเทพมหานคร"?'':'<a class="go" href="https://dds.bangkok.go.th/flood_report.php" target="_blank" rel="noopener"><b>รายงานน้ำท่วมขัง สนน.</b><span>รายการล่าสุดทางการ ค้นตามชื่อเขต</span></a>')+
+      '<a class="go" href="https://www.thaiwater.net/" target="_blank" rel="noopener"><b>thaiwater.net</b><span>ระดับน้ำคลองและฝนจากสถานีใกล้จุดนี้</span></a>'+
+      '</div></div>';
+    res.innerHTML=h;
+  }
+  document.getElementById('loc-form').addEventListener('submit',function(e){e.preventDefault();locate(locQ.value);});
+  document.querySelectorAll('.loc-quick .chip').forEach(function(c){c.addEventListener('click',function(){locQ.value=c.dataset.q;locate(c.dataset.q);});});
+  locQ.value='ลาดพร้าว'; locate('ลาดพร้าว');
+
+  // ---------- copy hotline ----------
+  var hlToast=document.getElementById('hl-toast');
+  document.querySelectorAll('.hl').forEach(function(b){
+    b.addEventListener('click',function(e){
+      if(e.target.closest('a')) return;
+      var num=b.dataset.num;
+      try{navigator.clipboard.writeText(num).then(function(){hlToast.textContent='คัดลอกเบอร์ '+num+' แล้ว';},function(){hlToast.textContent='คัดลอกอัตโนมัติไม่ได้ เบอร์คือ '+num;});}
+      catch(err){hlToast.textContent='คัดลอกอัตโนมัติไม่ได้ เบอร์คือ '+num;}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
