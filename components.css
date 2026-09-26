@@ -1,0 +1,64 @@
+/* ============================================================
+   efin Design Token · v0.1 — COMPONENTS.CSS ("ของใช้")
+   คลาสสำเร็จรูปประกอบจาก tokens.css เท่านั้น — ห้าม hex ตรง
+   ============================================================ */
+
+/* ---- Typography ---- */
+.t-head    { font: var(--w-head) var(--t-head)/1.2 var(--font-head); color: var(--efin-grey-dark); }
+.t-subhead { font: var(--w-subhead) var(--t-subhead)/1.3 var(--font-head); color: var(--efin-grey-dark); }
+.t-body    { font: var(--w-body) var(--t-body)/1.3 var(--font-body); color: var(--efin-grey-dark); }
+.t-label   { font: var(--w-label) var(--t-label)/1.3 var(--font-body); color: var(--efin-grey-light); }
+.t-num     { font-weight: var(--w-metric); font-variant-numeric: tabular-nums; text-align: right; }
+
+/* ---- Buttons (CTA = efin green เท่านั้น) ---- */
+.btn { display:inline-flex; align-items:center; gap:var(--s2);
+  padding:var(--s2) var(--s5); border-radius:var(--radius);
+  font:500 var(--t-body)/1 var(--font-body); border:1px solid transparent; cursor:pointer; }
+.b-primary   { background:var(--efin-green); color:var(--white); }
+.b-primary:hover { background:var(--efin-green-dark); }
+.b-secondary { background:var(--white); color:var(--efin-grey-dark); border-color:var(--line); }
+.b-ghost     { background:transparent; color:var(--efin-grey); }
+.b-danger    { background:var(--danger); color:var(--white); }
+.b-sm        { padding:var(--s1) var(--s3); font-size:var(--t-label); }
+.b-disabled  { background:var(--efin-grey-bg); color:var(--efin-grey-light); pointer-events:none; }
+
+/* ---- Chip / Badge ---- */
+.chip { display:inline-block; padding:2px var(--s3); border-radius:var(--radius-pill);
+  font:400 var(--t-label)/1.4 var(--font-body); }
+.chip.ok   { background:var(--success-bg); color:var(--success); }
+.chip.warn { background:var(--warning-bg); color:var(--warning); }
+.chip.bad  { background:var(--danger-bg);  color:var(--danger); }
+.chip.info { background:var(--info-bg);    color:var(--info); }
+.chip.brand{ background:var(--efin-green-bg); color:var(--efin-green-dark); }
+
+/* ---- Card / KPI ---- */
+.card { background:var(--white); border:1px solid var(--line);
+  border-radius:var(--radius); padding:var(--s5); box-shadow:var(--shadow-sm); }
+.kpi  { display:flex; flex-direction:column; gap:var(--s1); }
+.kpi .v { font:var(--w-metric) var(--t-head)/1.2 var(--font-head); color:var(--efin-grey-dark); }
+.kpi .up   { color:var(--success); } .kpi .down { color:var(--danger); }
+
+/* ---- Table (ห้าม zebra เทา ตาม v4) ---- */
+.tbl { width:100%; border-collapse:collapse; font:400 var(--t-body)/1.4 var(--font-body); }
+.tbl th { text-align:left; font-size:var(--t-label); color:var(--efin-grey-light);
+  padding:var(--s2) var(--s3); border-bottom:1px solid var(--line); }
+.tbl td { padding:var(--s2) var(--s3); border-bottom:1px solid var(--line); }
+.tbl td.num { font-weight:var(--w-money); font-variant-numeric:tabular-nums; text-align:right; }
+
+/* ---- Form ---- */
+.input, .selwrap select, .textarea { width:100%; padding:var(--s2) var(--s3);
+  border:1px solid var(--line); border-radius:var(--radius-sm);
+  font:400 var(--t-body)/1.4 var(--font-body); color:var(--efin-grey-dark); }
+.input:focus { outline:none; border-color:var(--efin-green);
+  box-shadow:0 0 0 3px var(--efin-green-bg); }
+.input.err { border-color:var(--danger); }
+
+/* ---- Alert / Nav / Misc ---- */
+.alert { padding:var(--s3) var(--s5); border-radius:var(--radius-sm);
+  font:400 var(--t-body)/1.4 var(--font-body); }
+.alert.info { background:var(--info-bg); color:var(--info); }
+.alert.warn { background:var(--warning-bg); color:var(--warning); }
+.alert.bad  { background:var(--danger-bg); color:var(--danger); }
+.alert.ok   { background:var(--success-bg); color:var(--success); }
+.bc { font-size:var(--t-label); color:var(--efin-grey-light); }
+.hr { border:0; border-top:1px solid var(--line); margin:var(--s5) 0; }
